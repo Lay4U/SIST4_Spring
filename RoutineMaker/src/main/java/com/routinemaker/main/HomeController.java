@@ -1,8 +1,12 @@
-package com.routinemaker.recommend;
+package com.routinemaker.main;
 
 import java.text.DateFormat;
 import java.util.Date;
 import java.util.Locale;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -34,6 +38,14 @@ public class HomeController {
 		model.addAttribute("serverTime", formattedDate );
 		
 		return "home";
+	}
+	
+	@RequestMapping(value = "/index.action", method = { RequestMethod.GET })
+	public String index (HttpServletRequest req, HttpServletResponse resp, HttpSession session) {
+
+		
+
+		return "index";
 	}
 	
 }

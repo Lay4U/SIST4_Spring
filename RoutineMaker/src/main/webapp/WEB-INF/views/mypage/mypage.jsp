@@ -6,7 +6,6 @@
 <meta charset="UTF-8">
 <title></title>
 
-<%@ include file="/inc/asset.jsp" %>
 
 <style>
    

@@ -29,7 +29,7 @@
 		class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="log4j"></property>
 		<property name="mapperLocations"
-			value="classpath*:com/test/code/mapper/*.xml"></property>
+			value="classpath*:com/routinemaker/calendar/mapper/*.xml"></property>
 		<property name="configLocation" value="/WEB-INF/mybatis.xml"></property>
 	</bean>
 

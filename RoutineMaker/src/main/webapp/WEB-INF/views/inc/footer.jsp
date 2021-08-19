@@ -1,26 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title></title>
 
-
-<style>
-   
-</style>
-
-</head>
-<body>
-   <!--  -->
-   <div class="container">
-      <h1 class="page-header"></h1>      
-      
-   </div>   
-   
-   <script>
-      
-   </script>
-</body>
-</html>
+ <!-- Footer.jsp -->
+ <!-- <hr style="margin-top:50px;"> -->
+ <div id = "footer">
+          <div id = "footer-content">
+             Copyright&copy; 2021. RoutineMaker. All Rights Reserved.
+             <div id="footer-icon">
+                <i class="fab fa-twitter"></i>&nbsp;&nbsp;
+                <i class="fab fa-instagram"></i>&nbsp;&nbsp;
+                <i class="fab fa-facebook"></i>
+             </div>
+       </div>
+    
+ </div>

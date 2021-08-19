@@ -3,24 +3,23 @@
 <!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configureation 2.1//EN" "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
 
 <tiles-definitions>
-	
-	
-	<definition name="*"  template="/WEB-INF/views/layout/template.jsp">
-		
-		<put-attribute name="main" value="/WEB-INF/views/{1}.jsp" />
-		
-	</definition>
-	
+   
+   
+   <definition name="*"  template="/WEB-INF/views/layout/template.jsp">
+   
+      <!-- 공용 조각 페이지 -->
+      <put-attribute name="asset" value="/WEB-INF/views/inc/asset.jsp"></put-attribute>
+      <put-attribute name="header" value="/WEB-INF/views/inc/header.jsp"></put-attribute>
+
+      <put-attribute name="init" value="/WEB-INF/views/inc/init.jsp"></put-attribute>
+      
+      <!-- 주업무 페이지 -->
+      <put-attribute name="main" value="/WEB-INF/views/{1}.jsp" />
+      
+      <!-- footer 공용 조각 페이지 -->
+      <put-attribute name="footer" value="/WEB-INF/views/inc/footer.jsp"></put-attribute>
+      
+   </definition>
+   
 </tiles-definitions>
-
-
-
-
-
-
-
-
-
-
-
 

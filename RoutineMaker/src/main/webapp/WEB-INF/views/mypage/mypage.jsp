@@ -5,13 +5,20 @@
 <head>
 <meta charset="UTF-8">
 <title></title>
+
+<%@ include file="/inc/asset.jsp" %>
+
 <style>
    
 </style>
 
 </head>
 <body>
- 
+   <!--  -->
+   <div class="container">
+      <h1 class="page-header"></h1>      
+      
+   </div>   
    
    <script>
       

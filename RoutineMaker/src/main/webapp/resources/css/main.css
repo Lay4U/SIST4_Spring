@@ -67,33 +67,32 @@ h3 {
 }
 
 /*header*/
-.main {
+#header {
     display: flex;
     height: 120px;
     width: 100%;
-    /* flex-flow: column wrap; */
     justify-content: space-between;
     background-color: #e17002;
 }
 
-.main>.logo {
+#header > #header-left {
     width: 50px;
     height: 50px;
 }
 
-.main>.right {
+#header > #header-right {
     display: flex;
 }
 
-div.logo>img {
+#header-left > img {
     position: relative;
     top: -70px;
 }
 
-div.right>div i {
-    /* background-color: aliceblue; */
+#header-right >div i {
     color: #692498;
     margin-left: 20px;
     margin-top: 25px;
     margin-right: 25px;
+    font-size: 40px;
 }

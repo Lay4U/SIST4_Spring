@@ -2,10 +2,10 @@
 
 <div id="header">
     <div id="header-left">
-        <img src="/routinemaker/resources/images/logo.png" style="width: 250px; height: 250px" />
+        <img src="/routinemaker/resources/images/logo.png" style="width: 250px; height: 250px;" />
     </div>
     <div id="header-right">
-        <<!-- div class="one">
+        <!-- div class="one">
             루틴추천
         </div>
         <div class="two">

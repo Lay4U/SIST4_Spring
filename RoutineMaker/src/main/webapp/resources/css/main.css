@@ -47,40 +47,44 @@ h3 {
 #footer {
    width: 100%;
    height: 160px;
-   background-color: #E17002;
+   background-color: #FFFFFF;
    border: 1px solid transparent;
    margin-top: 20px;
+   border-top: 1px solid #C1A1D6;
 }
 
 #footer-content {
    width: 100%;
    margin: 50px auto;
    font-size: 14px;
-   color: white;
+   color: #692498;
    text-align: center;
 }
 
 #footer-icon {
 	margin-top: 10px; 
 	font-size: 20px;
-    color: white;
+    color: #692498;
 }
 
 /*header*/
 #header {
     display: flex;
     height: 120px;
-    width: 100%;
+   
     justify-content: space-between;
-    background-color: #e17002;
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #C1A1D6;
+    box-shadow: 2px 2px 2px #DBD2E1;
+    margin: 0 auto;
 }
 
-#header > #header-left {
+#header #header-left {
     width: 50px;
     height: 50px;
 }
 
-#header > #header-right {
+#header #header-right {
     display: flex;
 }
 
@@ -94,5 +98,41 @@ h3 {
     margin-left: 20px;
     margin-top: 25px;
     margin-right: 25px;
-    font-size: 40px;
+    font-size: 30px;
 }
+
+#header-right > div .sub {
+	
+	color: #692498;
+	/* border : 1px solid black;  */
+	width: 80px;
+	height: auto;
+	text-align: center;
+	margin-top: 5px;
+	
+}
+
+#header-content {
+	
+	display: flex;
+    height: 120px;
+    width: 1200px;
+    justify-content: space-between;
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #C1A1D6;
+   
+    margin: 0 auto;
+	
+}
+
+
+/* 컨테이너 */
+
+.container{
+	
+	width: 1150px;
+	margin-bottom: 100px;
+	border: 1px solid black;
+	
+}
+

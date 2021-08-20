@@ -1,7 +1,16 @@
-@font-face {
+/* @font-face {
 	font-family: 'Jal_Onuel';
 	src:
 		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/Jal_Onuel.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+ */
+@font-face {
+	font-family: 'NEXON Lv2 Gothic Bold';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv2 Gothic Bold.woff')
 		format('woff');
 	font-weight: normal;
 	font-style: normal;
@@ -19,7 +28,8 @@ body {
 body, table, th, td, a, p, div, span, li, button, input, textarea,
 	select, option, h1, h2, h3, h4, h5, h6 {
 	color: #777;
-	font-family: 'Jal_Onuel' !important;
+	/* font-family: 'Jal_Onuel' !important; */
+	font-family: 'NEXON Lv2 Gothic Bold';
 }
 
 h1 {
@@ -77,13 +87,11 @@ h3 {
 	border-bottom: 1px solid #C1A1D6;
 	box-shadow: 2px 2px 2px #DBD2E1;
 	margin: 0 auto;
-	
 }
 
 #header #header-left {
 	width: 50px;
 	height: 50px;
-
 }
 
 #header #header-right {
@@ -98,11 +106,17 @@ h3 {
 }
 
 #header-right>div i {
-	color: #692498;
+	color: RGBA(105, 36, 152, 0.8);
 	margin-left: 20px;
 	margin-top: 25px;
 	margin-right: 25px;
 	font-size: 30px;
+}
+
+#header-right > #one:hover {
+	
+	color: #AFD485; 
+	
 }
 
 #header-right>div .sub {
@@ -123,13 +137,16 @@ h3 {
 	border-bottom: 1px solid #C1A1D6;
 	margin: 0 auto;
 }
-#header-left > img{
+
+#header-left>img {
 	cusor: pointer;
 }
-#header-right{
+
+#header-right {
 	cusor: pointer;
 }
-#header > #header-right > div {
+
+#header>#header-right>div {
 	cursor: pointer;
 }
 
@@ -137,5 +154,4 @@ h3 {
 .container {
 	width: 1150px;
 	margin-bottom: 100px;
-	
 }

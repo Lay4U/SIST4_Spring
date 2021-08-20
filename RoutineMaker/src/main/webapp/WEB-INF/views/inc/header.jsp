@@ -25,7 +25,7 @@
         </div> -->
 
 
-			<div class="one" onclick="location.href='/routinemaker/recommend.action';">
+			<div id="one" class="one" onclick="location.href='/routinemaker/recommend.action';">
 				<div class="sub">
 					<i class="far fa-thumbs-up"></i>
 				</div>

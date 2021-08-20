@@ -3,7 +3,7 @@
 
 <div id="header">
 	<div id="header-content">
-		<div id="header-left">
+		<div id="header-left" onclick="location.href='/routinemaker/myroutine.action';">
 			<img src="/routinemaker/resources/images/logo.png"
 				style="width: 250px; height: 250px;" />
 		</div>
@@ -25,31 +25,31 @@
         </div> -->
 
 
-			<div class="one">
+			<div class="one" onclick="location.href='/routinemaker/recommend.action';">
 				<div class="sub">
 					<i class="far fa-thumbs-up"></i>
 				</div>
 				<div class="sub">추천루틴</div>
 			</div>
-			<div class="two">
+			<div class="two" onclick="location.href='/routinemaker/challenge.action';">
 				<div class="sub">
 					<i class="fas fa-flag"></i>
 				</div>
 				<div class="sub">챌린지</div>
 			</div>
-			<div class="three">
+			<div class="three" onclick="location.href='/routinemaker/social.action';">
 				<div class="sub">
 					<i class="fas fa-globe-americas"></i>
 				</div>
 				<div class="sub">소셜</div>
 			</div>
-			<div class="four">
+			<div class="four" onclick="location.href='/routinemaker/calendar.action';">
 				<div class="sub">
 					<i class="far fa-calendar-alt"></i>
 				</div>
 				<div class="sub">캘린더</div>
 			</div>
-			<div class="five">
+			<div class="five" onclick="location.href='/routinemaker/mypage.action';">
 				<div class="sub">
 					<i class="fas fa-user"></i>
 				</div>

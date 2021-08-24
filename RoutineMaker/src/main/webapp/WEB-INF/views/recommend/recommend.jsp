@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title></title>
+<title>Routine Maker</title>
 
 
 <style>
@@ -13,9 +13,14 @@
 
 </head>
 <body>
-   <!--  -->
+
+   <!-- recommend.jsp -->
    <div class="container">
-      <h1 class="page-header"></h1>      
+      <h1 class="page-header">추천 루틴</h1>      
+      
+      
+      
+      
       
    </div>   
    

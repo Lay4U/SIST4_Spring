@@ -13,9 +13,9 @@
 
 </head>
 <body>
-   <!--  -->
+   <!-- views > calendar > calendar.jsp -->
    <div class="container">
-      <h1 class="page-header"></h1>      
+      <h1 class="page-header">calendar</h1>      
       
    </div>   
    

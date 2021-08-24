@@ -7,6 +7,8 @@
 	font-style: normal;
 }
  */
+ 
+ 
 @font-face {
 	font-family: 'NEXON Lv2 Gothic Bold';
 	src:
@@ -99,13 +101,13 @@ h3 {
 	cursor: pointer;
 }
 
-#header-left>img {
+#header-left> img {
 	position: relative;
-	top: -70px;
+	top:  8.5px;
 	cursor: pointer;
 }
 
-#header-right>div i {
+#header-right> div i {
 	color: RGBA(105, 36, 152, 0.8);
 	margin-left: 20px;
 	margin-top: 25px;
@@ -116,6 +118,12 @@ h3 {
 #header-right > #one:hover {
 	
 	color: #AFD485; 
+	
+}
+
+
+.same{
+	color: #AFD485;
 	
 }
 
@@ -150,7 +158,8 @@ h3 {
 	cursor: pointer;
 }
 
-/* 컨테이너 */
+
+/* container */
 .container {
 	width: 1150px;
 	margin-bottom: 100px;

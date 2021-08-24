@@ -4,7 +4,9 @@
    <!-- views > myroutine.jsp -->
    <div class="container">
 
-      <h1 class="page-header">마이루틴</h1>
+
+      <h1 class="page-header">마이루틴</h1>      
+
 		
 	<table>
 		<tr>
@@ -14,6 +16,7 @@
 			<td></td>
 		</tr>
 	</table>
+
 
    </div>   
    

@@ -5,7 +5,7 @@
 	<div id="header-content">
 		<div id="header-left" onclick="location.href='/routinemaker/index/index.action';">
 			<img src="/routinemaker/resources/images/logo.png"
-				style="width: 250px; height: 250px;" />
+				style="width: 250px; height: 100px;" />
 		</div>
 		<div id="header-right">
 		

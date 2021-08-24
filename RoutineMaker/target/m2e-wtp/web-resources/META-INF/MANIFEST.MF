@@ -1,5 +1,9 @@
 Manifest-Version: 1.0
+<<<<<<< HEAD
 Built-By: ShinBo
+=======
+Built-By: nhye
+>>>>>>> 864f599f76e5589c5dc7dde86e6bb5ed6e8a109a
 Build-Jdk: 11.0.11
 Created-By: Maven Integration for Eclipse
 

@@ -13,9 +13,9 @@
 
 </head>
 <body>
-   <!--  -->
+   <!-- views > myroutine.jsp -->
    <div class="container">
-      <h1 class="page-header"></h1>      
+      <h1 class="page-header">myroutine</h1>      
       
    </div>   
    

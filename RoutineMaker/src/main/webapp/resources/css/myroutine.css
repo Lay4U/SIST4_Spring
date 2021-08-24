@@ -1,0 +1,18 @@
+#my-photo {
+	width: 100px;
+	height: 100px;
+	background-color: #ccc;
+	border: 1px solid #ccc;
+	float:left;
+	margin-right: 20px;
+}
+
+#my-profile li {list-style: none; margin-bottom: 10px;}
+
+#my-profile {margin-bottom: 30px;}
+
+#my-timefilter {display: inline-block;}
+
+#my-date {position: relative; border: 1px solid transparent; margin-bottom: 60px;}
+#my-date1{position: absolute; left: 0px; top:0px;}
+#my-date2{position: absolute; right: 0px; top:0px;}

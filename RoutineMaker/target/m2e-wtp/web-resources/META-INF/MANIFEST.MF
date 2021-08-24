@@ -1,5 +1,13 @@
 Manifest-Version: 1.0
+<<<<<<< HEAD
 Built-By: hyun
+=======
+<<<<<<< HEAD
+Built-By: hyun
+=======
+Built-By: ShinBo
+>>>>>>> 3f0850647d050137135a377c59388433927e637e
+>>>>>>> 0d5930bb7ac301ab410d290081a053434f36fc0f
 Build-Jdk: 11.0.11
 Created-By: Maven Integration for Eclipse
 

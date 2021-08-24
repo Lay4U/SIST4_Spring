@@ -3,12 +3,13 @@
 
 <div id="header">
 	<div id="header-content">
-		<div id="header-left" onclick="location.href='/routinemaker/myroutine.action';">
+		<div id="header-left" onclick="location.href='/routinemaker/index/index.action';">
 			<img src="/routinemaker/resources/images/logo.png"
 				style="width: 250px; height: 250px;" />
 		</div>
 		<div id="header-right">
-			<!-- div class="one">
+		
+		<!-- div class="one">
             루틴추천
         </div>
         <div class="two">
@@ -22,14 +23,16 @@
         </div>
         <div class="five">
             마이페이지
-        </div> -->
+        </div> 
+        
+        -->
 
 
-			<div id="one" class="one" onclick="location.href='/routinemaker/recommend.action';">
+			<div id="one" class="one" onclick="location.href='/routinemaker/recommend/recommend.action';">
 				<div class="sub">
-					<i class="far fa-thumbs-up"></i>
+					<i class="far fa-thumbs-up same"></i>
 				</div>
-				<div class="sub">추천루틴</div>
+				<div class="sub same">추천루틴</div>
 			</div>
 			<div class="two" onclick="location.href='/routinemaker/challenge.action';">
 				<div class="sub">
@@ -43,7 +46,7 @@
 				</div>
 				<div class="sub">소셜</div>
 			</div>
-			<div class="four" onclick="location.href='/routinemaker/calendar.action';">
+			<div class="four" onclick="location.href='/routinemaker/calendar/calendar.action';">
 				<div class="sub">
 					<i class="far fa-calendar-alt"></i>
 				</div>

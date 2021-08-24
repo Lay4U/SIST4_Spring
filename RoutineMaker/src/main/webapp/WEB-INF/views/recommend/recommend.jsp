@@ -13,9 +13,13 @@
 
 </head>
 <body>
-   <!--  -->
+   <!-- recommend.jsp -->
    <div class="container">
-      <h1 class="page-header"></h1>      
+      <h1 class="page-header">추천루틴</h1>      
+      
+      
+      
+      
       
    </div>   
    

@@ -142,6 +142,7 @@ input[type=radio]:checked+label {
 	border: 1px solid blue;
 }
 
+
 .successrate {
 	width: 620px;
 	height: 100px;

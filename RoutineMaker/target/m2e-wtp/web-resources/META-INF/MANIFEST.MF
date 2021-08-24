@@ -1,5 +1,6 @@
 Manifest-Version: 1.0
 <<<<<<< HEAD
+<<<<<<< HEAD
 Built-By: hyun
 =======
 <<<<<<< HEAD
@@ -16,6 +17,9 @@ Built-By: ShinBo
 >>>>>>> 0d5930bb7ac301ab410d290081a053434f36fc0f
 >>>>>>> ab298e70bc9001f2414b2155da8709767effd04f
 >>>>>>> ce40b4ac9e9c63217cdb2db5126c5b4c527aebf7
+=======
+Built-By: ddd
+>>>>>>> 35e1a45a038c7256c7a3aa9336b381467d3f3f42
 Build-Jdk: 11.0.11
 Created-By: Maven Integration for Eclipse
 

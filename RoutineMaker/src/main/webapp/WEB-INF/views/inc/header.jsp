@@ -2,26 +2,14 @@
 	pageEncoding="UTF-8"%>
 
 <div id="header">
-<<<<<<< HEAD
-    <div id="header-left">
-        <img src="/routinemaker/resources/images/logo.png" style="width: 250px; height: 250px;" />
-    </div>
-    <div id="header-right">
-        <!-- div class="one">
-=======
 	<div id="header-content">
 		<div id="header-left" onclick="location.href='/routinemaker/index/index.action';">
 			<img src="/routinemaker/resources/images/logo.png"
 				style="width: 250px; height: 100px;" />
 		</div>
 		<div id="header-right">
-<<<<<<< HEAD
-			<!-- div class="one">
->>>>>>> 3b110701fce8cb77676f9a23173e500a9e2058d0
-=======
 		
 		<!-- div class="one">
->>>>>>> 2a31610c78d6e44f7b67130aee3b55f64c4d4dfe
             루틴추천
         </div>
         <div class="two">

@@ -1,0 +1,16 @@
+.challenge-container .searchbox #column {
+	width: 200px;
+}
+
+.challenge-container .searchbox #search {
+	width: 700px;
+}
+
+
+#column {
+	width: 200px;
+}
+
+#search {
+	width: 200px;
+}

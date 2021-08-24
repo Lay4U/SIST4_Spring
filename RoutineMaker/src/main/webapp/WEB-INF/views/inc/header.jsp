@@ -34,7 +34,7 @@
 				</div>
 				<div class="sub same">추천루틴</div>
 			</div>
-			<div class="two" onclick="location.href='/routinemaker/challenge.action';">
+			<div class="two" onclick="location.href='/routinemaker/challenge/challenge.action';">
 				<div class="sub">
 					<i class="fas fa-flag"></i>
 				</div>

@@ -16,9 +16,14 @@
    <!-- views > myroutine.jsp -->
    <div class="container">
 
+<<<<<<< HEAD
       <h1 class="page-header">마이루틴</h1>      
 
       <h1 class="page-header">myroutine</h1>      
+=======
+      <h1 class="page-header">마이루틴</h1>
+
+>>>>>>> 9e2383deab281730c86ed70ab60ce7e2897275a1
 
    </div>   
    

@@ -14,12 +14,12 @@
 </head>
 <body>
 
-   <!-- recommend.jsp -->
+   <!-- views > recommend.jsp -->
    <div class="container">
-      <h1 class="page-header">추천 루틴👍</h1>
+         <h1 class="page-header">추천 루틴👍<small>&nbsp;원하는 루틴을 클릭해서 내 피드로 퍼가 보세요!
+      </small></h1>
       
-      
-       
+      <hr>
    
       	
       

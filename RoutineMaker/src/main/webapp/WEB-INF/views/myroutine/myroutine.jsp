@@ -15,12 +15,10 @@
 <body>
    <!-- views > myroutine.jsp -->
    <div class="container">
-<<<<<<< HEAD
-      <h1 class="page-header">마이루틴</h1>      
-=======
-      <h1 class="page-header">myroutine</h1>      
->>>>>>> 64f24ec7c85ff2f530a05c5e21c2be34df4ceaeb
-      
+
+      <h1 class="page-header">마이루틴</h1>
+
+
    </div>   
    
    <script>

@@ -3,7 +3,7 @@
 
 <div id="header">
 	<div id="header-content">
-		<div id="header-left" onclick="location.href='/routinemaker/index/index.action';">
+		<div id="header-left" onclick="location.href='/routinemaker/myroutine/myroutine.action';">
 			<img src="/routinemaker/resources/images/logo.png"
 				style="width: 250px; height: 100px;" />
 		</div>

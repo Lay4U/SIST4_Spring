@@ -39,6 +39,7 @@ public class HomeController {
 
 		return "home";
 	}
+	
 
 	@RequestMapping(value = "/index/index.action", method = { RequestMethod.GET })
 	public String index(HttpServletRequest req, HttpServletResponse resp, HttpSession session) {
@@ -46,4 +47,5 @@ public class HomeController {
 		return "index";
 	}
 
+	
 }

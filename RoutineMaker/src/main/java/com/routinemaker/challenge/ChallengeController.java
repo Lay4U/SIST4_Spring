@@ -1,4 +1,4 @@
-package com.routinemaker.recommend;
+package com.routinemaker.challenge;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -9,11 +9,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-public class RecommendController {
+public class ChallengeController {
+	
+	@RequestMapping(value = "/challenge/challenge.action", method = { RequestMethod.GET })
+	public String challenge(HttpServletRequest req, HttpServletResponse resp, HttpSession session) {
 
-	@RequestMapping(value = "/recommend/recommend.action", method = { RequestMethod.GET })
-	public String recommend(HttpServletRequest req, HttpServletResponse resp, HttpSession session) {
 
-		return "recommend.recommend";
+		return "challenge.challenge";
 	}
+
 }

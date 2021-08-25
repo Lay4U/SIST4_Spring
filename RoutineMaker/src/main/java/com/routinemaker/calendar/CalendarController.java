@@ -16,6 +16,14 @@ public class CalendarController {
 
 		
 
-		return "calendar";
+		return "calendar.calendar";
+	}
+	
+	@RequestMapping(value = "/calendar/statistic.action", method = { RequestMethod.GET })
+	public String statistic(HttpServletRequest req, HttpServletResponse resp, HttpSession session) {
+
+		
+
+		return "calendar.statistic";
 	}
 }

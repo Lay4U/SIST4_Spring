@@ -20,7 +20,7 @@ public class MyroutineController {
 
 		
 
-		return "myroutine";
+		return "myroutine.myroutine";
 	}
 	
 }

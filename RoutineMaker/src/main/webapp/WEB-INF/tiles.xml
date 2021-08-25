@@ -17,7 +17,10 @@
       
       <!-- 주업무 페이지 -->
       <put-attribute name="main" value="/WEB-INF/views/{1}/{2}.jsp" />
+<<<<<<< HEAD
 		
+=======
+>>>>>>> 703e26b4685ce46b3b11553275af748f15228852
       
       
       <!-- footer 공용 조각 페이지 -->

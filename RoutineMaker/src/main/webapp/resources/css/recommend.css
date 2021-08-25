@@ -1,0 +1,35 @@
+/* recommend.css */
+
+
+.list-group-recommend {
+	
+	width: 300px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.container-recommend {
+	
+	float: left;
+	width: 400px;
+	margin: 20px;
+	padding: 20px;
+	/* border: 1px solid black; */
+	
+}
+
+.container-padding {
+	
+	width: 200px;
+	height: 300px;
+	float: left;
+	
+}
+
+
+.subcontainer-recommend{
+	
+	width: 300px;
+	border: 1px solid black;
+	
+}

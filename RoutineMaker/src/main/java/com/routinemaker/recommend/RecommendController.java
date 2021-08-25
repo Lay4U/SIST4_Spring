@@ -14,6 +14,15 @@ public class RecommendController {
 	@RequestMapping(value = "/recommend/recommend.action", method = { RequestMethod.GET })
 	public String recommend(HttpServletRequest req, HttpServletResponse resp, HttpSession session) {
 
-		return "recommend";
+		return "recommend.recommend";
 	}
+	
+	
+	@RequestMapping(value = "/recommend/recommendRoutineset.action", method = { RequestMethod.GET })
+	public String recommendRoutineset(HttpServletRequest req, HttpServletResponse resp, HttpSession session) {
+
+		return "recommend.recommendRoutineset";
+	}
+	
+	
 }

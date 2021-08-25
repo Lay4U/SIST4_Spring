@@ -71,8 +71,8 @@
 		</table>
 
 		<input type="button" id="routineplus" class="btn btn-info"
-			name="routineplus" value="루틴추가하기"> <input type="button"
-			id="bookroutine" class="btn btn-info" name="bookroutine"
+			name="routineplus" value="루틴추가하기"> 
+		<input type="button" id="bookroutine" class="btn btn-info" name="bookroutine"
 			value="예약루틴확인">
 
 

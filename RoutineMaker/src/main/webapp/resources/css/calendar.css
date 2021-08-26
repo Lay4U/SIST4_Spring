@@ -19,9 +19,10 @@
 #usericon {
 	font-size: 6em;
 	margin: 0 20px 10px 25px;
+	color:rgb(71, 91, 74);
 }
 
-#userinfo {
+.userinfo {
 	height: 80px;
 	width: 300px;
 	margin: 15px 0px 10px 20px;
@@ -48,7 +49,14 @@
 	width: 150px;
 	height: 50px;
 	font-size: 1.4em;
+	color: #692498;
+	background-color: #AFD485;
+	box-shadow: 1px 1px 1px 1px #692498;
 }
+ #sinho:hover, #tongye:hover{
+box-shadow: 2px 2px 2px 2px #692498;
+text-shadow: 1px 1px 1px gray;
+} 
 
 .month {
 	text-align: center;
@@ -60,6 +68,10 @@
 
 .month>i {
 	cursor: pointer;
+}
+
+.month>i:hover {
+	text-shadow: 3px 3px 3px #AFD485;
 }
 
 .submonth {
@@ -89,8 +101,10 @@ input[name=rb] {
 }
 
 input[type=radio]:checked+label {
+	font-weight:bold;
+	color: #692498;
 	text-decoration: underline;
-	text-shadow: 0.5px 0.5px 0.5px gray;
+	text-shadow: 3px 3px 3px #AFD485;
 }
 
 .subright #now:checked ~ #pastroutine {
@@ -129,7 +143,7 @@ input[type=radio]:checked+label {
 .calbox {
 	clear: left;
 	width: 620px;
-	height: 350px;
+	height: 300px;
 	margin: 0 auto;
 	/* border: 1px solid blue; */
 }
@@ -168,6 +182,6 @@ input[type=radio]:checked+label {
 	/* border:1px solid blue; */
 }
 
-.progress-bar {
+#progress-bar {
 	height: 20px;
 }

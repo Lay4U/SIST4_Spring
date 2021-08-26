@@ -8,7 +8,7 @@
       <div id="left">
       
 	    <i id="usericon" class="fas fa-user-circle"></i>
-	    <div id="userinfo">
+	    <div class="userinfo">
 	      	<p id="username">유 저 명</p>
 	      	<p id="withdate">루틴 시작한지 9일 째</p>
       	</div>
@@ -47,13 +47,14 @@
      <!-- 오른쪽 단락 -->
      <div id="right">
      	<div id="btn">
-     		<input type="button" id="sinho" class="btn" value="신호등캘린더"
+     		<input type="button" id="sinho" class="btn" value="신호등캘린더🚦""
      			onclick="location.href='/routinemaker/calendar/calendar.action';">
-     		<input type="button" id="tongye" class="btn" value="루틴통계"
+     		<input type="button" id="tongye" class="btn" value="루틴통계&nbsp;&nbsp;&nbsp;&nbsp;"
      			onclick="location.href='/routinemaker/calendar/statistic.action';">
      	</div>
      	
      	<div class="calsub">
+     	<div style="font-size:4em; margin-left:-20px;">🚥</div>
       	<div><i class="far fa-check-square"></i> 루틴 수행
       		<div><span>6</span>일</div>
       	</div>
@@ -67,7 +68,7 @@
 
 
 		<div class="calbox">
-		<div class="thiscal">월간 신호등 캘린더</div>
+		<div class="thiscal">월간 신호등 캘린더🚦</div>
 			<table id="calendar">
 				<tr>
 					<td id="tbCalendarYM" colspan="7">yyyy년 m월</td>
@@ -86,9 +87,9 @@
 		</div>
 
 		<div class="successrate">
-		<h4>&nbsp;이번 달 초록불 달성률</h4>
+		<h4>&nbsp;이번 달 초록불 달성률 <span style="font-size:1.3em;">😎</span></h4>
 			<div class="progress-bar progress-bar-success" role="progressbar" 
-				aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" 
+				id="progress-bar" aria-valuemin="0" aria-valuemax="100" 
 				style="width: 60%;">60%
 			</div>
 		</div>

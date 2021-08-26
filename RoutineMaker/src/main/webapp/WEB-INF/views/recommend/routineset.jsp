@@ -14,9 +14,24 @@
 <body>
    <!-- views > recommend > recommendRoutineset.jsp -->
    <div class="container">
-      <h1 class="page-header">가나다라</h1>      
-      
+   
+      <h1 class="page-header">
+			루틴 세트
+			<br><small>원하는 루틴을 클릭해서 내 피드로 퍼가 보세요!</small>
+		</h1>
+		
+		
+		</div><div class="container-recommend" onclick="location.href='/routinemaker/myroutine/myroutine.action';">
+			<img src="/routinemaker/resources/images/logo.png"
+				style="width: 250px; height: 100px;" />
+		</div>
+		
+
+
+
    </div>   
+   
+   
    
    <script>
       

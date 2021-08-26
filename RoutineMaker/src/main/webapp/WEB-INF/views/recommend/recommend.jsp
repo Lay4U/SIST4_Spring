@@ -18,7 +18,7 @@
 
 	<div class="container">
 		<h1 class="page-header">
-			루틴 세트
+			추천 루틴👍
 			<br><small>원하는 루틴을 클릭해서 내 피드로 퍼가 보세요!</small>
 		</h1>
 
@@ -27,6 +27,7 @@
 		<h2 class="page-header">루틴 검색🔍
 			<br><small>원하는 루틴을 검색 해 보세요!</small>
 		</h2>
+		
 		<form class="navbar-form navbar-left" role="search">
 			<div class="form-group">
 				<input type="text" class="form-control"
@@ -64,7 +65,8 @@
 		<div class="subcontainer-recommend">
 		
 		<hr>
-		<a href="/routinemaker/recommend/recommendRoutineset.action">👉 루틴 세트 구경하기</a>
+		
+		<a href="/routinemaker/recommend/routineset.action">👉 루틴 세트 구경하기</a>
 		<a href="#">👉 테마별 루틴 구경하기</a>
 		
 		</div>

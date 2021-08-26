@@ -11,20 +11,16 @@
       <put-attribute name="asset" value="/WEB-INF/views/inc/asset.jsp"></put-attribute>
       <put-attribute name="header" value="/WEB-INF/views/inc/header.jsp"></put-attribute>
 
-
       <put-attribute name="init" value="/WEB-INF/views/inc/init.jsp"></put-attribute>
       
       
       <!-- 주업무 페이지 -->
-      <put-attribute name="main" value="/WEB-INF/views/{1}/{2}.jsp" />
-<<<<<<< HEAD
-		
-=======
->>>>>>> 703e26b4685ce46b3b11553275af748f15228852
+      <put-attribute name="main" value="/WEB-INF/views/{1}/{2}.jsp" />		
       
       
       <!-- footer 공용 조각 페이지 -->
       <put-attribute name="footer" value="/WEB-INF/views/inc/footer.jsp"></put-attribute>
+      
       
    </definition>
    

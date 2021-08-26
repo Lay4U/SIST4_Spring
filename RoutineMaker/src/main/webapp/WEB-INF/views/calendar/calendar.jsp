@@ -30,6 +30,7 @@
 		      		<ul>
 		      			<li>잠 자기전 물한잔</li>
 		      			<li>외출전 플러그 뽑기</li>
+		      			<li>영어단어 외우기</li>
 		      		</ul>
 		      	</div>
 		      	<div id="pastroutine">

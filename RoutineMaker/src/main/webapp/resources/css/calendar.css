@@ -53,6 +53,7 @@
 	background-color: #AFD485;
 	box-shadow: 1px 1px 1px 1px #692498;
 }
+
  #sinho:hover, #tongye:hover{
 box-shadow: 2px 2px 2px 2px #692498;
 text-shadow: 1px 1px 1px gray;
@@ -184,4 +185,155 @@ input[type=radio]:checked+label {
 
 #progress-bar {
 	height: 20px;
+}
+
+
+
+
+/* statistic.css ------------------------------------------------------------------*/
+#statistic>#left, #statistic>#right {
+	height: 500px;
+	margin: 40px 0 0 10px;
+	/* border: 1px solid black; */
+}
+
+#statistic>#right {
+	width: 550px;
+}
+
+#statistic>#left {
+	width: 550px;
+}
+
+#bar1, #bar2, #bar3, #bar4, #bar5 {
+	height: 30px;
+	display: flex;
+	text-align: center;
+	min-width: 1.6em;
+}
+
+.bigbar>.barbox {
+	height: 70px;
+	font-size: 1.3em;
+	/* border: 1px solid pink; */
+}
+
+.bigbar > .barbox > p {
+	font-size:15px;
+	width:115px;
+	/* border: 1px solid green; */
+}
+
+.bigbar > .barbox > #p1{
+margin-top:30px;
+}
+
+.barright, .barleft, .bigbarright {
+	float: left;
+margin-left:10px;
+	/* border: 1px solid red; */
+}
+.bigbarleft{
+float: left;
+margin-left:10px;
+}
+
+ .bigbarright {
+	width: 125px;
+}
+
+ .bigbarleft {
+	width: 400px;
+}
+.smallbar {
+height:300px;
+/* border: 2px solid red;  */
+}
+
+.smallbar>.barleft{
+margin: 10px 0 10px 0;
+width: 100px;
+text-align:center;
+font-size: 1.4em;
+/* border: 1px solid blue; */ 
+}
+
+.smallbar>.barleft>.barbox {
+margin-bottom:19px;
+/* border: 1px solid black; */
+}
+.barright, .smallbar>.barright>.barbox{
+	height: 35px;
+	width: 370px;
+	margin: 5px 10px 10px 0;
+/* 	border: 1px solid black; */
+}
+.barpercent{
+float: left;
+height: 150px;
+width:50px;
+/* border: 1px solid red; */
+}
+
+.smallbar>.barpercent>.barbox{
+margin:17px 17px 22px 0;
+/* border: 1px solid black; */
+}
+.smallbar>.barpercent>.barbox > #bar5percent{
+padding-top:6px;
+/* border: 1px solid black; */
+}
+
+.month > p {
+	text-align:left;
+	margin-top:-25px;
+}
+.balloon_03 {
+ position:relative;
+ margin: 50px;
+ width:400px;
+ height:100px;
+ background:#D3E2C1;
+ border-radius: 10px;
+  
+}
+.balloon_03:after {
+ border-top:15px solid #D3E2C1;
+ border-left: 15px solid transparent;
+ border-right: 0px solid transparent;
+ border-bottom: 0px solid transparent;
+ content:"";
+ position:absolute;
+ top:10px;
+ left:-15px;
+}
+.feedbackbox {
+width:400px;
+margin-left:50px;
+font-size:1.2em;
+/* border:1px solid red; */
+
+}
+.speech-bubble {
+	position: relative;
+	background: #c4ffbd;
+	border-radius: .4em;
+	margin-bottom:30px;
+	padding:20px;
+	height:100px;
+}
+
+.speech-bubble:after {
+	content: '';
+	position: absolute;
+	right: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 29px solid transparent;
+	border-left-color: #c4ffbd;
+	border-right: 0;
+	border-bottom: 0;
+	margin-top: -14.5px;
+	margin-right: -29px;
 }

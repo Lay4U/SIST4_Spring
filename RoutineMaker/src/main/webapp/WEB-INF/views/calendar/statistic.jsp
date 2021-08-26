@@ -1,166 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title></title>
 
-<style>
-#left, #right {
-	height: 500px;
-	margin: 40px 0 0 10px;
-	/* border: 1px solid black; */
-}
-
-#right {
-	width: 550px;
-}
-
-#left {
-	width: 550px;
-}
-
-#bar1, #bar2, #bar3, #bar4, #bar5 {
-	height: 30px;
-	display: flex;
-	text-align: center;
-	min-width: 1.6em;
-}
-
-.bigbar>.barbox {
-	height: 70px;
-	font-size: 1.3em;
-	/* border: 1px solid pink; */
-}
-
-.bigbar > .barbox > p {
-	font-size:15px;
-	width:115px;
-	/* border: 1px solid green; */
-}
-
-.bigbar > .barbox > #p1{
-margin-top:30px;
-}
-
-.barright, .barleft, .bigbarright {
-	float: left;
-margin-left:10px;
-	/* border: 1px solid red; */
-}
-.bigbarleft{
-float: left;
-margin-left:10px;
-}
-
- .bigbarright {
-	width: 125px;
-}
-
- .bigbarleft {
-	width: 400px;
-}
-.smallbar {
-height:300px;
-/* border: 2px solid red;  */
-}
-
-.smallbar>.barleft{
-margin: 10px 0 10px 0;
-width: 100px;
-text-align:center;
-font-size: 1.4em;
-/* border: 1px solid blue; */ 
-}
-
-.smallbar>.barleft>.barbox {
-margin-bottom:19px;
-/* border: 1px solid black; */
-}
-.barright, .smallbar>.barright>.barbox{
-	height: 35px;
-	width: 370px;
-	margin: 5px 10px 10px 0;
-/* 	border: 1px solid black; */
-}
-.barpercent{
-float: left;
-height: 150px;
-width:50px;
-/* border: 1px solid red; */
-}
-
-.smallbar>.barpercent>.barbox{
-margin:17px 17px 22px 0;
-/* border: 1px solid black; */
-}
-.smallbar>.barpercent>.barbox > #bar5percent{
-padding-top:6px;
-/* border: 1px solid black; */
-}
-
-.month > p {
-	text-align:left;
-	margin-top:-25px;
-}
-.balloon_03 {
- position:relative;
- margin: 50px;
- width:400px;
- height:100px;
- background:#D3E2C1;
- border-radius: 10px;
-  
-}
-.balloon_03:after {
- border-top:15px solid #D3E2C1;
- border-left: 15px solid transparent;
- border-right: 0px solid transparent;
- border-bottom: 0px solid transparent;
- content:"";
- position:absolute;
- top:10px;
- left:-15px;
-}
-.feedbackbox {
-width:400px;
-margin-left:50px;
-font-size:1.2em;
-/* border:1px solid red; */
-
-}
-.speech-bubble {
-	position: relative;
-	background: #c4ffbd;
-	border-radius: .4em;
-	margin-bottom:30px;
-	padding:20px;
-	height:100px;
-}
-
-.speech-bubble:after {
-	content: '';
-	position: absolute;
-	right: 0;
-	top: 50%;
-	width: 0;
-	height: 0;
-	border: 29px solid transparent;
-	border-left-color: #c4ffbd;
-	border-right: 0;
-	border-bottom: 0;
-	margin-top: -14.5px;
-	margin-right: -29px;
-}
-
-</style>
-
-</head>
-<body>
 <!-- views > calendar > statistic.jsp -->
-<div class="container">
+<div class="container" id="statistic">
 
 	<!-- 왼쪽 단락 -->
 	<div id="left">
@@ -185,7 +28,6 @@ font-size:1.2em;
 					<div class="progress-bar progress-bar-info progress-bar-striped active"
 						role="progressbar" id="bar1" aria-valuemin="0"
 						aria-valuemax="100" style="width: 60%;"></div>
-					
 				</div>
 
 				<div class="barbox">
@@ -193,10 +35,10 @@ font-size:1.2em;
 					<div class="progress-bar progress-bar-info progress-bar-striped active"
 						role="progressbar" id="bar2" aria-valuemin="0"
 						aria-valuemax="100" style="width: 100%;"></div>
-
 				</div>
 			</div>
 		</div>
+		
 		<div class="bigbarright">
 			<div class="bigbar">
 				<div class="barbox">
@@ -265,31 +107,25 @@ font-size:1.2em;
 		<div id="btn">
 			<input type="button" id="sinho" class="btn" value="신호등캘린더&nbsp;&nbsp;&nbsp;"
 				onclick="location.href='/routinemaker/calendar/calendar.action';">
-			<input type="button" id="tongye" class="btn" value="루틴통계📊" "
+			<input type="button" id="tongye" class="btn" value="루틴통계📊"
 				onclick="location.href='/routinemaker/calendar/statistic.action';">
 		</div>
 		
 		<div class="userinfo"></div>
-		<div class="month">
-		<p>이번 달 루틴 피드백📢</p>
-		</div>
+		<div class="month"><p>이번 달 루틴 피드백📢</p></div>
 		
 		<div class="feedbackbox">
-		<div class="speech-bubble"><span>루틴 달성률이 부족해요!</span></div>
-		<div class="speech-bubble"><span>회고를 잊지말고 작성해요!</span></div>
-		
+			<div class="speech-bubble"><span>루틴 달성률이 부족해요!</span></div>
+			<div class="speech-bubble"><span>회고를 잊지말고 작성해요!</span></div>
 		</div>
-		
-		
-		
-	</div>
+	
+	</div><!-- end-<div id="right"> -->
 
-</div>
+</div> <!-- end-<div class="container" id="statistic"> -->
 
 
 <script>
 
-</script>
 
-</body>
-</html>
+
+</script>

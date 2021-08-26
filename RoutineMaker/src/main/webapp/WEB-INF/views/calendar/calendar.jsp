@@ -9,7 +9,7 @@
       
 	    <i id="usericon" class="fas fa-user-circle"></i>
 	    <div class="userinfo">
-	      	<p id="username">유 저 명</p>
+	      	<p id="username">${dto.name}</p>
 	      	<p id="withdate">루틴 시작한지 9일 째</p>
       	</div>
       	

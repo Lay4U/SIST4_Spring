@@ -1,0 +1,339 @@
+#left, #right {
+	height: 650px;
+	margin: 40px 0 0 10px;
+	/* border: 1px solid black; */
+}
+
+#right {
+	width: 650px;
+}
+
+#left {
+	width: 450px;
+}
+
+#left, #right, #usericon, #userinfo {
+	float: left;
+}
+
+#usericon {
+	font-size: 6em;
+	margin: 0 20px 10px 25px;
+	color:rgb(71, 91, 74);
+}
+
+.userinfo {
+	height: 80px;
+	width: 300px;
+	margin: 15px 0px 10px 20px;
+	/* border: 1px solid red; */
+}
+
+#username {
+	font-size: 1.5em;
+}
+
+#widthdate {
+	font-size: 1.2em;
+}
+
+#btn {
+	height: 80px;
+	float: right;
+	padding: 15px;
+	margin-top: -20px;
+	margin-bottom: 20px;
+}
+
+#sinho, #tongye {
+	width: 150px;
+	height: 50px;
+	font-size: 1.4em;
+	color: #692498;
+	background-color: #AFD485;
+	box-shadow: 1px 1px 1px 1px #692498;
+}
+
+ #sinho:hover, #tongye:hover{
+box-shadow: 2px 2px 2px 2px #692498;
+text-shadow: 1px 1px 1px gray;
+} 
+
+.month {
+	text-align: center;
+	clear: left;
+	font-size: 1.9em;
+	margin: 20px;
+	/* border: 1px solid red; */
+}
+
+.month>i {
+	cursor: pointer;
+}
+
+.month>i:hover {
+	text-shadow: 3px 3px 3px #AFD485;
+}
+
+.submonth {
+	height: 30px;
+	font-size: 1.2em;
+	margin: 20px;
+	/* border:1px solid blue; */
+}
+
+.subleft {
+	float: left;
+	margin-left: 10px;
+}
+
+input[name=rb] {
+	display: none;
+}
+
+.submonth label {
+	cursor: pointer;
+	margin-right: 10px;
+}
+
+.submonth #nowlabel {
+	padding-left: 130px;
+	/* border:1px solid green; */
+}
+
+input[type=radio]:checked+label {
+	font-weight:bold;
+	color: #692498;
+	text-decoration: underline;
+	text-shadow: 3px 3px 3px #AFD485;
+}
+
+.subright #now:checked ~ #pastroutine {
+	display: none;
+}
+
+.subright #past:checked ~ #nowroutine {
+	display: none;
+}
+
+#nowroutine, #pastroutine {
+	margin: 20px;
+}
+
+.calsub {
+	clear: right;
+	width: 500px;
+	height: 70px;
+	margin: 0 auto;
+	padding-left: 35px;
+	text-align: center;
+	/* border: 1px solid blue; */
+}
+
+.calsub>div {
+	float: left;
+	font-size: 1.2em;
+	margin: 0px 25px 0px 25px;
+	/* border: 1px solid red; */
+}
+
+.calsub>div>div>span {
+	font-size: 1.3em;
+}
+
+.calbox {
+	clear: left;
+	width: 620px;
+	height: 300px;
+	margin: 0 auto;
+	/* border: 1px solid blue; */
+}
+
+.successrate {
+	width: 620px;
+	height: 100px;
+	margin: 0 auto;
+	margin-top: 10px;
+	margin-left: 50px;
+	/* border: 1px solid green; */
+}
+
+#calendar>tr>td, #tbCalendarYM {
+	margin: 0 auto;
+}
+
+#calendar>tbody>tr {
+	/* border:1px solid blue; */
+	padding: 50px;
+	text-align: center;
+}
+
+#calendar {
+	width: 600px;
+	height: 300px;
+	font-size: 1.4em;
+	margin: 0 auto;
+}
+
+.thiscal {
+	font-size: 1.1em;
+	margin-bottom: -30px;
+	margin-left: 30px;
+	margin-top: 40px;
+	/* border:1px solid blue; */
+}
+
+#progress-bar {
+	height: 20px;
+}
+
+
+
+
+/* statistic.css ------------------------------------------------------------------*/
+#statistic>#left, #statistic>#right {
+	height: 500px;
+	margin: 40px 0 0 10px;
+	/* border: 1px solid black; */
+}
+
+#statistic>#right {
+	width: 550px;
+}
+
+#statistic>#left {
+	width: 550px;
+}
+
+#bar1, #bar2, #bar3, #bar4, #bar5 {
+	height: 30px;
+	display: flex;
+	text-align: center;
+	min-width: 1.6em;
+}
+
+.bigbar>.barbox {
+	height: 70px;
+	font-size: 1.3em;
+	/* border: 1px solid pink; */
+}
+
+.bigbar > .barbox > p {
+	font-size:15px;
+	width:115px;
+	/* border: 1px solid green; */
+}
+
+.bigbar > .barbox > #p1{
+margin-top:30px;
+}
+
+.barright, .barleft, .bigbarright {
+	float: left;
+margin-left:10px;
+	/* border: 1px solid red; */
+}
+.bigbarleft{
+float: left;
+margin-left:10px;
+}
+
+ .bigbarright {
+	width: 125px;
+}
+
+ .bigbarleft {
+	width: 400px;
+}
+.smallbar {
+height:300px;
+/* border: 2px solid red;  */
+}
+
+.smallbar>.barleft{
+margin: 10px 0 10px 0;
+width: 100px;
+text-align:center;
+font-size: 1.4em;
+/* border: 1px solid blue; */ 
+}
+
+.smallbar>.barleft>.barbox {
+margin-bottom:19px;
+/* border: 1px solid black; */
+}
+.barright, .smallbar>.barright>.barbox{
+	height: 35px;
+	width: 370px;
+	margin: 5px 10px 10px 0;
+/* 	border: 1px solid black; */
+}
+.barpercent{
+float: left;
+height: 150px;
+width:50px;
+/* border: 1px solid red; */
+}
+
+.smallbar>.barpercent>.barbox{
+margin:17px 17px 22px 0;
+/* border: 1px solid black; */
+}
+.smallbar>.barpercent>.barbox > #bar5percent{
+padding-top:6px;
+/* border: 1px solid black; */
+}
+
+.month > p {
+	text-align:left;
+	margin-top:-25px;
+}
+.balloon_03 {
+ position:relative;
+ margin: 50px;
+ width:400px;
+ height:100px;
+ background:#D3E2C1;
+ border-radius: 10px;
+  
+}
+.balloon_03:after {
+ border-top:15px solid #D3E2C1;
+ border-left: 15px solid transparent;
+ border-right: 0px solid transparent;
+ border-bottom: 0px solid transparent;
+ content:"";
+ position:absolute;
+ top:10px;
+ left:-15px;
+}
+.feedbackbox {
+width:400px;
+margin-left:50px;
+font-size:1.2em;
+/* border:1px solid red; */
+
+}
+.speech-bubble {
+	position: relative;
+	background: #c4ffbd;
+	border-radius: .4em;
+	margin-bottom:30px;
+	padding:20px;
+	height:100px;
+}
+
+.speech-bubble:after {
+	content: '';
+	position: absolute;
+	right: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 29px solid transparent;
+	border-left-color: #c4ffbd;
+	border-right: 0;
+	border-bottom: 0;
+	margin-top: -14.5px;
+	margin-right: -29px;
+}

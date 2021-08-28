@@ -8,12 +8,23 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+
 @Controller
 public class RecommendController {
 
 	@RequestMapping(value = "/recommend/recommend.action", method = { RequestMethod.GET })
 	public String recommend(HttpServletRequest req, HttpServletResponse resp, HttpSession session) {
 
-		return "recommend";
+		return "recommend.recommend";
 	}
+	
+	
+	@RequestMapping(value = "/recommend/routineset.action", method = { RequestMethod.GET })
+	public String recommendRoutineset(HttpServletRequest req, HttpServletResponse resp, HttpSession session) {
+
+		return "recommend.routineset";
+	}
+	
+
+	
 }

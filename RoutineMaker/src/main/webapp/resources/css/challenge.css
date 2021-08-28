@@ -1,16 +1,15 @@
 .challenge-container .searchbox #column {
 	width: 200px;
+	float: left;
 }
 
 .challenge-container .searchbox #search {
 	width: 700px;
+	float: left;
+}
+
+.challenge-container .searchbox {
+	margin-bottom: 20px;
 }
 
 
-#column {
-	width: 200px;
-}
-
-#search {
-	width: 200px;
-}

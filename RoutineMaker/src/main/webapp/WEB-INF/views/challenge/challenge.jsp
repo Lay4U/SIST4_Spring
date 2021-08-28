@@ -32,8 +32,23 @@
 		</div>
 		
 		<div class="list">
-		
+			<div class="list_content">
+				<div class="list_name">
+				name, season, count
+				</div>
+				<div class="list_content">챌린지다.</div>
+				<div class="list_startdate">2020-01-01</div>
+				<div class="list_enddate">2020-01-01</div>
+				<hr>
+				<div class="profile">
+				<div class="profile_image">0</div>
+				<div class="id">myroutine</div>
+				<div class="support">응원수: 20</div>
+				</div>
+				
+			</div>
 		</div>
+		<hr>
       
    </div>  
 </div>

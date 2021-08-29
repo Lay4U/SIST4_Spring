@@ -18,7 +18,14 @@ public class MyroutineController {
 	@RequestMapping(value = "/myroutine/myroutine.action", method = { RequestMethod.GET })
 	public String myroutine(HttpServletRequest req, HttpServletResponse resp, HttpSession session) {
 
+		String seq = "1";
 		
+		MyroutineDTO dto = dao.getprofile(seq);
+		
+		//데이터가공
+		
+		
+		req.setAttribute("dto", dto);
 
 		return "myroutine.myroutine";
 	}

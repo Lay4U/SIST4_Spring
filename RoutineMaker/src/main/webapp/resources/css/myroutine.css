@@ -1,8 +1,9 @@
 #my-photo {
 	width: 100px;
 	height: 100px;
-	background-color: #ccc;
-	border: 1px solid #ccc;
+	font-size: 6em;
+	margin: 0 20px 10px 25px;
+	color:rgb(71, 91, 74);
 	float:left;
 	margin-right: 20px;
 }
@@ -11,8 +12,51 @@
 
 #my-profile {margin-bottom: 30px;}
 
-#my-timefilter {display: inline-block;}
+#my-timefilter {display: inline-block; margin-right:20px; font-size: 1.3em;}
+#my-timefilter > span > i {margin-left: 10px;}
 
 #my-date {position: relative; border: 1px solid transparent; margin-bottom: 60px;}
-#my-date1{position: absolute; left: 0px; top:0px;}
-#my-date2{position: absolute; right: 0px; top:0px;}
+#my-date1 {position: absolute; left: 0px; top:0px; font-size: 1.3em; }
+#my-date2 {position: absolute; right: 0px; top:0px;}
+
+#diary-date {width: 500px; height: 100px;
+			display:flex;
+			position: relative;		
+}
+.weekdate-date {border-right:1px solid #ccc;}
+
+.diary-text {
+	width: 100%; height: 100px;
+	overflow: scroll;
+}
+
+.button-left {text-align: right;}
+
+/* 데일리회고 날짜부분 */
+#diary-weekdate {text-align: center; height: 80px; margin-left: 30px; margin-bottom: 200px; 
+				position: absolute; right:10px; top:30px;}
+#diary-weekdate div {width: 50px; float: left; font-size: 1.1em; padding-right: 5px; margin: 5px auto;}
+
+.margin-b20 {margin-bottom: 20px;}
+.margin-b40 {margin-bottom: 40px;}
+.font-strong {color: #93db4a;}
+.tr20 {width:20px;}
+.tr30 {width:30px;}
+.tr45 {width:45px;}
+.tr100 {width:100px;}
+.tr200 {width:200px;}
+.tr300 {width:300px;}
+.height30 {height: 30px;}
+
+.diary-header{font-size: 20px;}
+
+#my-table th, #my-table td{ text-align: center; vertical-align: middle;}
+#my-table tr:first-child > th:nth-child(2) {width: 100px;}
+#my-table tr:first-child > th:nth-child(3) {width: 150px;}
+#my-table tr:first-child > th:nth-child(4) {width: 250px;}
+#my-table tr:last-child > td:nth-child(4) > a {color: #93db4a; text-decoration: underline;}
+#my-table tr:last-child > td:last-child {width: 280px;}
+
+
+#routineplus th,#routineplus td {vertical-align: middle;}
+#routineplus th {height: 50px;}

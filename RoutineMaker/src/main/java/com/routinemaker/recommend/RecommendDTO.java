@@ -15,16 +15,7 @@ public class RecommendDTO {
 
 	
 
-	
-	//遺��듃�뒪�듃�옪 �깋�긽 戮묒븘�삤湲�
 	/* public String[] color = { "success", "info", "warning", "danger" }; */
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	

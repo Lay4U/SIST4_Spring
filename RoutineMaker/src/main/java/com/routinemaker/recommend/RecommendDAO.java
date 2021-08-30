@@ -1,10 +1,7 @@
 package com.routinemaker.recommend;
 
-<<<<<<< HEAD
-=======
 import java.sql.ResultSet;
 import java.sql.SQLException;
->>>>>>> bfe005dbebc32e90cab1ca92e7599cc13dbb4444
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,17 +17,16 @@ public class RecommendDAO {
 	private SqlSessionTemplate template;
 	
 	
-	//猷⑦떞 由ъ뒪�듃 媛��졇�삤湲�
+	//routineseq를 줄테니 routineName을 추출해오기
 	public List<RecommendDTO> getRoutineName(String routienseq) {
 			
 		return template.selectList("recommend.getRoutineName", routienseq);
-<<<<<<< HEAD
-		
-=======
+
 	}
+	
+	
 
-
-	//遺��듃�뒪�듃�옪肄붾뱶 
+	//부트스트랩 코드에서 색상을 뽑아내는 방법
 	public List<RecommendDTO> color() {
 		
 		ArrayList<RecommendDTO> colorlist = new ArrayList<RecommendDTO>();
@@ -40,15 +36,15 @@ public class RecommendDAO {
 			for(int i=0; i<4; i++) {
 			
 				RecommendDTO dto = new RecommendDTO();
-				
+						
 				dto.setColor(color[i]);
 				
 				colorlist.add(dto);
+				
 			}
 			
-		
-		return colorlist;
->>>>>>> bfe005dbebc32e90cab1ca92e7599cc13dbb4444
+			return colorlist;
+
 	}
 
 

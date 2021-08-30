@@ -26,13 +26,12 @@
 		</nav>
 		
 	
-	
 		<h1 class="page-header">
 			추천 루틴👍
 			<br><small>원하는 루틴을 클릭해서 내 피드로 퍼가 보세요!</small>
 		</h1>
 
-
+	
 		<div class="container-recommend">
 		<h2 class="page-header">루틴 검색🔍
 			<br><small>원하는 루틴을 검색 해 보세요!</small>
@@ -60,34 +59,7 @@
 				<c:forEach var="dto" items="${bestRoutine}">
 					<a href="#" class="list-group-item list-group-item-success">${dto.routineseq}. ${dto.name}</a>
 				</c:forEach>
-				
-				
-				
-				
-			<!-- <c:forEach var="dto" items="${bestRoutine}">
-					<c:forEach var="colordto" items="${colorList}">
-						<a href="#" class="list-group-item list-group-item-${colordto.color}">
-						${dto.routineseq}. ${dto.name}</a>
-					</c:forEach>
-				</c:forEach>
 			
-				-->
-				<!-- 
-				<a href="#" class="list-group-item list-group-item-success">1. 아침 05:00 기상☀</a>
-				<a href="#" class="list-group-item list-group-item-info">2. 눈 뜨자마자 물 한잔🥛</a>
-				<a href="#" class="list-group-item list-group-item-warning">3. 12시 전에 침대에 눕기🌙</a>
-				<a href="#" class="list-group-item list-group-item-danger">4. 잠들기 전 스트레칭🌙</a>
-				<a href="#" class="list-group-item list-group-item-success">5. 헬스 1시간</a> 
-				<a href="#" class="list-group-item list-group-item-info">6. 런데이 🏃🏼‍♂️</a>
-				<a href="#" class="list-group-item list-group-item-warning">7. 다음 날 플랜 미리 짜기📌</a>
-				<a href="#" class="list-group-item list-group-item-danger">8. 매일 밤 일기 쓰기📖</a>
-				<a href="#" class="list-group-item list-group-item-success">9. 하루 5분 방정리 </a> 
-				<a href="#" class="list-group-item list-group-item-info">10. 하루 3번 하늘 보기 ☁</a>
-				-->
-				
-		
-		
-		
 			</div>
 		
 		</div>
@@ -97,10 +69,6 @@
 
 	<script>
 	
-	/* <c:forEach items="${colorList}" var="colordto">
-    $('body').append('<a href="#" class="list-group-item list-group-item-${colordto.color}">${dto.routineseq}. ${dto.name}</a>')
-    
-	</c:forEach>	 */
 	</script>
 
 </body>

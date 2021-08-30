@@ -4,20 +4,28 @@
 
 <!-- views > calendar > statistic.jsp -->
 <div class="container" id="statistic">
+	<nav class="nav-recommend">
+		<ul class="nav nav-tabs">
+			<li role="presentation"><a href="/routinemaker/calendar/calendar.action">신호등캘린더🚦</a></li>
+			<li role="presentation" class="active"><a href="/routinemaker/calendar/statistic.action">루틴통계📊</a></li>
+		</ul>
+	</nav>
 
 	<!-- 왼쪽 단락 -->
 	<div id="left">
 
 		<i id="usericon" class="fas fa-user-circle"></i>
 		<div class="userinfo">
-			<p id="username">유 저 명</p>
-			<p id="withdate">루틴 시작한지 9일 째</p>
+			<p id="username">${username.name}</p>
+			<p id="withdate">루틴 시작한지 ${withdate.withdate}일 째</p>
 		</div>
 
 		<div class="month" style="margin-left:-75px;">
-			<i class="fas fa-chevron-left"></i> 
-			&nbsp;&nbsp;2021년 8월&nbsp;&nbsp;
-			<i class="fas fa-chevron-right"></i>
+	      	<i class="fas fa-chevron-left"></i>
+	      	<c:forEach items="${dateList}" var="dto">
+	      	&nbsp;&nbsp;${dto.sysyear}년 ${dto.sysmonth}월&nbsp;&nbsp;
+	      	</c:forEach>
+	      	<i class="fas fa-chevron-right"></i>
 		</div>
 
 
@@ -104,12 +112,6 @@
 
 	<!-- 오른쪽 단락 -->
 	<div id="right">
-		<div id="btn">
-			<input type="button" id="sinho" class="btn" value="신호등캘린더&nbsp;&nbsp;&nbsp;"
-				onclick="location.href='/routinemaker/calendar/calendar.action';">
-			<input type="button" id="tongye" class="btn" value="루틴통계📊"
-				onclick="location.href='/routinemaker/calendar/statistic.action';">
-		</div>
 		
 		<div class="userinfo"></div>
 		<div class="month"><p>이번 달 루틴 피드백📢</p></div>

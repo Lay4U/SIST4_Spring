@@ -19,7 +19,7 @@
 #usericon {
 	font-size: 6em;
 	margin: 0 20px 10px 25px;
-	color:rgb(71, 91, 74);
+	color: rgb(71, 91, 74);
 }
 
 .userinfo {
@@ -36,28 +36,6 @@
 #widthdate {
 	font-size: 1.2em;
 }
-
-#btn {
-	height: 80px;
-	float: right;
-	padding: 15px;
-	margin-top: -20px;
-	margin-bottom: 20px;
-}
-
-#sinho, #tongye {
-	width: 150px;
-	height: 50px;
-	font-size: 1.4em;
-	color: #692498;
-	background-color: #AFD485;
-	box-shadow: 1px 1px 1px 1px #692498;
-}
-
- #sinho:hover, #tongye:hover{
-box-shadow: 2px 2px 2px 2px #692498;
-text-shadow: 1px 1px 1px gray;
-} 
 
 .month {
 	text-align: center;
@@ -102,7 +80,7 @@ input[name=rb] {
 }
 
 input[type=radio]:checked+label {
-	font-weight:bold;
+	font-weight: bold;
 	color: #692498;
 	text-decoration: underline;
 	text-shadow: 3px 3px 3px #AFD485;
@@ -187,9 +165,6 @@ input[type=radio]:checked+label {
 	height: 20px;
 }
 
-
-
-
 /* statistic.css ------------------------------------------------------------------*/
 #statistic>#left, #statistic>#right {
 	height: 500px;
@@ -218,109 +193,116 @@ input[type=radio]:checked+label {
 	/* border: 1px solid pink; */
 }
 
-.bigbar > .barbox > p {
-	font-size:15px;
-	width:115px;
+.bigbar>.barbox>p {
+	font-size: 15px;
+	width: 115px;
 	/* border: 1px solid green; */
 }
 
-.bigbar > .barbox > #p1{
-margin-top:30px;
+.bigbar>.barbox>#p1 {
+	margin-top: 30px;
 }
 
 .barright, .barleft, .bigbarright {
 	float: left;
-margin-left:10px;
+	margin-left: 10px;
 	/* border: 1px solid red; */
 }
-.bigbarleft{
-float: left;
-margin-left:10px;
+
+.bigbarleft {
+	float: left;
+	margin-left: 10px;
 }
 
- .bigbarright {
+.bigbarright {
 	width: 125px;
 }
 
- .bigbarleft {
+.bigbarleft {
 	width: 400px;
 }
+
 .smallbar {
-height:300px;
-/* border: 2px solid red;  */
+	height: 300px;
+	/* border: 2px solid red;  */
 }
 
-.smallbar>.barleft{
-margin: 10px 0 10px 0;
-width: 100px;
-text-align:center;
-font-size: 1.4em;
-/* border: 1px solid blue; */ 
+.smallbar>.barleft {
+	margin: 10px 0 10px 0;
+	width: 100px;
+	text-align: center;
+	font-size: 1.4em;
+	/* border: 1px solid blue; */
 }
 
 .smallbar>.barleft>.barbox {
-margin-bottom:19px;
-/* border: 1px solid black; */
+	margin-bottom: 19px;
+	/* border: 1px solid black; */
 }
-.barright, .smallbar>.barright>.barbox{
+
+.barright, .smallbar>.barright>.barbox {
 	height: 35px;
 	width: 370px;
 	margin: 5px 10px 10px 0;
-/* 	border: 1px solid black; */
-}
-.barpercent{
-float: left;
-height: 150px;
-width:50px;
-/* border: 1px solid red; */
+	/* 	border: 1px solid black; */
 }
 
-.smallbar>.barpercent>.barbox{
-margin:17px 17px 22px 0;
-/* border: 1px solid black; */
-}
-.smallbar>.barpercent>.barbox > #bar5percent{
-padding-top:6px;
-/* border: 1px solid black; */
+.barpercent {
+	float: left;
+	height: 150px;
+	width: 50px;
+	/* border: 1px solid red; */
 }
 
-.month > p {
-	text-align:left;
-	margin-top:-25px;
+.smallbar>.barpercent>.barbox {
+	margin: 17px 17px 22px 0;
+	/* border: 1px solid black; */
 }
+
+.smallbar>.barpercent>.barbox>#bar5percent {
+	padding-top: 6px;
+	/* border: 1px solid black; */
+}
+
+.month>p {
+	text-align: left;
+	margin-top: -25px;
+}
+
 .balloon_03 {
- position:relative;
- margin: 50px;
- width:400px;
- height:100px;
- background:#D3E2C1;
- border-radius: 10px;
-  
+	position: relative;
+	margin: 50px;
+	width: 400px;
+	height: 100px;
+	background: #D3E2C1;
+	border-radius: 10px;
 }
-.balloon_03:after {
- border-top:15px solid #D3E2C1;
- border-left: 15px solid transparent;
- border-right: 0px solid transparent;
- border-bottom: 0px solid transparent;
- content:"";
- position:absolute;
- top:10px;
- left:-15px;
-}
-.feedbackbox {
-width:400px;
-margin-left:50px;
-font-size:1.2em;
-/* border:1px solid red; */
 
+.balloon_03:after {
+	border-top: 15px solid #D3E2C1;
+	border-left: 15px solid transparent;
+	border-right: 0px solid transparent;
+	border-bottom: 0px solid transparent;
+	content: "";
+	position: absolute;
+	top: 10px;
+	left: -15px;
 }
+
+.feedbackbox {
+	width: 400px;
+	margin-left: 50px;
+	font-size: 1.2em;
+	/* border:1px solid red; */
+}
+
 .speech-bubble {
 	position: relative;
 	background: #c4ffbd;
 	border-radius: .4em;
-	margin-bottom:30px;
-	padding:20px;
-	height:100px;
+	margin-bottom: 30px;
+	padding: 20px;
+	height: 100px;
 }
 
 .speech-bubble:after {

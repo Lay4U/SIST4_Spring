@@ -21,52 +21,12 @@ public class RecommendDAO {
 	}
 	
 	
-
-<<<<<<< HEAD
-	//부트스트랩 코드에서 색상을 뽑아내는 방법
-	public List<RecommendDTO> color() {
+	//루틴테마를 List로 받는다.
+	public List<RecommendDTO> getRoutineTheme(String routineseq){
+			
+		return template.selectList("recommend.getRoutineTheme", routineseq);
 		
-		ArrayList<RecommendDTO> colorlist = new ArrayList<RecommendDTO>();
-
-			String color[] = {"success", "info", "warning", "danger"};
-			
-			for(int i=0; i<4; i++) {
-			
-				RecommendDTO dto = new RecommendDTO();
-						
-				dto.setColor(color[i]);
-				
-				colorlist.add(dto);
-				
-			}
-			
-			return colorlist;
-
 	}
-
-
-	//부트스트랩 코드 
-//	public ArrayList<RecommendDTO> color(String routineseq) {
-//		
-//		ArrayList<String> colorList = new ArrayList<String>();
-//		
-//		colorList.add("success");
-//		colorList.add("info");
-//		colorList.add("warning");
-//		colorList.add("danger");
-//	
-//		
-//		if( template.selectList("recommend.color", routineseq).equals("1")) {
-//			
-//			/* colorList.get(0); */
-//		}
-//		
-//		return null;
-//		
-//	}
 	
-	
-=======
->>>>>>> 449b35c4794d56a0ae07682a6ff2bc7d76e533fe
 	
 }

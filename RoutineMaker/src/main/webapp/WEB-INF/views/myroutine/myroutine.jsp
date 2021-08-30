@@ -86,6 +86,7 @@
 				<div class="modal-content">
 					<div class="modal-header">
 						<h5 class="modal-title" id="staticBackdropLabel" style="text-align:center; font-size: 1.5em;">루틴 추가하기</h5>
+						
 						<button type="button" class="close" data-dismiss="modal"
 							aria-label="Close">
 							<span aria-hidden="true">&times;</span>

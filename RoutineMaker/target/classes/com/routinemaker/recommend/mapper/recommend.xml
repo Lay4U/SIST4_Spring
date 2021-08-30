@@ -13,9 +13,15 @@
 	</select>
 
 	
-	<!--  -->
 	
+	<!-- 루틴 테마 가져오기-->
+	<select id="getRoutineTheme" resultType="recommend">
+		
+		select rownum as "routineseq", theme from(select theme  from tblroutine group by theme)
+	</select>
 
+
+	
 
 
 </mapper>

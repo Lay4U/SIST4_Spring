@@ -19,7 +19,7 @@ public class RecommendController {
 	
 	@Autowired
 	private RecommendDAO dao;
-	private String routineseq = "5";
+	private String routineseq = "";
 	
 	
 	@RequestMapping(value = "/recommend/recommend.action", method = { RequestMethod.GET })
@@ -27,23 +27,7 @@ public class RecommendController {
 
 		List<RecommendDTO> bestRoutine = dao.getRoutineName(routineseq);
 		req.setAttribute("bestRoutine", bestRoutine);
-		
-<<<<<<< HEAD
-		
-		//루틴 색상 정하기
-		/*
-		 * List<RecommendDTO> colorList = dao.color(); req.setAttribute("colorList",
-		 * colorList);
-		 */
-		
-		
-//		List<RecommendDTO> colorList = dao.color();
-//		req.setAttribute("colorList", colorList);
-//		System.out.println(colorList);
 
-		
-=======
->>>>>>> 449b35c4794d56a0ae07682a6ff2bc7d76e533fe
 		return "recommend.recommend";
 	}
 	
@@ -65,11 +49,19 @@ public class RecommendController {
 	@RequestMapping(value = "/recommend/themebest.action", method = { RequestMethod.GET })
 	public String themebest(HttpServletRequest req, HttpServletResponse resp, HttpSession session) {
 
+		
+		//루틴이름
 		List<RecommendDTO> bestRoutine = dao.getRoutineName(routineseq);
 		req.setAttribute("bestRoutine", bestRoutine);
 	
 		
+		//루틴테마
+		List<RecommendDTO> routineTheme = dao.getRoutineTheme(routineseq);
+		req.setAttribute("routineTheme", routineTheme);
+		
+		
 		return "recommend.themebest";
+		
 	}
 	
 }

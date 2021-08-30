@@ -28,6 +28,7 @@ public class RecommendController {
 		List<RecommendDTO> bestRoutine = dao.getRoutineName(routineseq);
 		req.setAttribute("bestRoutine", bestRoutine);
 		
+<<<<<<< HEAD
 		
 		//루틴 색상 정하기
 		/*
@@ -41,6 +42,8 @@ public class RecommendController {
 //		System.out.println(colorList);
 
 		
+=======
+>>>>>>> 449b35c4794d56a0ae07682a6ff2bc7d76e533fe
 		return "recommend.recommend";
 	}
 	

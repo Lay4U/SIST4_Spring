@@ -1,8 +1,4 @@
 package com.routinemaker.recommend;
-
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
 import org.mybatis.spring.SqlSessionTemplate;
@@ -26,6 +22,7 @@ public class RecommendDAO {
 	
 	
 
+<<<<<<< HEAD
 	//부트스트랩 코드에서 색상을 뽑아내는 방법
 	public List<RecommendDTO> color() {
 		
@@ -69,5 +66,7 @@ public class RecommendDAO {
 //	}
 	
 	
+=======
+>>>>>>> 449b35c4794d56a0ae07682a6ff2bc7d76e533fe
 	
 }

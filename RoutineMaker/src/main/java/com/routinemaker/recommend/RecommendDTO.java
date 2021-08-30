@@ -11,8 +11,6 @@ public class RecommendDTO {
 	private String theme;
 	private String regdate;
 	
-	private String color;
-
 	
 
 	/* public String[] color = { "success", "info", "warning", "danger" }; */

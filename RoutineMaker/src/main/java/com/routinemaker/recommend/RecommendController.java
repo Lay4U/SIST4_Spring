@@ -29,12 +29,6 @@ public class RecommendController {
 		List<RecommendDTO> bestRoutine = dao.getRoutineName(routineseq);
 		req.setAttribute("bestRoutine", bestRoutine);
 		
-		
-		//猷⑦떞 �깋�긽 �젙�븯湲�
-		List<RecommendDTO> colorList = dao.color();
-		req.setAttribute("colorList", colorList);
-		System.out.println(colorList);
-		
 		return "recommend.recommend";
 	}
 	

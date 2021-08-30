@@ -57,14 +57,9 @@
 		
 			<div class="list-group list-group-recommend">
 				
-				<c:forEach var="dto" items="${bestRoutine}">
-					<c:forEach var="colordto" items="${colorList}">
-						<a href="#" class="list-group-item list-group-item-${colordto.color}">
-						${dto.routineseq}. ${dto.name}</a>
+					<c:forEach var="dto" items="${bestRoutine}">
+							<a href="#" id="color${dto.routineseq}" class="list-group-item">${dto.routineseq}. ${dto.name}</a>
 					</c:forEach>
-				</c:forEach>
-				
-				
 				<!-- 
 				<a href="#" class="list-group-item list-group-item-success">1. 아침 05:00 기상☀</a>
 				<a href="#" class="list-group-item list-group-item-info">2. 눈 뜨자마자 물 한잔🥛</a>
@@ -78,9 +73,6 @@
 				<a href="#" class="list-group-item list-group-item-info">10. 하루 3번 하늘 보기 ☁</a>
 				-->
 				
-		
-		
-		
 			</div>
 		
 		</div>
@@ -90,10 +82,45 @@
 
 	<script>
 	
-	/* <c:forEach items="${colorList}" var="colordto">
-    $('body').append('<a href="#" class="list-group-item list-group-item-${colordto.color}">${dto.routineseq}. ${dto.name}</a>')
+	$(function(){
+        
+		<c:forEach items="${bestRoutine}" var="dto">
+	       	num = ${dto.routineseq};
+	       	
+	       	num2= num%4;
+	       	/* console.log(num); */
+	       	console.log(num2);
+	       	
+	       	 if (num2 == 0){
+					$('#color${dto.routineseq}').addClass('list-group-item-success');
+					//console.log('list-group-item-success');
+				}else if(num2 == 1){
+					$('#color${dto.routineseq}').addClass('list-group-item-info');
+					//console.log('list-group-item-info');
+				}else if (num2 == 2){
+					$('#color${dto.routineseq}').addClass('list-group-item-warning');
+					//console.log('list-group-item-warning');
+				}else if (num2 == 3){
+					$('#color${dto.routineseq}').addClass('list-group-item-danger');
+					//console.log('list-group-item-danger');
+				}
+       	 
+       	</c:forEach>
+       
+        
+     });
+     
+     
+	
+	/* 	 
+    $(function(){
+	    $('#color1').addClass('list-group-item-success');
+	    $('#color2').addClass('list-group-item-info');
+	    $('#color3').addClass('list-group-item-warning');
+	    $('#color4').addClass('list-group-item-danger');
+    }
+    */
     
-	</c:forEach>	 */
 	</script>
 
 </body>

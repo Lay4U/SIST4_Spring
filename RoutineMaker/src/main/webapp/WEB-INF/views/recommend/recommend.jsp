@@ -56,6 +56,15 @@
 		<h2 class="page-header">종합 베스트 순위<br><small>지금 루틴메이커에서 가장 인기있는 루틴은?👀</small></h2>
 		
 			<div class="list-group list-group-recommend">
+				
+				<c:forEach var="dto" items="${bestRoutine}">
+					<c:forEach var="colordto" items="${colorList}">
+				<a href="#" class="list-group-item list-group-item-${colordto.color}">${dto.routineseq}. ${dto.name}</a>
+					</c:forEach>
+				</c:forEach>
+				
+				
+				<!-- 
 				<a href="#" class="list-group-item list-group-item-success">1. 아침 05:00 기상☀</a>
 				<a href="#" class="list-group-item list-group-item-info">2. 눈 뜨자마자 물 한잔🥛</a>
 				<a href="#" class="list-group-item list-group-item-warning">3. 12시 전에 침대에 눕기🌙</a>
@@ -66,17 +75,21 @@
 				<a href="#" class="list-group-item list-group-item-danger">8. 매일 밤 일기 쓰기📖</a>
 				<a href="#" class="list-group-item list-group-item-success">9. 하루 5분 방정리 </a> 
 				<a href="#" class="list-group-item list-group-item-info">10. 하루 3번 하늘 보기 ☁</a>
+				-->
+				
+		
+		
 		
 			</div>
 		
 		</div>
 		
-		
-		
+	
 	</div>
 
 	<script>
 		
 	</script>
+
 </body>
 </html>

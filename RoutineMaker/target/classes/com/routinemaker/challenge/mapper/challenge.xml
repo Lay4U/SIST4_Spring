@@ -3,4 +3,8 @@
 
 <mapper namespace="challenge">
 
+	<!-- <select id="getOriginalList" resultType="ChallengeDTO">
+		select * from tblChallenge order by seq desc
+	</select> -->
+
 </mapper>

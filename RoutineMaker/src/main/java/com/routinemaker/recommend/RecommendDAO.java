@@ -1,5 +1,6 @@
 package com.routinemaker.recommend;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.mybatis.spring.SqlSessionTemplate;
@@ -18,19 +19,29 @@ public class RecommendDAO {
 	public List<RecommendDTO> getRoutineName(String routienseq) {
 			
 		return template.selectList("recommend.getRoutineName", routienseq);
+		
 	}
 
 
-	//부트스트랩코드 
-	public List<RecommendDTO> color() {
-		
-		List<RecommendDTO> colorList =  List<RecommendDTO>;
-		
-			
-		
-		return null;
-	}
-
+	//부트스트랩 코드 
+//	public ArrayList<RecommendDTO> color(String routineseq) {
+//		
+//		ArrayList<String> colorList = new ArrayList<String>();
+//		
+//		colorList.add("success");
+//		colorList.add("info");
+//		colorList.add("warning");
+//		colorList.add("danger");
+//	
+//		
+//		if( template.selectList("recommend.color", routineseq).equals("1")) {
+//			
+//			/* colorList.get(0); */
+//		}
+//		
+//		return null;
+//		
+//	}
 	
 	
 	

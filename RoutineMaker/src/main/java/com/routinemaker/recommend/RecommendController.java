@@ -30,8 +30,10 @@ public class RecommendController {
 		
 		
 		//루틴 색상 정하기
-		List<RecommendDTO> colorList = dao.color();
-		req.setAttribute("colorList", colorList);
+		/*
+		 * List<RecommendDTO> colorList = dao.color(); req.setAttribute("colorList",
+		 * colorList);
+		 */
 		
 		
 		return "recommend.recommend";

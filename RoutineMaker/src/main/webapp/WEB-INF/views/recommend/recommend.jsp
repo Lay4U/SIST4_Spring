@@ -58,12 +58,19 @@
 			<div class="list-group list-group-recommend">
 				
 				<c:forEach var="dto" items="${bestRoutine}">
+					<a href="#" class="list-group-item list-group-item-success">${dto.routineseq}. ${dto.name}</a>
+				</c:forEach>
+				
+				
+				
+				
+			<!-- <c:forEach var="dto" items="${bestRoutine}">
 					<c:forEach var="colordto" items="${colorList}">
 				<a href="#" class="list-group-item list-group-item-${colordto.color}">${dto.routineseq}. ${dto.name}</a>
 					</c:forEach>
 				</c:forEach>
-				
-				
+			
+				-->
 				<!-- 
 				<a href="#" class="list-group-item list-group-item-success">1. 아침 05:00 기상☀</a>
 				<a href="#" class="list-group-item list-group-item-info">2. 눈 뜨자마자 물 한잔🥛</a>

@@ -3,8 +3,53 @@
 
 <mapper namespace="calendar">
 
-	<select id="name" resultType="com.routinemaker.calendar.CalendarDTO" parameterType="String">
+
+	<!-- 유저이름가져오기 -->
+	<select id="getUserName" resultType="calendar" parameterType="String">
 		select * from tblMember where memberseq = #{seq}
 	</select>
+	<!-- 루틴시작한지 몇일째 -->
+ 	<select id="getWithdate" resultType="calendar" parameterType="String">
+		select trunc(sysdate)-to_date(regdate) as withdate from tblmember where memberseq = #{seq}
+	</select> 
+	<!-- 현재 년도와 월 (list)-->
+	<select id="getSysdate" resultType="calendar">
+		select distinct to_char(sysdate,'yyyy')as sysyear, to_char(sysdate,'mm')as sysmonth from tblmember
+	</select>
+	<!-- 이 달의 루틴-> 완료루틴들 (list) -->
+	<select id="pastRoutine" resultType="calendar" parameterType="String">
+		select
+			r.name as pastRoutineName
+		from tblRoutineState rs
+			inner join tblRoutine r
+				on rs.routineseq = r.routineSeq
+			inner join tblSuccess s
+				on rs.routinestateseq = s.routinestateseq
+		where rs.memberseq = #{seq}
+			and to_char(sysdate,'yyyy') = to_char(rs.startdate,'yyyy')
+			and to_char(sysdate,'mm') = to_char(rs.startdate,'mm')
+			and sysdate > rs.startdate
+	</select>
+	<!-- 이 달의 루틴-> 진행 루틴들 (list) -->
+	<select id="nowRoutine" resultType="calendar" parameterType="String">
+		select
+			r.name as nowRoutineName
+		from tblRoutineState rs
+			inner join tblRoutine r
+				on rs.routineseq = r.routineSeq
+			inner join tblSuccess s
+				on rs.routinestateseq = s.routinestateseq
+		where rs.memberseq = #{seq}
+			and to_char(sysdate,'yyyy') = to_char(rs.startdate,'yyyy')
+			and to_char(sysdate,'mm') = to_char(rs.startdate,'mm')
+			and rs.startdate > sysdate
+	</select>
+	
+	
+
+	<!-- <select id="name" resultType="com.routinemaker.calendar.CalendarDTO" parameterType="String">
+		select * from tblMember where memberseq = #{seq}
+	</select> -->
+
 	
 </mapper>

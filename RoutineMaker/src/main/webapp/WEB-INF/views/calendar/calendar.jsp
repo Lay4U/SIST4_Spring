@@ -3,19 +3,27 @@
 
   <!-- views > calendar > calendar.jsp -->
   <div class="container">
-      
-      <!-- 왼쪽 단락 -->
+	<nav class="nav-recommend">
+		<ul class="nav nav-tabs">
+			<li role="presentation" class="active"><a href="/routinemaker/calendar/calendar.action">신호등캘린더🚦</a></li>
+			<li role="presentation"><a href="/routinemaker/calendar/statistic.action">루틴통계📊</a></li>
+		</ul>
+	</nav>
+
+	<!-- 왼쪽 단락 -->
       <div id="left">
       
 	    <i id="usericon" class="fas fa-user-circle"></i>
 	    <div class="userinfo">
-	      	<p id="username">${dto.name}</p>
-	      	<p id="withdate">루틴 시작한지 9일 째</p>
+	      	<p id="username">${username.name}</p>
+	      	<p id="withdate">루틴 시작한지 ${withdate.withdate}일 째</p>
       	</div>
       	
       	<div class="month">
 	      	<i class="fas fa-chevron-left"></i>
-	      	&nbsp;&nbsp;2021년 8월&nbsp;&nbsp;
+	      	<c:forEach items="${dateList}" var="dto">
+	      	&nbsp;&nbsp;${dto.sysyear}년 ${dto.sysmonth}월&nbsp;&nbsp;
+	      	</c:forEach>
 	      	<i class="fas fa-chevron-right"></i>
       	</div>
       	
@@ -24,19 +32,30 @@
       		
       		<div class="subright">
       			<input type="radio" id="now" name="rb" checked><label id="nowlabel" for="now">진행 루틴</label> 
-				<input type="radio" id="past" name="rb"><label for="past">완료 루틴</label>
+				<input type="radio" id="past" name="rb"><label for="past">지난 루틴</label>
 
 		      	<div id="nowroutine">
-		      		<ul>
-		      			<li>잠 자기전 물한잔</li>
-		      			<li>외출전 플러그 뽑기</li>
-		      			<li>영어단어 외우기</li>
-		      		</ul>
-		      	</div>
+					<ul>
+						<c:if test="${nowRoutineList.size() == 0}">
+							진행중인 루틴이 없어요.😅 <br>루틴을 추가해보세요!
+						</c:if>
+						<c:if test="${nowRoutineList.size() != 0}">
+							<c:forEach items="${nowRoutineList}" var="nowdto">
+								<li>${nowdto.nowRoutineName}</li>
+							</c:forEach>
+						</c:if>
+					</ul>
+				</div>
 		      	<div id="pastroutine">
 		      		<ul>
-		      			<li>영어단어 외우기</li>
-		      			<li>루틴메이커 작성하기</li>
+			      		<c:if test="${pastRoutineList.size() == 0}">
+			      			지난 루틴이 없어요.😏	      		
+			      		</c:if>
+			      		<c:if test="${pastRoutineList.size() != 0}">
+			      			<c:forEach items="${pastRoutineList}" var="pastdto">
+			      				<li>${pastdto.pastRoutineName}</li>
+			      			</c:forEach>
+			      		</c:if>
 		      		</ul>
 	      		</div>
 	      		
@@ -47,12 +66,6 @@
      
      <!-- 오른쪽 단락 -->
      <div id="right">
-     	<div id="btn">
-     		<input type="button" id="sinho" class="btn" value="신호등캘린더🚦""
-     			onclick="location.href='/routinemaker/calendar/calendar.action';">
-     		<input type="button" id="tongye" class="btn" value="루틴통계&nbsp;&nbsp;&nbsp;&nbsp;"
-     			onclick="location.href='/routinemaker/calendar/statistic.action';">
-     	</div>
      	
      	<div class="calsub">
      	<div style="font-size:4em; margin-left:-20px;">🚥</div>

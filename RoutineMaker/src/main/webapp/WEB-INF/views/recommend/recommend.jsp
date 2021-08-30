@@ -17,6 +17,16 @@
 	<!-- views > recommend.jsp -->
 
 	<div class="container">
+	
+		<nav class="nav-recommend">
+			<ul class="nav nav-tabs">
+				<li role="presentation"><a href="/routinemaker/recommend/themebest.action">👉 테마별 루틴</a></li>
+				<li role="presentation"><a href="/routinemaker/recommend/routineset.action">👉 루틴 세트</a></li>
+			</ul>
+		</nav>
+		
+	
+	
 		<h1 class="page-header">
 			추천 루틴👍
 			<br><small>원하는 루틴을 클릭해서 내 피드로 퍼가 보세요!</small>
@@ -38,7 +48,7 @@
 		</div>
 		
 		
-		<div class="container-padding">
+		<div class="container-padding-vertical">
 			
 		</div>
 
@@ -61,15 +71,6 @@
 		
 		</div>
 		
-		
-		<div class="subcontainer-recommend">
-		
-		<hr>
-		
-		<a href="/routinemaker/recommend/routineset.action">👉 루틴 세트 구경하기</a>
-		<a href="#">👉 테마별 루틴 구경하기</a>
-		
-		</div>
 		
 		
 	</div>

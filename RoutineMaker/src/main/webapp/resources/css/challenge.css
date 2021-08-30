@@ -1,16 +1,177 @@
 .challenge-container .searchbox #column {
 	width: 200px;
+	float: left;
 }
 
 .challenge-container .searchbox #search {
 	width: 700px;
+	float: left;
+}
+
+.challenge-container .searchbox {
+	margin-bottom: 20px;
+}
+/* 추천 챌린지 */
+
+.challenge-container .recommend{
+	text-align: center;
+	height: 50px;
+}
+.challenge-container .recommend-list{
+    width: 1000px;
+    margin: 0 auto;
+}
+.challenge-container .recommend-list::after{
+	content: '';
+    display: block;
+    clear: both;
+	
+}
+.challenge-container .recommend-list .list-content {
+	width: 300px;
+	height: 250px;
+	border: 5px solid #ACC6AA;
+	border-radius: 30px;
+	padding: 10px;
+	
+	float: left;
+	margin: 0 10px;
+	margin-bottom: 20px;
+}
+
+.challenge-container .recommend-list .list-content .list_name{
+	font-size: 17px;
+	color: #666;
+	margin-bottom: 5px;
+}
+.challenge-container .recommend-list .list-content .profile{
+	border-top: 5px solid #ACC6AA;
+	margin-top: 10px;
+}
+.challenge-container .recommend-list .list-content .profile .profile_image{
+	font-size: 10px;
+	margin-top: 10px;
+}	
+
+
+/* 일반 챌린지 */
+.challenge-container .original{
+	text-align: center;
+	height: 50px;
+}
+
+.challenge-container .original-list {
+	width: 1000px;
+    margin: 0 auto;
+}
+
+.challenge-container .original-list::after{
+	content: '';
+    display: block;
+    clear: both;
+	
+}
+.challenge-container .original-list .original-content {
+	width: 300px;
+	height: 250px;
+	border: 5px solid #F4E5C2;
+	border-radius: 30px;
+	padding: 10px;
+	
+	float: left;
+	margin: 0 10px;
+	margin-bottom: 20px;
+}
+
+.challenge-container .original-list .original-content .list_name{
+	font-size: 17px;
+	color: #666;
+	margin-bottom: 5px;
+}
+.challenge-container .original-list .original-content .profile{
+	border-top: 5px solid #F4E5C2;
+	margin-top: 10px;
+}
+.challenge-container .original-list .original-content .profile .profile_image{
+	font-size: 10px;
+	margin-top: 10px;
+}	
+
+
+/* 챌린지 뷰(상세보기) */
+.view-container {
+	width: 100%;
+	border: 3px solid #ddd;
+	border-radius: 30px;
+	padding: 20px 70px;
+}
+
+.view-container .title{
+	font-size: 20px;
+}
+
+.view-container .sub-section {
+	margin-bottom: 20px;
+}
+
+.view-container .sub-section::after {
+	content: '';
+    display: block;
+    clear: both;
+}
+
+.view-container .sub-section .sub-condition {
+	width: 400px;
+	float: left;
+	background-color: #BDDF53;
+	border-radius: 15px;
+	padding: 10px;
+}
+.view-container .sub-section .sub-condition span{
+	display: block;
+}
+
+.view-container .sub-section .sub-condition:first-line {
+	font-size: 20px;
+}
+
+.view-container .sub-section .sub-profile {
+	width: 400px;
+	float: left;
+}
+
+.view-container .main-section {
+	margin-bottom: 30px;	
+}
+
+.view-container .main-section {
+	
+}
+.view-container .main-section {
+	
 }
 
 
-#column {
-	width: 200px;
+
+.view-container .review-section {
+	
 }
 
-#search {
-	width: 200px;
+.view-container .review-section .review-content {
+	background-color: #eee;
+	border-radius: 15px;
+	padding: 10px;
+	margin-bottom: 10px;
 }
+
+.view-container .review-section .review-content span{
+	display: block;
+}
+
+
+
+
+
+
+
+

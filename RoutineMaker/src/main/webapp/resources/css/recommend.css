@@ -1,89 +1,132 @@
 /* recommend.css */
-
-
 .list-group-recommend {
-	
 	width: 300px;
 	margin: 0 auto;
 	text-align: center;
 }
 
 .container-recommend {
-	
 	float: left;
 	width: 400px;
 	margin: 20px;
 	padding: 20px;
 	/* border: 1px solid black; */
-	
 }
 
-.container-padding {
-	
+.container-padding-vertical {
 	width: 200px;
 	height: 300px;
 	float: left;
-	
 }
 
-
-.subcontainer-recommend{
-	
-	width: 300px;
-	border: 1px solid black;
-	
+.container-padding-horizen {
+	width: 200px;
+	height: 30px;
+	margin: 0 auto;
+	/* border: 1px solid black; */
 }
 
-.container-routineset{
-	
+.container-routineset {
 	width: 1000px;
 	height: 350px;
 	cursor: pointer;
 	border: 1px solid black;
-	float: left;
+	margin: 0 auto;
+}
+
+.img-container-routinesetview {
+	width: 100%;
+	height: 350px;
+	text-align: center;
+	display: flex;
+}
+
+
+.img-container-routineset{
+	
+	width: 43%;
+	float:left;
 	
 }
 
- 	
- 
- 
- 
- 
-/* .img-routineset{
-
-	float: left;
-	width: 300px;
-	height: 350px;
+.container-routineset-text{
+	
+	float: right; 
+	width: 57%;
 	border: 1px solid black;
-} */
-
-
-/* .title-routineset{
-	float: left;
-	border : 1px solid black;
+	
+	
 }
 
- */
+
+.image {
+	margin: 0 auto;
+}
+
+.image-routineset{
+	
+	
+	height: 320px;
+	margin: 15px 10px;
+}
 
 
+.container-title {
+	width: 100%;
+	text-align: left;
+	font-size: 22px;
+	font-weight: bold;
+	/* border: 1px solid black; */
+}
 
+.container-content {
+	width: 100%;
+	font-size: 18px;
+	/*border: 2px solid black;*/
+}
 
+#table-routineset {
+	text-align: left;
+	float: left;
+	height: 100%;
+	padding: 20px;
+	/* border: 1px solid black; */
+}
 
+#content-routineset {
+	text-align: left;
+	clear: both;
+	/* border: 1px solid black; */
+}
 
+#btn-routindadd {
+	width: 300px;
+	margin: 0 auto;
+}
 
+.table td:nth-child(1) {
+	width: 150px;
+	text-align: center;
+}
 
+.table td:nth-child(2) {
+	width: 200px;
+	text-align: center;
+}
 
+.table td:nth-child(3) {
+	width: 150px;
+	text-align: center;
+}
 
+.btn-routine {
+	margin-left: 15px;
+	margin-right: 15px;
+}
 
-
-
-
-
-
-
-
-
-
+.nav-recommend {
+	font-size: 20px;
+}
 
 
 

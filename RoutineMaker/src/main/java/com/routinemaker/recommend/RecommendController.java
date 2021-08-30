@@ -26,5 +26,17 @@ public class RecommendController {
 	}
 	
 
+	@RequestMapping(value = "/recommend/routinesetview.action", method = { RequestMethod.GET })
+	public String routinesetview(HttpServletRequest req, HttpServletResponse resp, HttpSession session) {
+
+		return "recommend.routinesetview";
+	}
+	
+	
+	@RequestMapping(value = "/recommend/themebest.action", method = { RequestMethod.GET })
+	public String themebest(HttpServletRequest req, HttpServletResponse resp, HttpSession session) {
+
+		return "recommend.themebest";
+	}
 	
 }

@@ -1,7 +1,5 @@
 package com.routinemaker.recommend;
 
-import java.util.HashMap;
-
 import lombok.Data;
 
 @Data
@@ -13,7 +11,12 @@ public class RecommendDTO {
 	private String theme;
 	private String regdate;
 	
-	//부트스트랩 색상 뽑아오기
+	private String color;
+
+	
+
+	
+	//遺��듃�뒪�듃�옪 �깋�긽 戮묒븘�삤湲�
 	/* public String[] color = { "success", "info", "warning", "danger" }; */
 	
 	

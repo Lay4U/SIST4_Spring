@@ -1,5 +1,8 @@
 package com.routinemaker.recommend;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.mybatis.spring.SqlSessionTemplate;
@@ -14,21 +17,31 @@ public class RecommendDAO {
 	private SqlSessionTemplate template;
 	
 	
-	//루틴 리스트 가져오기
+	//猷⑦떞 由ъ뒪�듃 媛��졇�삤湲�
 	public List<RecommendDTO> getRoutineName(String routienseq) {
 			
 		return template.selectList("recommend.getRoutineName", routienseq);
 	}
 
 
-	//부트스트랩코드 
+	//遺��듃�뒪�듃�옪肄붾뱶 
 	public List<RecommendDTO> color() {
 		
-		List<RecommendDTO> colorList =  List<RecommendDTO>;
-		
+		ArrayList<RecommendDTO> colorlist = new ArrayList<RecommendDTO>();
+
+			String color[] = {"success", "info", "warning", "danger"};
+			
+			for(int i=0; i<4; i++) {
+			
+				RecommendDTO dto = new RecommendDTO();
+				
+				dto.setColor(color[i]);
+				
+				colorlist.add(dto);
+			}
 			
 		
-		return null;
+		return colorlist;
 	}
 
 	

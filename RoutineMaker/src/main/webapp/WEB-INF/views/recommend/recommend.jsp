@@ -66,7 +66,8 @@
 				
 			<!-- <c:forEach var="dto" items="${bestRoutine}">
 					<c:forEach var="colordto" items="${colorList}">
-				<a href="#" class="list-group-item list-group-item-${colordto.color}">${dto.routineseq}. ${dto.name}</a>
+						<a href="#" class="list-group-item list-group-item-${colordto.color}">
+						${dto.routineseq}. ${dto.name}</a>
 					</c:forEach>
 				</c:forEach>
 			
@@ -95,7 +96,11 @@
 	</div>
 
 	<script>
-		
+	
+	/* <c:forEach items="${colorList}" var="colordto">
+    $('body').append('<a href="#" class="list-group-item list-group-item-${colordto.color}">${dto.routineseq}. ${dto.name}</a>')
+    
+	</c:forEach>	 */
 	</script>
 
 </body>

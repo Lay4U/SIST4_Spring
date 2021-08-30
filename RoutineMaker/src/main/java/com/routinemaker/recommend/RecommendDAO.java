@@ -1,5 +1,10 @@
 package com.routinemaker.recommend;
 
+<<<<<<< HEAD
+=======
+import java.sql.ResultSet;
+import java.sql.SQLException;
+>>>>>>> bfe005dbebc32e90cab1ca92e7599cc13dbb4444
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,11 +20,35 @@ public class RecommendDAO {
 	private SqlSessionTemplate template;
 	
 	
-	//루틴 리스트 가져오기
+	//猷⑦떞 由ъ뒪�듃 媛��졇�삤湲�
 	public List<RecommendDTO> getRoutineName(String routienseq) {
 			
 		return template.selectList("recommend.getRoutineName", routienseq);
+<<<<<<< HEAD
 		
+=======
+	}
+
+
+	//遺��듃�뒪�듃�옪肄붾뱶 
+	public List<RecommendDTO> color() {
+		
+		ArrayList<RecommendDTO> colorlist = new ArrayList<RecommendDTO>();
+
+			String color[] = {"success", "info", "warning", "danger"};
+			
+			for(int i=0; i<4; i++) {
+			
+				RecommendDTO dto = new RecommendDTO();
+				
+				dto.setColor(color[i]);
+				
+				colorlist.add(dto);
+			}
+			
+		
+		return colorlist;
+>>>>>>> bfe005dbebc32e90cab1ca92e7599cc13dbb4444
 	}
 
 

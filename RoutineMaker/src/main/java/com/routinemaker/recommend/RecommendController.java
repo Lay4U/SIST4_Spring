@@ -1,5 +1,6 @@
 package com.routinemaker.recommend;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -24,17 +25,24 @@ public class RecommendController {
 	@RequestMapping(value = "/recommend/recommend.action", method = { RequestMethod.GET })
 	public String recommend(HttpServletRequest req, HttpServletResponse resp, HttpSession session) {
 
-		//루틴베스트 리스트 불러오기
+		//猷⑦떞踰좎뒪�듃 由ъ뒪�듃 遺덈윭�삤湲�
 		List<RecommendDTO> bestRoutine = dao.getRoutineName(routineseq);
 		req.setAttribute("bestRoutine", bestRoutine);
 		
 		
+<<<<<<< HEAD
 		//루틴 색상 정하기
 		/*
 		 * List<RecommendDTO> colorList = dao.color(); req.setAttribute("colorList",
 		 * colorList);
 		 */
 		
+=======
+		//猷⑦떞 �깋�긽 �젙�븯湲�
+		List<RecommendDTO> colorList = dao.color();
+		req.setAttribute("colorList", colorList);
+		System.out.println(colorList);
+>>>>>>> bfe005dbebc32e90cab1ca92e7599cc13dbb4444
 		
 		return "recommend.recommend";
 	}

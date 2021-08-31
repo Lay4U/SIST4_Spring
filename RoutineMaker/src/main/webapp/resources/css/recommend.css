@@ -121,6 +121,15 @@ HEAD
 	font-size: 20px;
 }
 
+.resultValue{
+	width:100%;
+	hegiht: auto;
+	margin : 20px;
+	
+	text-align: left;
+}
+
+
 /* modal CSS */
 .modal-header {
 	text-align: center;

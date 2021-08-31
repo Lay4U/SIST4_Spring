@@ -3,23 +3,39 @@
 
 <mapper namespace="recommend">
 	
+	
 	<!-- 루틴 이름 가져오기 -->
 	<select id="getRoutineName" resultType="recommend" parameterType="String">
-		select rownum, r.* from ( 
-									select routine.*
-									from tblRoutine routine
-									order by routineseq asc) r
-									where <![CDATA[ rownum <11 ]]>
+		select * from tblRoutine where routineseq  between 1 and 10 order by  routineseq asc 							
 	</select>
 
 	
-	
-	<!-- 루틴 테마 가져오기-->
+	<!-- 루틴 테마 가져오기 -->
 	<select id="getRoutineTheme" resultType="recommend">
-		
 		select rownum as "routineseq", theme from(select theme  from tblroutine group by theme)
 	</select>
+	
+	
+	<!-- 루틴검색하기 -->
+	<!-- 일단 보류 -->
+	<!-- <select id="routineSearch" resultType="recommend" parameterType="String">
+		select * from tblRoutine 
+			where name like '%' || #{keyword} || '%'
+				order by name asc
+	</select> -->
 
+
+
+	<!-- 루틴조회하기 -->
+	<select id="routineSearch" resultType="recommend" parameterType="String">
+		
+		select * from tblRoutine where routineseq = #{routineseq}
+	
+	</select>
+
+	
+	
+	
 
 	
 

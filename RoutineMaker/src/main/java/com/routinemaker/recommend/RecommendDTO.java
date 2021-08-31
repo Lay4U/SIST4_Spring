@@ -12,6 +12,8 @@ public class RecommendDTO {
 	private String regdate;
 	
 
+	//검색 필터
+	private String keyword;
 	
 	
 	

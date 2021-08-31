@@ -32,25 +32,26 @@
 		</h1>
 
 	
+	
 		<div class="container-recommend">
 		<h2 class="page-header">루틴 검색🔍
 			<br><small>원하는 루틴을 검색 해 보세요!</small>
 		</h2>
-		
-		 <form method="GET" action="" class="navbar-form navbar-left" role="search">
 			<div class="form-group">
-			<select name="column" id="column" class="form-control">
-					<!-- <option value="postTitle">최신</option>
-					<option value="content">조회수</option>
-					<option value="nickName">좋아요</option> -->
-			</select> 
-				<input type="text" id="search1" class="form-control" placeholder="루틴을 검색하세요😘">
-			</div>
+				<select name="column" id="column" class="form-control">
+						 <option value="postTitle">최신</option>
+						<option value="content">조회수</option>
+						<option value="nickName">좋아요</option> 
+				</select>
+					<input type="text" id="search1" class="form-control" 
+							 placeholder="루틴을 검색하세요😘">
+			
 			<button type="submit" id="recommendbtn1" class="btn btn-default">검색하기</button>
+			</div>
 			<hr>
 			<h3>루틴 검색 결과</h3>
 			<div id="m1" class="alert alert-success"></div>
-		</form>
+		
 		
 		
 		
@@ -87,7 +88,7 @@
 	       	
 	       	num2= num%4;
 	       	/* console.log(num); */
-	       	console.log(num2);
+	       	/* console.log(num2); */
 	       	
 	       	 if (num2 == 0){
 					$('#color${dto.routineseq}').addClass('list-group-item-success');
@@ -119,7 +120,8 @@
 				data: 'routineseq=' + $('#search1').val(),
 				dataType: 'json',
 				success: function(dto) {
-					$('#m1').text('routineseq:' + dto.routineseq);
+					 $('#m1').text( '루틴번호:' + dto.routineseq +	
+							 ', 루틴명: '+ dto.name + ', 테마: ' + dto.theme);
 					
 				},
 				

@@ -48,7 +48,7 @@
 				<input type="text" class="form-control"
 					placeholder="루틴을 검색하세요😘">
 			</div>
-			<button type="submit" class="btn btn-default">검색하기</button>
+			<button type="submit" id="recommendbtn" class="btn btn-default">검색하기</button>
 		</form>
 		</div>
 		
@@ -105,6 +105,47 @@
      });
      
      
+	
+	
+	/* 검색하는 코드 Ajax */
+	
+	$('#recommendbtn').click(function() {
+		
+		//1. XMLHttpRequest 객체를 생성한다.
+		let ajax = new XMLHttpRequest();
+		
+		//2. 이벤트 매핑을 한다.
+		ajax.onreadystatechange = function() {
+			
+			//ajax.status
+			// - 서버 응답 코드
+			// - 200: OK
+			// - 404: Page not found
+			// - 500: 서버측 에러
+			
+			$('#output').text('');
+		
+			if (ajax.readyState == 4 && ajax.status == 200) { //4. 데이터를 응답받으며 호출된다.
+				//5. 서버로부터 응답받은 데이터
+				$('#output').text(ajax.responseText);
+				//document.title = ajax.status;
+			}
+		};
+		
+		//3. 연결 + 요청
+		ajax.open('GET', '/ajax/user/count.action', true);
+		ajax.send('name=hong&age=20');
+		
+		
+	});
+	
+	
+	
+	
+	
+	
+	
+	
     
 	</script>
 

@@ -46,7 +46,9 @@
 
 		<div class="list-group list-group-recommend">
 			<c:forEach var="dto" items="${bestRoutine}">
-				<a href="#" id="colorroutine${dto.routineseq}"
+			
+			
+				<a href="#routineModal" data-toggle="modal" id="colorroutine${dto.routineseq}"
 					class="list-group-item">${dto.routineseq}.${dto.name}</a>
 				<div class="container-padding-horizen"></div>
 			</c:forEach>
@@ -54,6 +56,120 @@
 
 
 	</div>
+
+	
+	
+		<!-- Modal -->
+		<div class="modal fade" id="routineModal" data-backdrop="static"
+			tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel"
+			aria-hidden="true">
+			<div class="modal-dialog" role="document">
+			
+				<div class="modal-content">
+			
+					<div class="modal-header">
+						<h5 class="modal-title" id="staticBackdropLabel" style="text-align:center; font-size: 1.5em;">내 루틴에 퍼가기</h5>
+						
+						<button type="button" class="close" data-dismiss="modal"
+							aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+							<br>
+						</button>
+					</div>
+					<div class="modal-body">
+						
+						<table class="table table-bordered" id="routineplus">
+							<tr>
+								<th colspan="2"><input type="text">JavaScript 공부하기</th>
+								
+							</tr>
+							<tr>
+								<th>타임필터</th>
+								<td>
+									<select id="time" name="time" class="tr100 height30">
+										<option value="">☀아침</option>
+										<option value="">☕점심</option>
+										<option value="">🌙저녁</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<th>상황/시간</th>
+								<td><input type="text" name="" id="" class="tr300 height30" placeholder="ex) 운동 후, 아침 먹은 후"></td>
+							</tr>
+							<tr>
+								<th>알람설정</th>
+								<td>on / off</td>
+							</tr>
+							<tr>
+								<th>하고싶은 이유</th>
+								<td><input type="text" name="" id="" class="tr300 height30" placeholder="하고싶은 이유 ( 150자 이내 )"></td>
+							</tr>
+							<tr>
+								<th>루틴반복주기</th>
+								<td>on / off</td>
+							</tr>
+							<tr>
+								<th>테마</th>
+								<td>
+									<select id="theme" name="theme" class="tr100 height30">
+										<option value="">모닝루틴</option>
+										<option value="">저녁루틴</option>
+										<option value="">건강</option>
+										<option value="">생산성</option>
+										<option value="">셀프케어</option>
+										<option value="">생활</option>
+										<option value="">여유</option>
+										<option value="">관계</option>
+										<option value="">성장</option>
+										<option value="">공부</option>
+										<option value="">경제</option>
+										<option value="">경제</option>
+										<option value="">기타</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<th>희망시작일</th>
+								<td><input type="date" name="wishdate" id=""></td>
+							</tr>
+						
+						</table>
+					
+					</div>
+					<div class="modal-footer">
+			          <button type="button" class="btn btn-primary">내 루틴에 퍼가기</button>
+			          <button type="button" class="btn btn-default" data-dismiss="modal">취소하기</button>
+			        </div>
+				</div>
+			</div>
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -121,6 +237,12 @@
 					
 					
 		});
+		
+		
+	
+		
+		
+		
 		
 	</script>
 

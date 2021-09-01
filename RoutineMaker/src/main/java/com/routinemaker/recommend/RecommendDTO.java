@@ -12,7 +12,7 @@ public class RecommendDTO {
 	private String regdate;
 	
 
-	//검색 필터
+	//검색 필터 -> 검색어 
 	private String keyword;
 	
 	

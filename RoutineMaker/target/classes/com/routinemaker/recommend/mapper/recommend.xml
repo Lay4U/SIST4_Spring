@@ -16,28 +16,44 @@
 	</select>
 	
 	
-	<!-- 루틴검색하기 -->
-	<!-- 일단 보류 -->
-	<!-- <select id="routineSearch" resultType="recommend" parameterType="String">
-		select * from tblRoutine 
-			where name like '%' || #{keyword} || '%'
-				order by name asc
-	</select> -->
-
-
-
-	<!-- 루틴조회하기 -->
+	<!-- 루틴 조회 하기 -->
 	<select id="routineSearch" resultType="recommend" parameterType="String">
-		
 		select * from tblRoutine where routineseq = #{routineseq}
-	
 	</select>
 
 	
+	<!-- 루틴 검색기능 -->
+	    <select id="routineSearchWord" resultType="recommend" parameterType="String">
+      select * from tblRoutine 
+         where name like '%' || #{keyword} || '%'
+            order by regdate desc
+   </select>
 	
 	
+	
+	<!-- 루틴테마별로 루틴조회 -->
+		<select id="routineCheckTheme" resultType="recommend" parameterType="String">
+				
+		</select>
 
 	
 
 
 </mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

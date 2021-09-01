@@ -46,9 +46,7 @@
 
 		<div class="list-group list-group-recommend">
 			<c:forEach var="dto" items="${bestRoutine}">
-			
-			
-				<a href="#routineModal" data-toggle="modal" id="colorroutine${dto.routineseq}"
+			<a href="#routineModal" data-toggle="modal" id="colorroutine${dto.routineseq}"
 					class="list-group-item">${dto.routineseq}.${dto.name}</a>
 				<div class="container-padding-horizen"></div>
 			</c:forEach>
@@ -80,7 +78,7 @@
 						
 						<table class="table table-bordered" id="routineplus">
 							<tr>
-								<th colspan="2"><input type="text">JavaScript 공부하기</th>
+								<th colspan="2"><input type="text" value="JavaScript 공부하기"></th>
 								
 							</tr>
 							<tr>
@@ -144,18 +142,6 @@
 				</div>
 			</div>
 		</div>
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

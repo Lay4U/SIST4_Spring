@@ -11,6 +11,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class RecommendDAO {
 
+	
 	@Autowired
 	private SqlSessionTemplate template;
 	
@@ -31,10 +32,29 @@ public class RecommendDAO {
 
 	
 	//루틴번호로 루틴이름을 받아온다.
-	public RecommendDTO routineSearch(String routineseq) {
-		
-		return template.selectOne("recommend.routineSearch", routineseq);
-	}
+	
+ 	public List<RecommendDTO> routineSearchWord(String keyword){
+         
+         return template.selectList("recommend.routineSearchWord", keyword);
+         
+    }
+	 
+
+	
+	/*
+	 * public List<RecommendDTO> routineSearch(String keyword) {
+	 * 
+	 * return template.selectList("recommend.routineSearch", keyword); }
+	 */
+	
+	
+	
+	/*
+	 * //루틴테마별로 -> 루틴 알려주기 public RecommendDTO routineCheckTheme(String theme) {
+	 * 
+	 * 
+	 * return template.selectOne("recommend.routineCheckTheme", theme); }
+	 */
 
 	
 	

@@ -67,21 +67,49 @@ public class RecommendController {
 		
 		//Ajax 구현
 		//루틴검색하기
-		@RequestMapping(value = "/recommend/m1.action", method = { RequestMethod.GET })
-		@ResponseBody
-		public RecommendDTO Search(HttpServletRequest req, HttpServletResponse resp, 
-												HttpSession session, String routineseq) {
-
-			//이따가 String keyword를 불러와서 조회하면 될 거 같기도 하다
-			
-			RecommendDTO dto = dao.routineSearch(routineseq);
-			
-			return dto;
-			
-		}
+		 
+	    @RequestMapping(value = "/recommend/m1.action", method = { RequestMethod.GET })
+	    @ResponseBody
+	    public List<RecommendDTO> Search(HttpServletRequest req, HttpServletResponse resp, 
+	                                  HttpSession session, String keyword) {
 	
+	       //이따가 String keyword를 불러와서 조회하면 될 거 같기도 하다
+	
+	       return dao.routineSearchWord(keyword);
+	    }
+				
+		
+		
+		// 베스트 루틴 -> 검색버튼 클릭하면 원하는 버튼이 출력되도록 
+		// Ajax 구현하기
+		@RequestMapping(value = "/recommend/m2.action", method = { RequestMethod.GET })
+		public String m2(HttpServletRequest req, HttpServletResponse resp, HttpSession session) {
+
+			
+
+			return "recommend/m2";
+		}
+		
 	
 	
 	
 	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -38,15 +38,15 @@ public class RecommendDAO {
          return template.selectList("recommend.routineSearchWord", keyword);
          
     }
+
+ 	
+ 	//루틴추가하기
+	public int routineadd(RecommendDTO dto) {
+		
+		return template.insert("recommend.routineadd", dto);
+	}
 	 
 
-	
-	/*
-	 * public List<RecommendDTO> routineSearch(String keyword) {
-	 * 
-	 * return template.selectList("recommend.routineSearch", keyword); }
-	 */
-	
 	
 	
 	/*

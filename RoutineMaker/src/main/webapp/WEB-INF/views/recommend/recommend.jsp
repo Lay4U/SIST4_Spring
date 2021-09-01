@@ -113,7 +113,10 @@
 							
 							<tr>
 								<th colspan="2">
+									
+									
 								<input type="text" value="JavaScript 공부하기">
+									
 								</th>
 							</tr>
 							<tr>
@@ -191,7 +194,7 @@
 	       	num = ${dto.routineseq};
 	       	
 	       	
-	       	num2= num%4;
+	       	num2 = num % 4;
 	      
 	       	 if (num2 == 0){
 					$('#color${dto.routineseq}').addClass('list-group-item-success');
@@ -210,41 +213,16 @@
        	</c:forEach>
        
         
+       	
      });
-     
-     
-	/* 검색하는 코드 Ajax */
 	
-		/* $('#recommendbtn1').click(function() {
-			
-			$.ajax({
-				type: 'GET',
-				url: '/routinemaker/recommend/m1.action',
-				data: 'routineseq=' + $('#search1').val(),
-				dataType: 'json',
-				success: function(dto) {
-					 $('#m1').text( '루틴번호:' + dto.routineseq +	
-							 ', 루틴명: '+ dto.name + ', 테마: ' + dto.theme);
-					
-				},
-				
-				
-				error: function(a,b,c) {
-					console.log(a,b,c);
-				}
-			});
-			
-		}); 	
 	
-	 */
-	 
-
-	  		/* Ajax 검색코드 */
-	  		/* 테이블에 출력하기 */
+	  /* Ajax 검색코드 */
+	  /* 테이블에 출력하기 */
 			
 			 $('#recommendbtn1').click(function() {
 		         
-		         $.ajax({
+		       $.ajax({
 		        	 
 		            type: 'GET',
 		            url: '/routinemaker/recommend/m1.action',
@@ -253,18 +231,18 @@
 		            success: function(routineThemeList) {
 		               
 		            	//이전 검색 결과물을 삭제
-		            	$('#tbody1').html('');
-		                       
-		                	if( routineThemeList.length > 0 ) {
-		                				
-		               			 $(routineThemeList).each(function(index, item) {
-		            
-		                		 	 $('#tbody1').append('<tr><td>' + item.routineseq + '</td>' 
-					                    		 			+ ', <td>'+ item.name + '</td>' 
-					                    		 			+ ', <td> ' + item.theme + '</td></tr>');
-		                	
-		                	 });
-		               			 
+	            	$('#tbody1').html('');
+	                       
+                		if( routineThemeList.length > 0 ) {
+                				
+               			 $(routineThemeList).each(function(index, item) {
+            
+                		 	 $('#tbody1').append('<tr><td>' + item.routineseq + '</td>' 
+			                    		 			+ ', <td>'+ item.name + '</td>' 
+			                    		 			+ ', <td> ' + item.theme + '</td></tr>');
+	                	
+	                	 });
+	               			 
 		               			 
 		               		 } else { 
 

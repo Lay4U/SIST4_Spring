@@ -16,20 +16,20 @@ public class CalendarController {
 
 	@Autowired
 	private CalendarDAO dao;
-	private String seq = "5";
+	private String seq = "1";
 
 	@RequestMapping(value = "/calendar/calendar.action", method = { RequestMethod.GET })
 	public String getUserInfo(HttpServletRequest req, HttpServletResponse resp, HttpSession session) {
 
-		//À¯Àú¸í°¡Á®¿À±â
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		CalendarDTO username = dao.getUserName(seq);
-		//ÇÔ²²ÇÑÁö ¸îÀÏÂ°
+		//ï¿½Ô²ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Â°
 		CalendarDTO withdate = dao.getWithdate(seq);
-		//ÇöÀç ³â,¿ù 
+		//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½,ï¿½ï¿½ 
 		List<CalendarDTO> dateList = dao.getSysdate();
-		//ÀÌ ´ÞÀÇ ·çÆ¾->Áö³­·çÆ¾µé
+		//ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ¾->ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ¾ï¿½ï¿½
 		List<CalendarDTO> pastRoutineList = dao.pastRoutine(seq);
-		//ÀÌ ´ÞÀÇ ·çÆ¾->ÁøÇà·çÆ¾µé
+		//ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ¾->ï¿½ï¿½ï¿½ï¿½ï¿½Æ¾ï¿½ï¿½
 		List<CalendarDTO> nowRoutineList = dao.nowRoutine(seq);
 		
 		req.setAttribute("username", username);
@@ -45,11 +45,11 @@ public class CalendarController {
 	@RequestMapping(value = "/calendar/statistic.action", method = { RequestMethod.GET })
 	public String statistic(HttpServletRequest req, HttpServletResponse resp, HttpSession session) {
 
-		//À¯Àú¸í°¡Á®¿À±â
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		CalendarDTO username = dao.getUserName(seq);
-		//ÇÔ²²ÇÑÁö ¸îÀÏÂ°
+		//ï¿½Ô²ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Â°
 		CalendarDTO withdate = dao.getWithdate(seq);
-		//ÇöÀç ³â,¿ù 
+		//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½,ï¿½ï¿½ 
 		List<CalendarDTO> dateList = dao.getSysdate();
 		
 		

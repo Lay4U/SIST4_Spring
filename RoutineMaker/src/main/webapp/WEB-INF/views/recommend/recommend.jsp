@@ -80,7 +80,8 @@
 		
 			<div class="list-group list-group-recommend">
 				<c:forEach var="dto" items="${bestRoutine}">
-					<a href="#routineModal" data-toggle="modal"  id="color${dto.routineseq}" class="list-group-item">${dto.routineseq}. ${dto.name}</a>
+					<a href="#routineModal" data-toggle="modal"  data-title="Test Title"
+					id="color${dto.routineseq}" class="list-group-item">${dto.routineseq}. ${dto.name}</a>
 				</c:forEach>
 			</div>
 		
@@ -90,10 +91,11 @@
 
 
 
-		<!-- Modal -->
+	<!-- Modal -->
+	<form id="addForm">
 		<div class="modal fade" id="routineModal" data-backdrop="static"
 			tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel"
-			aria-hidden="true">
+			aria-hidden="true" >
 			<div class="modal-dialog" role="document">
 			
 				<div class="modal-content">
@@ -114,7 +116,11 @@
 						<table class="table table-bordered" id="routineplus">
 							<tr>
 								<th colspan="2">
-								<input type="text" placeholder="JavaScript 공부하기">
+								
+								
+								<h4 class="modal-title1" id="routinename">${dto.name }</h4>
+								
+								
 								</th>
 							</tr>
 							<tr>
@@ -133,7 +139,11 @@
 							</tr>
 							<tr>
 								<th>알람설정</th>
-								<td>on / off</td>
+								<td><label class="switch"> <input type="checkbox"
+										id="alarmset"> <span class="slider round"></span>
+								</label>
+									<p class="ap">OFF</p>
+									<p class="ap" style="display: none;">ON</p></td>
 							</tr>
 							<tr>
 								<th>하고싶은 이유</th>
@@ -142,10 +152,12 @@
 							<tr>
 								<th>루틴반복주기</th>
 								<td>
-									<div class="form-check form-switch">
-									  <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-									  <label class="form-check-label" for="flexSwitchCheckDefault">Default switch checkbox input</label>
-									</div>
+									<label class="switch">
+									<input type="checkbox" id="routineset">
+									<span class="slider round"></span>
+									</label>
+									<p class="rp">OFF</p>
+									<p class="rp" style="display: none;">ON</p>
 								</td>
 							</tr>
 							<tr>
@@ -170,23 +182,77 @@
 							</tr>
 							<tr>
 								<th>희망시작일</th>
-								<td><input type="date" name="wishdate" id=""></td>
+								<td><input type="date" name="sysdate" id=""></td>
 							</tr>
 						</table>
 					
 					</div>
 					
 					<div class="modal-footer">
-			          <button type="button" id="addroutinebtn1" class="btn btn-primary">내 루틴에 퍼가기</button>
+			          <button type="button" id="btnAdd" class="btn btn-primary">내 루틴에 추가하기</button>
 			          <button type="button" class="btn btn-default" data-dismiss="modal">취소하기</button>
 			        </div>
 				</div>
 			</div>
 		</div>
-
+	</form>
 
 
 	<script>
+	
+	//모달에 루틴 제목 불러오기
+	
+		/* var routineName="";  //루틴이름을 받아올 변수
+  
+		    $(document).ready(function() {     
+		        $('#routineModal').on('show.bs.modal', function(event) {          
+		        	routineName = $(event.relatedTarget).data('name');
+		         
+		        });
+		        
+		    }); */
+
+
+		    $('#routineModal').on('show.bs.modal', function (event) { 
+		    	  var button = $(event.relatedTarget) // 모달 윈도우를 오픈하는 버튼
+		    	  var titleTxt = button.data('title') // 버튼에서 data-title 값을 titleTxt 변수에 저장
+		    	  var modal = $(this)
+		    	  modal.find('.modal-title1').text(titleTxt) // 모달위도우에서 .modal-title을 찾아 titleTxt 값을 치환
+		    	})
+		
+		
+		
+	/* $('#btnAdd').click(function() {
+		
+		//직렬화: 객체나 배열 등의 데이터를 일련의 하나의 연속된 문자열로 만드는 작업 
+		//alert($('#form7').serialize());
+		
+		$.ajax({
+			type: 'POST',
+			url: '/routinemaker/recommend/routineadd.action',
+			data: $('#addForm').serialize(),
+			dataType: 'json',
+			success: function(result) {
+				
+				if (result == '1') {
+					alert('루틴에 퍼가기 성공했어요🎉');
+				} else {
+					alert('루틴에 퍼가기가 실패했어요😥');
+				}
+				
+			},
+			
+				error: function(a,b,c) {
+					console.log(a,b,c);
+			}
+		
+		});
+	
+	}); */
+
+
+	
+	
 
 	$(function(){
         
@@ -250,18 +316,18 @@
 		            
 		            		},
 		            		
-	            		       	   error: function(a,b,c) {
-					               console.log(a,b,c);
+	            		       error: function(a,b,c) {
+					           console.log(a,b,c);
 					               
-					               
-					            }
-					         });
+					           }
+					     });
 					         
-					      }); 
+					 }); 
 				 
 	 
 		  
-				
+		  
+		  		
 	 
 	 
     

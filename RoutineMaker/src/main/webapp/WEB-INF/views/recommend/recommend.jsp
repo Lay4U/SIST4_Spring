@@ -57,9 +57,9 @@
 				<table class="table table-border" style="border: 1px solid black;">
 					<thead>
 						<tr>
-							<th >루틴번호</th>
-							<th >루틴명</th>
-							<th >루틴테마</th>
+							<th>루틴번호</th>
+							<th>루틴명</th>
+							<th>루틴테마</th>
 						</tr>
 					</thead>
 					<tbody id="tbody1">
@@ -301,7 +301,7 @@
                 				
                			 $(routineThemeList).each(function(index, item) {
             
-                		 	 $('#tbody1').append('<tr><td>' + item.routineseq + '</td>' 
+                		 	 $('#tbody1').append('<tr><td><a href=\"#routineModal\">' + item.routineseq + '</a></td>' 
 			                    		 			+ ', <td>'+ item.name + '</td>' 
 			                    		 			+ ', <td> ' + item.theme + '</td></tr>');
 	                	

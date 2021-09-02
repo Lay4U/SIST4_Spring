@@ -40,7 +40,7 @@
 				</div>
 				<div class="sub">챌린지</div>
 			</div>
-			<div class="three" onclick="location.href='/routinemaker/social.action';">
+			<div class="three" onclick="location.href='/routinemaker/social/social.action';">
 				<div class="sub">
 					<i class="fas fa-globe-americas"></i>
 				</div>
@@ -52,7 +52,7 @@
 				</div>
 				<div class="sub">캘린더</div>
 			</div>
-			<div class="five" onclick="location.href='/routinemaker/mypage.action';">
+			<div class="five" onclick="location.href='/routinemaker/mypage/mypage.action';">
 				<div class="sub">
 					<i class="fas fa-user"></i>
 				</div>

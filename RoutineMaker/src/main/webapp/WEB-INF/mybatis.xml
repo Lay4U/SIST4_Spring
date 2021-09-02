@@ -6,7 +6,17 @@
 	
 	<typeAliases>
 		
+		<!-- Calendar -->
+		<typeAlias type="com.routinemaker.calendar.CalendarDTO" alias="calendar" />
+		
+		<!-- Recommend -->
+		<typeAlias type="com.routinemaker.recommend.RecommendDTO" alias="recommend" />
 		
 	</typeAliases>
+	
+	
+	
+	
+	
 	
 </configuration>

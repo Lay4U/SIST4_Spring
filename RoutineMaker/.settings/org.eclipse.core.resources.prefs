@@ -1,2 +1,5 @@
 eclipse.preferences.version=1
+encoding//src/main/java/com/routinemaker/recommend/RecommendController.java=UTF-8
+encoding//src/main/java/com/routinemaker/recommend/RecommendDAO.java=UTF-8
+encoding//src/main/java/com/routinemaker/recommend/RecommendDTO.java=UTF-8
 encoding//src/main/webapp/WEB-INF/views/challenge/challenge.jsp=UTF-8

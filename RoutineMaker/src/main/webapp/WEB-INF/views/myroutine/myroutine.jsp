@@ -20,10 +20,37 @@
 
 	<div id="myroutine">
 		<div id="my-date">
-			<span id="my-date1"> <span><span>2021-8-16</span>&nbsp;&nbsp;~&nbsp;&nbsp;<span>2021-8-22</span></span>
-				<span id="my-calendar">▼<input type="date" class="btn btn-xs"
-					name="my-calendar"></span>
-			</span> <span id="my-date2">
+			<span id="my-date1">
+			<span>
+				<c:if test="${empty sdate}">
+				<span id="monday">2021-08-31</span>
+				</c:if>
+				<c:if test="${not empty sdate}">
+				<span id="monday">${sdate}</span>
+				</c:if>
+				
+				&nbsp;~&nbsp;
+				
+				<c:if test="${empty fdate}">
+				<span id="sunday">2021-09-05</span>
+				</c:if>
+				<c:if test="${not empty fdate}">
+				<span id="sunday">${fdate}</span>
+				</c:if>
+				
+			</span>
+			</span> 
+			
+			<c:if test="${empty now}">
+				<input type="date" id="my-calendar" class="btn btn-xs" name="my-calendar" value="2021-09-03">
+			</c:if>
+			<c:if test="${not empty now}">
+				<input type="date" id="my-calendar" class="btn btn-xs" name="my-calendar" value="${now}">
+			</c:if>
+			 
+			 
+			
+			<span id="my-date2">
 				<div id="my-timefilter">
 					<span>타임필터</span> <span> <i class="fas fa-sun"></i> <i
 						class="fas fa-cloud-sun"></i> <i class="fas fa-moon"></i>
@@ -48,26 +75,60 @@
 				<th class="tr20">8/22</th>
 				<th>3주차 루틴회고</th>
 			</tr>
-			<tr>
-				<td>1</td>
-				<td>건강</td>
-				<td>기상직후</td>
-				<td><a href="#!">물마시기</a></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td>
-					<form id="" method="POST">
-						<!--  에이작스폼태그구현 -->
-						<input type="text" id="weekdiary"
-							placeholder="1주일 진행 느낀점을 적어보세요:)" style="width: 250px;">
-					</form>
-				</td>
-			</tr>
+
+			<c:if test="${empty rdto}">
+				<c:forEach items="${bdto}" var="dto" >
+				<tr>
+					<td>1</td>
+					<td>${dto.theme}</td>
+					<td>${dto.state}</td>
+					<td><a href="#!" class="rountinename">${dto.name}</a></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>
+						<form method="POST">
+							<!--  에이작스폼태그구현 -->
+							<input type="text" class="weekdiary"
+								placeholder="1주일 진행 느낀점을 적어보세요:)" style="width: 250px;"
+								value="${dto.weekdiary}">
+						</form>
+					</td>
+				</tr>
+			</c:forEach>
+			</c:if>
+			
+			<c:if test="${not empty rdto}">
+			<c:forEach items="${rdto}" var="dto" >
+				<tr>
+					<td>${dto.rnum}</td>
+					<td>${dto.theme}</td>
+					<td>${dto.state}</td>
+					<td><a href="#!" class="rountinename">${dto.name}</a></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>
+						<form method="POST">
+							<!--  에이작스폼태그구현 -->
+							<input type="text" class="weekdiary"
+								placeholder="1주일 진행 느낀점을 적어보세요:)" style="width: 250px;"
+								value="${dto.weekdiary}">
+						</form>
+					</td>
+				</tr>
+			</c:forEach> 
+			</c:if>	
+			
+		
 		</table>
 
 		<button type="button" data-toggle="modal" data-target="#routineplus"
@@ -78,54 +139,63 @@
 
 
 
-		<!-- Modal -->
+		<!-- 루틴 추가하기 Modal -->
 		<div class="modal fade" id="routineplus" data-backdrop="static"
 			tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel"
 			aria-hidden="true">
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
+<<<<<<< HEAD
+						<h5 class="modal-title" id="staticBackdropLabel"
+							style="text-align: center; font-size: 1.5em;">루틴 추가하기</h5>
+=======
 						<h5 class="modal-title" id="staticBackdropLabel" style="text-align:center; font-size: 1.5em;">루틴 추가하기</h5>
 						
+>>>>>>> 52087ed50cb2ab73acd3a03cffab140b823bfae0
 						<button type="button" class="close" data-dismiss="modal"
 							aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-							<br>
+							<span aria-hidden="true">&times;</span> <br>
 						</button>
 					</div>
 					<div class="modal-body">
-						
+
 						<table class="table table-bordered" id="routineplus">
 							<tr>
 								<th>루틴명</th>
-								<td><input type="text" name="" id="" class="tr300 height30"></td>
+								<td><input type="text" class="tr300 height30"></td>
 							</tr>
 							<tr>
 								<th>타임필터</th>
-								<td>
-									<select id="time" name="time" class="tr100 height30">
+								<td><select id="time" name="time" class="tr100 height30">
 										<option value="">아침</option>
 										<option value="">오후</option>
 										<option value="">저녁</option>
-									</select>
-								</td>
+								</select></td>
 							</tr>
 							<tr>
 								<th>상황/시간</th>
-								<td><input type="text" name="" id="" class="tr300 height30"></td>
+								<td><input type="text" class="tr300 height30"></td>
 							</tr>
 							<tr>
 								<th>알람설정</th>
-								<td>on / off</td>
+								<td><label class="switch"> <input type="checkbox"
+										id="alarmset"> <span class="slider round"></span>
+								</label>
+									<p class="ap">OFF</p>
+									<p class="ap" style="display: none;">ON</p></td>
 							</tr>
 							<tr>
 								<th>루틴반복주기</th>
-								<td>on / off</td>
+								<td><label class="switch"> <input type="checkbox"
+										id="routineset"> <span class="slider round"></span>
+								</label>
+									<p class="rp">OFF</p>
+									<p class="rp" style="display: none;">ON</p></td>
 							</tr>
 							<tr>
 								<th>테마</th>
-								<td>
-									<select id="theme" name="theme" class="tr100 height30">
+								<td><select id="theme" name="theme" class="tr100 height30">
 										<option value="">모닝루틴</option>
 										<option value="">저녁루틴</option>
 										<option value="">건강</option>
@@ -139,20 +209,19 @@
 										<option value="">경제</option>
 										<option value="">경제</option>
 										<option value="">기타</option>
-									</select>
-								</td>
+								</select></td>
 							</tr>
 							<tr>
 								<th>희망시작일</th>
 								<td><input type="date" name="wishdate" id=""></td>
 							</tr>
-						
-						
-						
+
+
+
 						</table>
-					
+
 					</div>
-					<div class="modal-footer"  style="text-align:center;">
+					<div class="modal-footer" style="text-align: center;">
 						<button type="button" class="btn btn-secondary"
 							data-dismiss="modal">취소</button>
 						<button type="button" class="btn btn-primary">확인</button>
@@ -227,13 +296,113 @@
 
 	</div>
 
-
+	<input id="input_date" type="date">
+	<input id="input_submitt" type="submit" onclick="input()" value="확인">
 
 </div>
 
 <script>
-	$('#my-calendar').click(function() {
+	
 
-		/*  <input type="date" class="btn btn-xs" name="my-calendar"> */
+	//date값 입력시 -> 일주일 자동적용
+	$('#my-calendar').change(function() {
+
+				var date = $('#my-calendar').val(); //구하고자 하는 날짜 설정
+				console.log(date); //2021-09-01
+				$('#my-calendar').val(date);
+				
+				get_Date(date); //특정일자의 해당 Week의 월요일과 일요일을 구한다.	
+				function get_Date(obj) {
+					
+					var year = obj.substring(0, 4); //2021
+					var month = obj.substring(5, 7); //08
+					var day = obj.substring(8); //31
+
+					var vn_day1 = new Date(year, month - 1, day);
+					console.log(vn_day1); //Tue Sep 07 2021
+
+					var i = vn_day1.getDay(); //현재 요일을 구한다.( 0:일요일, 1:월요일, 2:화요일, 3:수요일, 4:목요일, 5:금요일, 6:토요일 )
+					console.log(i); //2
+					
+					if ((i > 0) && (i < 7)) { //현재 요일이 월~토 일때
+						aa = 1 - i; //1-2=-1
+						bb = 7 - i; //7-2=5
+						var Cal_st = new Date(vn_day1.getYear(), vn_day1.getMonth(), vn_day1.getDate() + aa);
+						var Cal_en = new Date(vn_day1.getYear(), vn_day1.getMonth(), vn_day1.getDate() + bb);
+						
+					} else if (i == 0) { //현재 요일이 일요일일때
+						aa = i-7; //-7
+						bb = i; //0
+						var Cal_st = new Date(vn_day1.getYear(), vn_day1.getMonth(), vn_day1.getDate() + aa);
+						var Cal_en = new Date(vn_day1.getYear(), vn_day1.getMonth(), vn_day1.getDate() + bb);
+
+					}
+
+					//날짜표시형식 첫번째 
+					var st_day = "2021-" + (Cal_st.getMonth() + 1) + "-" + Cal_st.getDate();
+					var en_day = "2021-" + (Cal_en.getMonth() + 1) + "-" + Cal_en.getDate();
+
+					
+					//document.write("입력받은 날짜 : " + obj + "<BR>");
+					//document.write("이번주 시작일(월) : " + st_day + "<BR>");
+					//document.write("이번주 종료일(일) : " + en_day + "<BR>");
+					$('#monday').text(st_day);
+					$('#sunday').text(en_day);
+					$('#my-calendar').text(obj);
+					
+					var sdate = $('#monday').text();
+					var fdate = $('#sunday').text();
+					var now = $('#my-calendar').val();
+					
+					function submit() {
+
+			         var form = document.createElement("form");
+
+			         form.setAttribute("charset", "UTF-8");
+			         form.setAttribute("method", "Post");  //Post 방식
+			         form.setAttribute("action", "/routinemaker/myroutine/myroutine.action"); //요청 보낼 주소
+			        
+			         var hiddenField = document.createElement("input");
+			         hiddenField.setAttribute("type", "hidden");
+			         hiddenField.setAttribute("name", "sdate");
+			         hiddenField.setAttribute("value", sdate);
+			         form.appendChild(hiddenField);
+
+			         hiddenField = document.createElement("input");
+			         hiddenField.setAttribute("type", "hidden");
+			         hiddenField.setAttribute("name", "fdate");
+			         hiddenField.setAttribute("value", fdate);
+			         form.appendChild(hiddenField);
+			         
+			         hiddenField = document.createElement("input");
+			         hiddenField.setAttribute("type", "hidden");
+			         hiddenField.setAttribute("name", "now");
+			         hiddenField.setAttribute("value", now);
+			         form.appendChild(hiddenField);
+
+			         document.body.appendChild(form);
+
+			         form.submit();
+
+					 }//submit
+					 
+					submit();
+					
+				}
+				
+				
+				//location.href='/routinemaker/myroutine/weekdate.action?sdate=' + sdate + "&fdate=" + fdate;
+					
+			});
+	
+	
+	
+
+	//루틴추가(알람,반복주기 ON토글)
+	$('#alarmset').click(function() {
+		$('.ap').toggle();
+	});
+	$('#routineset').click(function() {
+		$('.rp').toggle();
 	});
 </script>

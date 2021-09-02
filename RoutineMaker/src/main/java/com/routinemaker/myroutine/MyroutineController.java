@@ -1,5 +1,6 @@
 package com.routinemaker.myroutine;
 
+import java.io.IOException;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -73,7 +74,57 @@ public class MyroutineController {
 		req.setAttribute("now", now);
 		
 		req.setAttribute("dto", dto);
+		
 		return "myroutine.myroutine";
+	}
+	
+	
+	@RequestMapping(value = "/myroutine/routineplus.action", method = { RequestMethod.POST })
+	public void routineplus(HttpServletRequest req, HttpServletResponse resp, HttpSession session,
+			String name,
+			String time,
+			String state,
+			String alarm,
+			String repeat,
+			String theme,
+			String startDate) {
+		
+		//System.out.println("alarm(BEFORE): " + alarm); //null and on
+		
+		if (alarm == null && repeat == null) {
+			
+			alarm = "N";
+			repeat = "N";
+			
+		} else {
+			
+			alarm = "Y";
+			repeat = "Y";
+		}
+		
+		//System.out.println("alarm(AFTER): " + alarm); //N
+		
+		RoutinePlusDTO dto = new RoutinePlusDTO();
+		dto.setName(name);
+		dto.setTime(time);
+		dto.setState(state);
+		dto.setAlarm(alarm);
+		dto.setRepeat(repeat);
+		dto.setTheme(theme);
+		dto.setStartDate(startDate);
+		
+		dao.add(dto);
+		dao.add1(dto);
+		
+		System.out.println("루틴추가성공");
+
+		try {
+			resp.sendRedirect("http://localhost:8090/routinemaker/myroutine/myroutine.action");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 	}
 	
 	

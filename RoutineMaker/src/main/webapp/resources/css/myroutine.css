@@ -44,7 +44,7 @@
 .margin-b40 {margin-bottom: 40px;}
 .font-strong {color: #93db4a;}
 .tr20 {width:20px;}
-.tr30 {width:30px;}
+.tr30 {width:30px; !important}
 .tr45 {width:45px;}
 .tr100 {width:100px;}
 .tr200 {width:200px;}

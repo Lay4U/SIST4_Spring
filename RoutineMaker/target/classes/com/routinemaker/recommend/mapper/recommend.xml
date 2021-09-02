@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="recommend">
-	
+
 	
 	<!-- 루틴 이름 가져오기 -->
 	<select id="getRoutineName" resultType="recommend" parameterType="String">
@@ -15,7 +15,7 @@
 		select rownum as "routineseq", theme from(select theme  from tblroutine group by theme)
 	</select>
 	
-	
+		
 	<!-- 루틴 조회 하기 -->
 	<select id="routineSearch" resultType="recommend" parameterType="String">
 		select * from tblRoutine where routineseq = #{routineseq}
@@ -28,24 +28,16 @@
          where name like '%' || #{keyword} || '%'
             order by regdate desc
   	 </select>
-	
-	
+
 	
 	<!-- 루틴 추가하기 -->
 	<insert id="routineadd" parameterType="recommend">
 		insert into tblRoutine 
-			values (routineseq.nextVal, #{name}, #{content}, #{theme}, #{sysdate}
-			1, null)
+		values(routineSeq.nextVal, #{name}, #{content}, #{theme}, #{sysdate}, 1, null);
 	</insert>	
 
-
+	
 </mapper>
-
-
-
-
-
-
 
 
 

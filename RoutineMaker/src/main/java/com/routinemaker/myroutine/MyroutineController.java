@@ -61,6 +61,11 @@ public class MyroutineController {
 			//데이터가공(루틴)
 			List<MyroutineDTO> rdto = dao.routinelist(map);
 			req.setAttribute("rdto", rdto); //rnum까지 들어있음
+			
+			//날짜가공
+			
+			
+			
 		}
 		
 		req.setAttribute("sdate", sdate);

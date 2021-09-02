@@ -47,49 +47,67 @@
 			<c:if test="${not empty now}">
 				<input type="date" id="my-calendar" class="btn btn-xs" name="my-calendar" value="${now}">
 			</c:if>
-			 
-			 
+		
 			
 			<span id="my-date2">
-				<div id="my-timefilter">
-					<span>타임필터</span> <span> <i class="fas fa-sun"></i> <i
-						class="fas fa-cloud-sun"></i> <i class="fas fa-moon"></i>
+				<span id="my-timefilter">
+					<span>타임필터</span> 
+					<span> 
+					<i class="fas fa-sun"></i> 
+					<i class="fas fa-cloud-sun"></i> 
+					<i class="fas fa-moon"></i>
 					</span>
-				</div> <input type="button" id="numberchange" class="btn btn-default"
-				name="numberchange" value="루틴순서변경">
+				</span>
+				<input type="button" id="numberchange" class="btn btn-default" name="numberchange" value="루틴순서변경">
 			</span>
 		</div>
 
 		<table class="table table-bordered" id="my-table">
 			<tr>
-				<th class="tr45">번호</th>
+				<th class="tr30">번호</th>
 				<th>테마</th>
 				<th>시간/상황</th>
 				<th>루틴명</th>
-				<th class="tr20">8/16</th>
-				<th class="tr20">8/17</th>
-				<th class="tr20">8/18</th>
-				<th class="tr20">8/19</th>
-				<th class="tr20">8/20</th>
-				<th class="tr20">8/21</th>
-				<th class="tr20">8/22</th>
+				
+			<c:if test="${empty rdto}">
+				<th class="tr20">8/30</th>
+				<th class="tr20">8/31</th>
+				<th class="tr20">9/1</th>
+				<th class="tr20">9/2</th>
+				<th class="tr20">9/3</th>
+				<th class="tr20">9/4</th>
+				<th class="tr20">9/5</th>
+			</c:if>
+			
+			<c:if test="${not empty rdto}">
+				<th class="tr20">8/30</th>
+				<th class="tr20">8/31</th>
+				<th class="tr20">9/1</th>
+				<th class="tr20">9/2</th>
+				<th class="tr20">9/3</th>
+				<th class="tr20">9/4</th>
+				<th class="tr20">9/5</th>
+			</c:if>
+			
+			
+			
 				<th>3주차 루틴회고</th>
 			</tr>
 
 			<c:if test="${empty rdto}">
 				<c:forEach items="${bdto}" var="dto" >
 				<tr>
-					<td>1</td>
+					<td>${dto.rnum}</td>
 					<td>${dto.theme}</td>
 					<td>${dto.state}</td>
 					<td><a href="#!" class="rountinename">${dto.name}</a></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
+					<td>★</td>
+					<td>★</td>
+					<td>★</td>
+					<td>★</td>
+					<td>☆</td>
+					<td>☆</td>
+					<td>☆</td>
 					<td>
 						<form method="POST">
 							<!--  에이작스폼태그구현 -->
@@ -109,13 +127,13 @@
 					<td>${dto.theme}</td>
 					<td>${dto.state}</td>
 					<td><a href="#!" class="rountinename">${dto.name}</a></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
+					<td>★</td>
+					<td>★</td>
+					<td>★</td>
+					<td>★</td>
+					<td>☆</td>
+					<td>☆</td>
+					<td>☆</td>
 					<td>
 						<form method="POST">
 							<!--  에이작스폼태그구현 -->
@@ -146,13 +164,8 @@
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
-<<<<<<< HEAD
 						<h5 class="modal-title" id="staticBackdropLabel"
 							style="text-align: center; font-size: 1.5em;">루틴 추가하기</h5>
-=======
-						<h5 class="modal-title" id="staticBackdropLabel" style="text-align:center; font-size: 1.5em;">루틴 추가하기</h5>
-						
->>>>>>> 52087ed50cb2ab73acd3a03cffab140b823bfae0
 						<button type="button" class="close" data-dismiss="modal"
 							aria-label="Close">
 							<span aria-hidden="true">&times;</span> <br>
@@ -390,8 +403,6 @@
 					
 				}
 				
-				
-				//location.href='/routinemaker/myroutine/weekdate.action?sdate=' + sdate + "&fdate=" + fdate;
 					
 			});
 	

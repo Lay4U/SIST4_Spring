@@ -12,11 +12,11 @@
 
 #my-profile {margin-bottom: 30px;}
 
-#my-timefilter {display: inline-block; margin-right:20px; font-size: 1.3em;}
+#my-timefilter {margin-right:20px; font-size: 1.3em;}
 #my-timefilter > span > i {margin-left: 10px;}
 
 #my-date {position: relative; border: 1px solid transparent; margin-bottom: 60px;}
-#my-date1 {width: 260px; position: absolute; left: 0px; top:0px; font-size: 1.3em; border:3px solid #6A2598; padding: 3px 7px; text-align: center;}
+#my-date1 {width: 280px; position: absolute; left: 0px; top:0px; font-size: 1.3em; border:3px solid #6A2598; padding: 3px 7px; text-align: center;}
 #input_submit {position:absolute; left: 270px; top:0px;}
 #my-date input[type=date] {position:absolute; left: 300px; top:0px;}
 #my-date2 {position: absolute; right: 0px; top:0px;}

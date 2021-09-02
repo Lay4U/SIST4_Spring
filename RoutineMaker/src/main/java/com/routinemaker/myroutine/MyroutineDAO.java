@@ -28,6 +28,17 @@ public class MyroutineDAO {
 		return template.selectList("myroutine.routinelist", map);
 	}
 
+	public void add(RoutinePlusDTO dto) {
+		
+		//반환값없는 insert
+		template.insert("myroutine.add", dto);
+	}
+
+	public void add1(RoutinePlusDTO dto) {
+		//반환값없는 insert1
+		template.insert("myroutine.add1", dto);
+	}
+
 	
 	
 }

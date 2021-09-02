@@ -100,7 +100,7 @@
 					<td>${dto.rnum}</td>
 					<td>${dto.theme}</td>
 					<td>${dto.state}</td>
-					<td><a href="#!" class="rountinename">${dto.name}</a></td>
+					<td><a href="#!" class="rountinename" data-toggle="modal" data-target="#routineedit">${dto.name}</a></td>
 					<td>★</td>
 					<td>★</td>
 					<td>★</td>
@@ -126,7 +126,7 @@
 					<td>${dto.rnum}</td>
 					<td>${dto.theme}</td>
 					<td>${dto.state}</td>
-					<td><a href="#!" class="rountinename">${dto.name}</a></td>
+					<td><a href="#!" class="rountinename" data-toggle="modal" data-target="#routineedit">${dto.name}</a></td>
 					<td>★</td>
 					<td>★</td>
 					<td>★</td>
@@ -145,19 +145,17 @@
 				</tr>
 			</c:forEach> 
 			</c:if>	
-			
 		
 		</table>
 
 		<button type="button" data-toggle="modal" data-target="#routineplus"
 			class="btn btn-success">루틴추가하기</button>
-		<input type="button" id="bookroutine" class="btn btn-default"
-			name="bookroutine" value="예약루틴확인">
+		<button type="button" data-toggle="modal" data-target="#bookroutine"
+			class="btn btn-default"> 예약루틴확인</button>
+				
 
-
-
-
-		<!-- 루틴 추가하기 Modal -->
+	<!-- 루틴 추가하기 Modal -->
+	<form method="POST" action="/routinemaker/myroutine/routineplus.action">
 		<div class="modal fade" id="routineplus" data-backdrop="static"
 			tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel"
 			aria-hidden="true">
@@ -165,7 +163,7 @@
 				<div class="modal-content">
 					<div class="modal-header">
 						<h5 class="modal-title" id="staticBackdropLabel"
-							style="text-align: center; font-size: 1.5em;">루틴 추가하기</h5>
+							style="text-align: center; font-size: 1.5em;">루틴 추가하기💗</h5>
 						<button type="button" class="close" data-dismiss="modal"
 							aria-label="Close">
 							<span aria-hidden="true">&times;</span> <br>
@@ -176,31 +174,37 @@
 						<table class="table table-bordered" id="routineplus">
 							<tr>
 								<th>루틴명</th>
-								<td><input type="text" class="tr300 height30"></td>
+								<td><input type="text" name="name" class="tr300 height30"></td>
 							</tr>
 							<tr>
 								<th>타임필터</th>
-								<td><select id="time" name="time" class="tr100 height30">
-										<option value="">아침</option>
-										<option value="">오후</option>
-										<option value="">저녁</option>
-								</select></td>
+								<td>
+									<select id="time" name="time" class="tr100 height30">
+										<option value="아침">아침</option>
+										<option value="오후">오후</option>
+										<option value="저녁">저녁</option>
+									</select>
+								</td>
 							</tr>
 							<tr>
 								<th>상황/시간</th>
-								<td><input type="text" class="tr300 height30"></td>
+								<td><input type="text" name="state" class="tr300 height30"></td>
 							</tr>
 							<tr>
 								<th>알람설정</th>
-								<td><label class="switch"> <input type="checkbox"
-										id="alarmset"> <span class="slider round"></span>
+								<td>
+								<label class="switch"> 
+								<input type="checkbox" name="alarm" id="alarmset">
+								<span class="slider round"></span>
 								</label>
 									<p class="ap">OFF</p>
 									<p class="ap" style="display: none;">ON</p></td>
 							</tr>
 							<tr>
 								<th>루틴반복주기</th>
-								<td><label class="switch"> <input type="checkbox"
+								<td>
+								<label class="switch">
+								<input type="checkbox" name="repeat"
 										id="routineset"> <span class="slider round"></span>
 								</label>
 									<p class="rp">OFF</p>
@@ -209,39 +213,162 @@
 							<tr>
 								<th>테마</th>
 								<td><select id="theme" name="theme" class="tr100 height30">
-										<option value="">모닝루틴</option>
-										<option value="">저녁루틴</option>
-										<option value="">건강</option>
-										<option value="">생산성</option>
-										<option value="">셀프케어</option>
-										<option value="">생활</option>
-										<option value="">여유</option>
-										<option value="">관계</option>
-										<option value="">성장</option>
-										<option value="">공부</option>
-										<option value="">경제</option>
-										<option value="">경제</option>
-										<option value="">기타</option>
+										<option value="모닝루틴">모닝루틴</option>
+										<option value="저녁루틴">저녁루틴</option>
+										<option value="건강">건강</option>
+										<option value="생산성">생산성</option>
+										<option value="셀프케어">셀프케어</option>
+										<option value="생활">생활</option>
+										<option value="여유">여유</option>
+										<option value="관계">관계</option>
+										<option value="성장">성장</option>
+										<option value="공부">공부</option>
+										<option value="경제">경제</option>
+										<option value="기타">기타</option>
 								</select></td>
 							</tr>
 							<tr>
 								<th>희망시작일</th>
-								<td><input type="date" name="wishdate" id=""></td>
+								<td><input type="date" name="startDate" id=""></td>
 							</tr>
-
-
-
 						</table>
 
 					</div>
 					<div class="modal-footer" style="text-align: center;">
 						<button type="button" class="btn btn-secondary"
 							data-dismiss="modal">취소</button>
-						<button type="button" class="btn btn-primary">확인</button>
+						<button type="submit" class="btn btn-primary">확인</button>
 					</div>
 				</div>
 			</div>
-		</div>
+		</div><!-- 모달 -->
+	</form>
+	
+	<!-- 예약루틴 확인하기 -->
+	<div class="modal fade" id="bookroutine" data-backdrop="static"
+			tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel"
+			aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="staticBackdropLabel"
+							style="text-align: center; font-size: 1.5em;">예약루틴 목록😃</h5>
+						<button type="button" class="close" data-dismiss="modal"
+							aria-label="Close">
+							<span aria-hidden="true">&times;</span> <br>
+						</button>
+					</div>
+					<div class="modal-body">
+
+						<table class="table table-bordered" id="routineplus">
+							<tr>
+								<th>시작날짜</th>
+								<th>루틴명</th>
+							</tr>
+							<tr>
+								<td>2021-09-15</td>
+								<td>물마시기</td>
+							</tr>
+						</table>
+
+					</div>
+					<div class="modal-footer" style="text-align: center;">
+						<button type="button" class="btn btn-success"
+							data-dismiss="modal">확인</button>
+					</div>
+				</div>
+			</div>
+		</div><!-- 모달 -->	
+
+	<!-- 루틴 수정하기 Modal -->
+	<form method="POST" action="/routinemaker/myroutine/routineplus.action">
+		<div class="modal fade" id="routineedit" data-backdrop="static"
+			tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel"
+			aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="staticBackdropLabel"
+							style="text-align: center; font-size: 1.5em;">루틴 수정하기💗</h5>
+						<button type="button" class="close" data-dismiss="modal"
+							aria-label="Close">
+							<span aria-hidden="true">&times;</span> <br>
+						</button>
+					</div>
+					<div class="modal-body">
+
+						<table class="table table-bordered" id="routineplus">
+							<tr>
+								<th>루틴명</th>
+								<td><input type="text" name="name" class="tr300 height30" value="${rdto[0].name}"></td>
+							</tr>
+							<tr>
+								<th>타임필터</th>
+								<td>
+									<select id="time" name="time" class="tr100 height30" value="${rdto[4].time}">
+										<option value="아침">아침</option>
+										<option value="오후">오후</option>
+										<option value="저녁">저녁</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<th>상황/시간</th>
+								<td><input type="text" name="state" class="tr300 height30" value="${rdto[2].state}"></td>
+							</tr>
+							<tr>
+								<th>알람설정</th>
+								<td>
+								<label class="switch"> 
+								<input type="checkbox" name="alarm" id="alarmset">
+								<span class="slider round"></span>
+								</label>
+									<p class="ap">OFF</p>
+									<p class="ap" style="display: none;">ON</p></td>
+							</tr>
+							<tr>
+								<th>루틴반복주기</th>
+								<td>
+								<label class="switch">
+								<input type="checkbox" name="repeat"
+										id="routineset"> <span class="slider round"></span>
+								</label>
+									<p class="rp">OFF</p>
+									<p class="rp" style="display: none;">ON</p></td>
+							</tr>
+							<tr>
+								<th>테마</th>
+								<td><select id="theme" name="theme" class="tr100 height30" value="${rdto[1].theme}">
+										<option value="모닝루틴">모닝루틴</option>
+										<option value="저녁루틴">저녁루틴</option>
+										<option value="건강">건강</option>
+										<option value="생산성">생산성</option>
+										<option value="셀프케어">셀프케어</option>
+										<option value="생활">생활</option>
+										<option value="여유">여유</option>
+										<option value="관계">관계</option>
+										<option value="성장">성장</option>
+										<option value="공부">공부</option>
+										<option value="경제">경제</option>
+										<option value="기타">기타</option>
+								</select></td>
+							</tr>
+							<tr>
+								<th>희망시작일</th>
+								<td><input type="date" name="startDate" id=""></td>
+							</tr>
+						</table>
+
+					</div>
+					<div class="modal-footer" style="text-align: center;">
+						<button type="button" class="btn btn-secondary"
+							data-dismiss="modal">취소</button>
+						<button type="submit" class="btn btn-primary">확인</button>
+					</div>
+				</div>
+			</div>
+		</div><!-- 모달 -->
+	</form>
 
 
 
@@ -309,8 +436,6 @@
 
 	</div>
 
-	<input id="input_date" type="date">
-	<input id="input_submitt" type="submit" onclick="input()" value="확인">
 
 </div>
 

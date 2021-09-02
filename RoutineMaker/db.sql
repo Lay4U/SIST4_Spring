@@ -19,15 +19,26 @@ inner join tblWeekDiary wd
     
 select * from vwmyroutine;
 select * from vwmyroutine where memberseq = 1;
-
 select * from vwmyroutine where startdate between '2021-08-29' and '2021-09-05' and memberseq = 1;
+
 select distinct name, theme, state, rest, time, alarm, repeat 
 		from vwmyroutine where memberseq = 1 and startdate between '2021-08-31' and '2021-09-05' order by time asc;
-
 
 select n.*, rownum as rnum from (select distinct name, theme, state, rest, time, alarm, repeat 
 		from vwmyroutine where memberseq = 1 and startdate between '2021-08-31' and '2021-09-05' order by time asc) n;      
 
 
-    
-    
+--루틴추가(전체루틴 테이블 추가 -> 루틴등록 추가)
+--전체루틴 TABLE
+insert into tblRoutine values (routineSeq.nextVal , '영어 공부하기', '토익 R/C', '공부', sysdate, 1, null);
+
+SELECT * FROM tblRoutine ORDER BY ROUTINESEQ DESC;
+SELECT MAX(ROUTINESEQ) FROM TBLROUTINE;
+
+--루틴등록 TABLE
+SELECT MAX(ROUTINESTATESEQ) FROM TBLROUTINESTATE;
+insert into TBLROUTINESTATE (ROUTINESTATESEQ, STARTDATE, KIND, REST, TIME, STATE, ALARM, REPEAT, READCOUNT, MEMBERSEQ, ROUTINESEQ) 
+values (routineStateSeq.nextVal, default, '루틴', 'N', '저녁', '저녁먹고나서', 'N', 'N', 1, 1, (SELECT MAX(ROUTINESEQ) FROM TBLROUTINE));
+
+SELECT * FROM TBLROUTINESTATE ORDER BY ROUTINESTATESEQ DESC;
+

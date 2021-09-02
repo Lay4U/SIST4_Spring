@@ -16,5 +16,14 @@
 		select n.*, rownum as rnum from (select distinct name, theme, state, rest, time, alarm, repeat 
 		from vwmyroutine where memberseq = #{seq} and startdate between #{sdate} and #{fdate} order by time asc) n
 	</select>
+	
+	<insert id="add" parameterType="com.routinemaker.myroutine.RoutinePlusDTO">
+		insert into tblRoutine values (routineSeq.nextVal , #{name}, '변화하고 싶어서', #{theme}, sysdate, 1, null)
+	</insert>
+	
+	<insert id="add1" parameterType="com.routinemaker.myroutine.RoutinePlusDTO">
+		insert into TBLROUTINESTATE (ROUTINESTATESEQ, STARTDATE, KIND, REST, TIME, STATE, ALARM, REPEAT, READCOUNT, MEMBERSEQ, ROUTINESEQ) 
+	values (routineStateSeq.nextVal, #{startDate}, '루틴', 'N', #{time}, #{state}, #{alarm}, #{repeat}, 1, 1, (SELECT MAX(ROUTINESEQ) FROM TBLROUTINE))
+	</insert>
 
 </mapper>

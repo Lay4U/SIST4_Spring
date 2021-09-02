@@ -8,8 +8,8 @@
 	</select>
 	
 	<select id="routine" parameterType="String" resultType="com.routinemaker.myroutine.MyroutineDTO">
-		select distinct name, theme, state, rest, time, alarm, repeat 
-		from vwmyroutine where memberseq = #{seq} and startdate between '2021-08-31' and '2021-09-05' order by time asc
+		select n.*, rownum as rnum from (select distinct name, theme, state, rest, time, alarm, repeat 
+		from vwmyroutine where memberseq = #{seq} and startdate between '2021-08-31' and '2021-09-05' order by time asc) n
 	</select>
 	
 	<select id="routinelist" parameterType="java.util.HashMap" resultType="com.routinemaker.myroutine.MyroutineDTO">

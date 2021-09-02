@@ -162,20 +162,11 @@
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
-
-
+					
+					
 						<h5 class="modal-title" id="staticBackdropLabel"
-							style="text-align: center; font-size: 1.5em;">루틴 추가하기</h5>
-
-
-
-						<h5 class="modal-title" id="staticBackdropLabel"
-<<<<<<< HEAD
-							style="text-align: center; font-size: 1.5em;">루틴 추가하기</h5>
-
-=======
 							style="text-align: center; font-size: 1.5em;">루틴 추가하기💗</h5>
->>>>>>> 6209e33ecbd84c4de35d3f66b5403597f9d759b2
+
 						<button type="button" class="close" data-dismiss="modal"
 							aria-label="Close">
 							<span aria-hidden="true">&times;</span> <br>

@@ -301,7 +301,7 @@
                 				
                			 $(routineThemeList).each(function(index, item) {
             
-                		 	 $('#tbody1').append('<tr><td><a href=\"#routineModal\">' + item.routineseq + '</a></td>' 
+                		 	 $('#tbody1').append('<tr><td>' + item.routineseq + '</td>' 
 			                    		 			+ ', <td>'+ item.name + '</td>' 
 			                    		 			+ ', <td> ' + item.theme + '</td></tr>');
 	                	

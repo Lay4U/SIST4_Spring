@@ -3,11 +3,11 @@
 
 <mapper namespace="calendar">
 
-<<<<<<< HEAD
+
 	<select id="name" resultType="com.routinemaker.calendar.CalendarDTO" parameterType="String">
 		select * from tblMember where memberseq = #{seq}
 	</select>
-=======
+
 
 	<!-- 유저이름가져오기 -->
 	<select id="getUserName" resultType="calendar" parameterType="String">
@@ -56,6 +56,6 @@
 		select * from tblMember where memberseq = #{seq}
 	</select> -->
 
->>>>>>> 52087ed50cb2ab73acd3a03cffab140b823bfae0
+
 	
 </mapper>

@@ -11,7 +11,12 @@ public class RecommendDTO {
 	private String theme;
 	private String regdate;
 	
+	
+	private String memberseq;
+	private String routinesetseq;
 
+	
+	
 	//검색 필터 -> 검색어 
 	private String keyword;
 	

@@ -32,7 +32,7 @@
 	
 	
 	<!-- 루틴 추가하기 -->
-	<insert id="routineadd" parameterType="com.test.ajax.UserDTO">
+	<insert id="routineadd" parameterType="recommend">
 		insert into tblRoutine 
 			values (routineseq.nextVal, #{name}, #{content}, #{theme}, #{sysdate}
 			1, null)

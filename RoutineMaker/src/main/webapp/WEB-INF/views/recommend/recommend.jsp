@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -99,7 +100,7 @@
 			
 					<div class="modal-header">
 						<h5 class="modal-title" id="staticBackdropLabel" 
-								style="text-align:center; font-size: 1.5em;">내 루틴에 퍼가기</h5>
+								style="text-align:center; font-size: 1.5em;">내 루틴에 추가하기</h5>
 						
 						<button type="button" class="close" data-dismiss="modal"
 							aria-label="Close">
@@ -107,16 +108,13 @@
 							<br>
 						</button>
 					</div>
+					
 					<div class="modal-body">
 						
 						<table class="table table-bordered" id="routineplus">
-							
 							<tr>
 								<th colspan="2">
-									
-									
-								<input type="text" value="JavaScript 공부하기">
-									
+								<input type="text" placeholder="JavaScript 공부하기">
 								</th>
 							</tr>
 							<tr>
@@ -143,7 +141,12 @@
 							</tr>
 							<tr>
 								<th>루틴반복주기</th>
-								<td>on / off</td>
+								<td>
+									<div class="form-check form-switch">
+									  <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+									  <label class="form-check-label" for="flexSwitchCheckDefault">Default switch checkbox input</label>
+									</div>
+								</td>
 							</tr>
 							<tr>
 								<th>테마</th>
@@ -169,19 +172,17 @@
 								<th>희망시작일</th>
 								<td><input type="date" name="wishdate" id=""></td>
 							</tr>
-						
 						</table>
 					
 					</div>
+					
 					<div class="modal-footer">
-			          <button type="button" class="btn btn-primary">내 루틴에 퍼가기</button>
+			          <button type="button" id="addroutinebtn1" class="btn btn-primary">내 루틴에 퍼가기</button>
 			          <button type="button" class="btn btn-default" data-dismiss="modal">취소하기</button>
 			        </div>
 				</div>
 			</div>
 		</div>
-
-
 
 
 
@@ -191,9 +192,8 @@
         
 		
 		<c:forEach items="${bestRoutine}" var="dto">
-	       	num = ${dto.routineseq};
-	       	
-	       	
+	      
+			num = ${dto.routineseq};
 	       	num2 = num % 4;
 	      
 	       	 if (num2 == 0){
@@ -212,15 +212,13 @@
        	 
        	</c:forEach>
        
-        
-       	
      });
 	
 	
-	  /* Ajax 검색코드 */
-	  /* 테이블에 출력하기 */
-			
-			 $('#recommendbtn1').click(function() {
+		  /* Ajax 검색코드 */
+		  /* 테이블에 출력하기 */
+				
+		  $('#recommendbtn1').click(function() {
 		         
 		       $.ajax({
 		        	 
@@ -231,7 +229,7 @@
 		            success: function(routineThemeList) {
 		               
 		            	//이전 검색 결과물을 삭제
-	            	$('#tbody1').html('');
+	                $('#tbody1').html('');
 	                       
                 		if( routineThemeList.length > 0 ) {
                 				
@@ -262,9 +260,8 @@
 					      }); 
 				 
 	 
-	 			
-	 
-	 
+		  
+				
 	 
 	 
     

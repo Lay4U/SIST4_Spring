@@ -100,7 +100,7 @@
 					<td>${dto.rnum}</td>
 					<td>${dto.theme}</td>
 					<td>${dto.state}</td>
-					<td><a href="#!" class="rountinename" data-toggle="modal" data-target="#routineedit">${dto.name}</a></td>
+					<td><a href="#routineedit" class="rountinename" data-toggle="modal" data-target="#routineedit">${dto.name}</a></td>
 					<td>★</td>
 					<td>★</td>
 					<td>★</td>
@@ -126,7 +126,7 @@
 					<td>${dto.rnum}</td>
 					<td>${dto.theme}</td>
 					<td>${dto.state}</td>
-					<td><a href="#!" class="rountinename" data-toggle="modal" data-target="#routineedit">${dto.name}</a></td>
+					<td><a href="#routineedit" class="rountinename" data-toggle="modal" data-target="#routineedit">${dto.name}</a></td>
 					<td>★</td>
 					<td>★</td>
 					<td>★</td>
@@ -382,31 +382,31 @@
 			<div class="diary-header" style="width: 100px;">데일리회고</div>
 			<div id="diary-weekdate">
 				<div class="weekdate-date">
-					<div>24</div>
+					<div>30</div>
 					<div>월</div>
 				</div>
 				<div class="weekdate-date">
-					<div>25</div>
+					<div>31</div>
 					<div>화</div>
 				</div>
 				<div class="weekdate-date">
-					<div>26</div>
+					<div>1</div>
 					<div>수</div>
 				</div>
 				<div class="weekdate-date">
-					<div>27</div>
+					<div>2</div>
 					<div>목</div>
 				</div>
 				<div class="weekdate-date">
-					<div>28</div>
+					<div>3</div>
 					<div>금</div>
 				</div>
 				<div class="weekdate-date">
-					<div>29</div>
+					<div>4</div>
 					<div>토</div>
 				</div>
 				<div class="weekdate-date" style="border-style: none;">
-					<div>30</div>
+					<div>5</div>
 					<div>일</div>
 				</div>
 			</div>
@@ -416,14 +416,14 @@
 			<button class="btn btn-default">회고관리</button>
 		</div>
 		<div>
-			<div class="diary-header margin-b20">루틴회고1</div>
+			<div class="diary-header margin-b20">스스로에게 피드백!</div>
 			<div>
 				<textarea class="diary-text margin-b40" rows="" cols=""
 					placeholder="오늘 루틴은 어땠나요?"></textarea>
 			</div>
 		</div>
 		<div>
-			<div class="diary-header margin-b20">루틴회고2</div>
+			<div class="diary-header margin-b20">오늘의 나에게!</div>
 			<div>
 				<textarea class="diary-text margin-b20" rows="" cols=""
 					placeholder="수고한 나에게 한마디!"></textarea>

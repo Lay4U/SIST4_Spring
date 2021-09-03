@@ -6,7 +6,7 @@
 <div class="container">
 
 
-	<h1 class="page-header">마이루틴</h1>
+	<h1 class="page-header">마이루틴 👍</h1>
 
 	<div id="my-profile">
 		<i id="my-photo" class="fas fa-user-circle"></i>
@@ -385,7 +385,7 @@
 	<div id="my-diary">
 
 		<div id="diary-date">
-			<div class="diary-header" style="width: 100px;">데일리회고</div>
+			<div class="diary-header" style="width: 200px;">데일리회고 ✨</div>
 			<div id="diary-weekdate">
 				<!-- <div class="weekdate-date" onclick="open(2021-08-30)">
 				<input type="radio" name="date" class="weekdate-date btn1" id="id_btn_01" /> 
@@ -436,8 +436,11 @@
 		<div class="diary-header margin-b20 button-left">
 			<button class="btn btn-default">회고관리</button>
 		</div>
+	
+	<!-- 다이어리 쓰기기능 -->
+	<form id="formdiary">
 		<div>
-			<div class="diary-header margin-b20">스스로에게 피드백!</div>
+			<div class="diary-header margin-b20" id="">스스로에게 피드백!</div>
 			<div>
 				<textarea class="diary-text margin-b40" rows="" cols=""
 					placeholder="오늘 루틴은 어땠나요?"></textarea>
@@ -453,7 +456,8 @@
 		<div class="button-left">
 			<button class="btn btn-success">저장하기</button>
 		</div>
-	</div>
+	</form> <!-- 다이어리저장 -->
+  </div>
 </div>
 
 <script>

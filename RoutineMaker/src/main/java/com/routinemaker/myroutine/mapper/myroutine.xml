@@ -25,5 +25,14 @@
 		insert into TBLROUTINESTATE (ROUTINESTATESEQ, STARTDATE, KIND, REST, TIME, STATE, ALARM, REPEAT, READCOUNT, MEMBERSEQ, ROUTINESEQ) 
 	values (routineStateSeq.nextVal, #{startDate}, '루틴', 'N', #{time}, #{state}, #{alarm}, #{repeat}, 1, 1, (SELECT MAX(ROUTINESEQ) FROM TBLROUTINE))
 	</insert>
+	
+	<select id="future" parameterType="String" resultType="com.routinemaker.myroutine.MyroutineDTO">
+		select name, startdate from vwfutureroutine 
+		where memberseq = #{seq} and regdate > '2021-09-01' order by startdate asc
+	</select>
+	
+	<select id="getDiary" parameterType="String" resultType="com.routinemaker.myroutine.DailyDiaryDTO">
+		select * from tbldiary where memberseq = 1 and regdate = #{date}
+	</select>
 
 </mapper>

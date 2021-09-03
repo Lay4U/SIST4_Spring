@@ -17,8 +17,7 @@
 
 #my-date {position: relative; border: 1px solid transparent; margin-bottom: 60px;}
 #my-date1 {width: 280px; position: absolute; left: 0px; top:0px; font-size: 1.3em; border:3px solid #6A2598; padding: 3px 7px; text-align: center;}
-#input_submit {position:absolute; left: 270px; top:0px;}
-#my-date input[type=date] {position:absolute; left: 300px; top:0px;}
+#my-calendar {position:absolute; left: 300px; top:0px;}
 #my-date2 {position: absolute; right: 0px; top:0px;}
 
 
@@ -36,32 +35,32 @@
 .button-left {text-align: right;}
 
 /* 데일리회고 날짜부분 */
-#diary-weekdate {text-align: center; height: 80px; margin-left: 30px; margin-bottom: 200px; 
+.diary-header{font-size: 20px;}
+#diary-weekdate { width:100%; font-size: 1.3em; padding-top:20px;  text-align: left; height: 80px; margin-left: 30px; margin-bottom: 200px; 
 				position: absolute; right:10px; top:30px;}
-#diary-weekdate div {width: 50px; float: left; font-size: 1.1em; padding-right: 5px; margin: 5px auto;}
-
+/* #diary-weekdate div {width: 50px; float: left; font-size: 1.1em; padding-right: 5px; margin: 5px auto;}*/
 .margin-b20 {margin-bottom: 20px;}
 .margin-b40 {margin-bottom: 40px;}
 .font-strong {color: #93db4a;}
 .tr20 {width:20px;}
 .tr30 {width:30px; !important}
 .tr45 {width:45px;}
+.tr70 {width:70px;}
 .tr100 {width:100px;}
+.tr150 {width:150px;}
 .tr200 {width:200px;}
+.tr250 {width:250px;}
+.tr270 {width:270px;}
+.tr280 {width:280px;}
 .tr300 {width:300px;}
 .height30 {height: 30px;}
 
-.diary-header{font-size: 20px;}
+#my-table {width: 100%;}
 
-#my-table th, #my-table td{ text-align: center; vertical-align: middle;}
-#my-table tr:first-child > th:nth-child(2) {width: 100px;}
-#my-table tr:first-child > th:nth-child(3) {width: 150px;}
-#my-table tr:first-child > th:nth-child(4) {width: 250px;}
+#my-table th, #my-table td {text-align: center; vertical-align: middle;}
 #my-table .rountinename {color: #93db4a; text-decoration: underline;}
-#my-table tr:last-child > td:last-child {width: 280px;}
 
-
-#routineplus th,#routineplus td {vertical-align: middle;}
+#routineplus th, #routineplus td {vertical-align: middle; text-align: center;}
 #routineplus th {height: 50px;}
 
 
@@ -132,3 +131,9 @@ p {
 	font-size:15px;
 	font-weight:bold;
 }
+
+
+/* 라디오버튼 */
+.btn1 {opacity:0;}
+.btn1 > label{padding: 5px 10px; border-left:1px solid #ccc; border-radius:3px;}
+input[type=radio]:checked + label { background: #ffffc8; border:1px solid #8633C0; padding: 10px 10px;}

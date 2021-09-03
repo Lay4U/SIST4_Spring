@@ -55,7 +55,7 @@ input[name=rb] {
 	/* border:1px solid green; */
 }
 
-input[type=radio]:checked+label {
+#left > .submonth> .subright> input[type=radio]:checked+label   {
 	font-weight: bold;
 	color: #692498;
 	text-decoration: underline;

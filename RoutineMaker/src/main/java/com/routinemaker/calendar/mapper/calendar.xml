@@ -54,7 +54,7 @@
 		SELECT  
 			count(distinct successdate) as successday,  <!-- 초록불만든 날(모든 루틴성공인 날짜들의 수) -->
 			to_char(sysdate,'yyyy-mm-dd') as todate,
-			round(sysdate) - round(sysdate,'mm') as allday <!-- 이번달 1일부터 어제까지의 날짜들의 수 -->
+			round(sysdate-1) - round(sysdate,'mm') as allday <!-- 이번달 1일부터 어제까지의 날짜들의 수 -->
 		FROM VWROUTINESUCCESS vw 
 			where vw.memberseq = #{seq}
 				and vw.successdate between trunc(sysdate,'mm') and to_char(sysdate-1,'yyyy-mm-dd') 

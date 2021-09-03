@@ -136,4 +136,4 @@ p {
 /* 라디오버튼 */
 .btn1 {opacity:0;}
 .btn1 > label{padding: 5px 10px; border-left:1px solid #ccc; border-radius:3px;}
-input[type=radio]:checked + label { background: #ffffc8; border:1px solid #8633C0; padding: 10px 10px;}
+ #diary-weekdate > input[type=radio]:checked + label { background: #ffffc8; border:1px solid #8633C0; padding: 10px 10px;}

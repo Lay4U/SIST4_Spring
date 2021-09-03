@@ -79,7 +79,7 @@
 						
 						<table class="table table-bordered" id="routineplus">
 							<tr>
-								<th colspan="2"><input type="text" value="JavaScript 공부하기"></th>
+								<th colspan="2"><input type="text" value="아침 05:00기상☀"></th>
 								
 							</tr>
 							<tr>
@@ -98,7 +98,12 @@
 							</tr>
 							<tr>
 								<th>알람설정</th>
-								<td>on / off</td>
+								<td><label class="switch">
+								<input type="checkbox" id="alarmset">
+								<span class="slider round"></span>
+								</label>
+									<p class="ap">OFF</p>
+									<p class="ap" style="display: none;">ON</p></td>
 							</tr>
 							<tr>
 								<th>하고싶은 이유</th>
@@ -106,7 +111,14 @@
 							</tr>
 							<tr>
 								<th>루틴반복주기</th>
-								<td>on / off</td>
+								<td>
+									<label class="switch">
+										<input type="checkbox" name="repeat" id="routineset">
+										<span class="slider round"></span>
+									</label>
+										<p class="rp">OFF</p>
+										<p class="rp" style="display: none;">ON</p>
+								</td>
 							</tr>
 							<tr>
 								<th>테마</th>

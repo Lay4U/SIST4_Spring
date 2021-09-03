@@ -1,6 +1,7 @@
 #left, #right {
 	height: 650px;
 	margin: 40px 0 0 10px;
+	float: left;
 	/* border: 1px solid black; */
 }
 
@@ -10,31 +11,6 @@
 
 #left {
 	width: 450px;
-}
-
-#left, #right, #usericon, #userinfo {
-	float: left;
-}
-
-#usericon {
-	font-size: 6em;
-	margin: 0 20px 10px 25px;
-	color: rgb(71, 91, 74);
-}
-
-.userinfo {
-	height: 80px;
-	width: 300px;
-	margin: 15px 0px 10px 20px;
-	/* border: 1px solid red; */
-}
-
-#username {
-	font-size: 1.5em;
-}
-
-#widthdate {
-	font-size: 1.2em;
 }
 
 .month {
@@ -161,7 +137,7 @@ input[type=radio]:checked+label {
 	/* border:1px solid blue; */
 }
 
-#progress-bar {
+#greenbar {
 	height: 20px;
 }
 

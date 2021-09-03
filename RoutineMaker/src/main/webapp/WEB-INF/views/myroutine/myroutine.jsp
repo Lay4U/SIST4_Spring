@@ -8,7 +8,7 @@
 
 	<h1 class="page-header">마이루틴 👍</h1>
 
-	<div id="my-profile">
+	<!-- <div id="my-profile">
 		<i id="my-photo" class="fas fa-user-circle"></i>
 		<ul>
 			<li>사용자:&nbsp;&nbsp;<span>${dto.name}</span></li>
@@ -16,7 +16,17 @@
 			</li>
 			<li>자기소개:&nbsp;&nbsp;<span>${dto.selfIntro}</span></li>
 		</ul>
-	</div>
+	</div> -->
+	
+	<div id="my-profile" style=" display:flex;">
+         <img style="width:94px;" src="/routinemaker/resources/images/user.jpg"/>
+      <ul style="padding-top:15px;">
+         <li>사용자:&nbsp;&nbsp;<span>${dto.name}</span></li>
+         <li>루틴 시작한 지, <span class="font-strong">${dto.regdate}</span>일
+         </li>
+         <li>자기소개:&nbsp;&nbsp;<span>${dto.selfIntro}</span></li>
+      </ul>
+   </div>
 
 	<div id="myroutine">
 		<div id="my-date">
@@ -430,12 +440,12 @@
 				</div> -->
 				
 				<input type="radio" name="date" class="btn1" id="id_btn_01" /> <label for="id_btn_01">30<span>(월)</span></label>
-				<input type="radio" name="date" class="btn1" id="id_btn_02" /> <label for="id_btn_02">31<span>(화)</span></label>
-				<input type="radio" name="date" class="btn1" id="id_btn_03" /> <label for="id_btn_03">1<span>(수)</span></label>
-				<input type="radio" name="date" class="btn1" id="id_btn_04" /> <label for="id_btn_04">2<span>(목)</span></label>
-				<input type="radio" name="date" class="btn1" id="id_btn_05" checked/> <label for="id_btn_05">3<span>(금)</span></label>
-				<input type="radio" name="date" class="btn1" id="id_btn_06" /> <label for="id_btn_06">4<span>(토)</span></label>
-				<input type="radio" name="date" class="btn1" id="id_btn_07" /> <label for="id_btn_07">5<span>(일)</span></label>
+            <input type="radio" name="date" class="btn1" id="id_btn_02" /> <label for="id_btn_02">31<span>(화)</span></label>
+            <input type="radio" name="date" class="btn1" id="id_btn_03" /> <label for="id_btn_03">1<span>(수)</span></label>
+            <input type="radio" name="date" class="btn1" id="id_btn_04" /> <label for="id_btn_04">2<span>(목)</span></label>
+            <input type="radio" name="date" class="btn1" id="id_btn_05" checked/> <label for="id_btn_05">3<span>(금)</span></label>
+            <input type="radio" name="date" class="btn1" id="id_btn_06" disabled/> <label for="id_btn_06">4<span>(토)</span></label>
+            <input type="radio" name="date" class="btn1" id="id_btn_07" disabled/> <label for="id_btn_07">5<span>(일)</span></label>
 			
 			
 			</div>
@@ -631,6 +641,26 @@
 			}
 		});
 	});
+	
+	
+	//0903내용 초기화
+	   $('#id_btn_05').click(function() {
+	      
+	      $('#diarytxt').text('');
+	      
+	       $.ajax({
+	         type:'GET',
+	         url: 'http://localhost:8090/routinemaker/myroutine/dailydiary.action?date=' + '2021-09-03',
+	         dataType: 'json',
+	         success: function(obj) {
+	            //alert(obj.content);
+	            $('#diarytxt').text(obj.content);
+	         },
+	         error: function(a,b,c) {
+	            console.log(a,b,c);
+	         }
+	      });
+	   });
 	
 	
 </script>

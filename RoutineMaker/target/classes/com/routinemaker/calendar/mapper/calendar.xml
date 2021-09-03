@@ -8,14 +8,13 @@
 		select * from tblMember where memberseq = #{seq}
 	</select>
 
-
 	<!-- 유저이름가져오기 -->
 	<select id="getUserName" resultType="calendar" parameterType="String">
 		select * from tblMember where memberseq = #{seq}
 	</select>
 	<!-- 루틴시작한지 몇일째 -->
  	<select id="getWithdate" resultType="calendar" parameterType="String">
-		select trunc(sysdate)-to_date(regdate) as withdate from tblmember where memberseq = #{seq}
+		select to_char(sysdate,'yyyy-mm-dd') as todate, trunc(sysdate)-to_date(regdate) as withdate from tblmember where memberseq = #{seq}
 	</select> 
 	<!-- 현재 년도와 월 (list)-->
 	<select id="getSysdate" resultType="calendar">
@@ -24,7 +23,7 @@
 	<!-- 이 달의 루틴-> 완료루틴들 (list) -->
 	<select id="pastRoutine" resultType="calendar" parameterType="String">
 		select
-			r.name as pastRoutineName
+			distinct r.name as pastRoutineName
 		from tblRoutineState rs
 			inner join tblRoutine r
 				on rs.routineseq = r.routineSeq
@@ -38,7 +37,7 @@
 	<!-- 이 달의 루틴-> 진행 루틴들 (list) -->
 	<select id="nowRoutine" resultType="calendar" parameterType="String">
 		select
-			r.name as nowRoutineName
+			distinct r.name as nowRoutineName
 		from tblRoutineState rs
 			inner join tblRoutine r
 				on rs.routineseq = r.routineSeq
@@ -50,12 +49,41 @@
 			and rs.startdate > sysdate
 	</select>
 	
+	<!-- 루틴수행일, 이번달 초록불 달성률을 위한 쿼리  -->
+	<select id="successday" resultType="calendar" parameterType="String">
+		SELECT  
+			count(distinct successdate) as successday,  <!-- 초록불만든 날(모든 루틴성공인 날짜들의 수) -->
+			to_char(sysdate,'yyyy-mm-dd') as todate,
+			round(sysdate) - round(sysdate,'mm') as allday <!-- 이번달 1일부터 어제까지의 날짜들의 수 -->
+		FROM VWROUTINESUCCESS vw 
+			where vw.memberseq = #{seq}
+				and vw.successdate between trunc(sysdate,'mm') and to_char(sysdate-1,'yyyy-mm-dd') 
+				and vw.successstate ='Y'
+	</select>
+	<!-- round(sysdate) - round(sysdate,'mm') trunc(sysdate,'mm') and to_char(sysdate,'yyyy-mm-dd')  -->
+
+	<!-- 이번달 초록불 달성 횟수 -->
+	<select id="green" resultType="calendar" parameterType="String">
+		select  
+         nvl(sum(case 
+                	when vw.successstate ='N' then 1
+              	end),0) as green,
+       	 vw.successdate as greendate
+        from vwroutinesuccess vw
+        where vw.successdate between trunc(sysdate,'mm') and to_char(sysdate-1,'yyyy-mm-dd')  
+        		and vw.memberseq = #{seq}
+         				group by vw.successdate
+         					order by vw.successdate asc
+	</select> 
+	
+	<select id="getdiary" resultType="calendar" parameterType="String">
+			select 
+				count(*) as diarycnt <!-- 회고작성한 일수 --> 
+			from tbldiary 
+			where memberseq=1 
+				and regdate between trunc(sysdate,'mm') and to_char(sysdate-1,'yyyy-mm-dd')
+	</select>
+	
 	
 
-	<!-- <select id="name" resultType="com.routinemaker.calendar.CalendarDTO" parameterType="String">
-		select * from tblMember where memberseq = #{seq}
-	</select> -->
-
-
-	
 </mapper>

@@ -36,6 +36,20 @@ public class CalendarDAO {
 		//이 달의 루틴->진행루틴들
 		return template.selectList("calendar.nowRoutine", seq);
 	}
+	
+	public List<CalendarDTO> green(String seq) {
+		//초록불 달성 일자들 반환
+		return template.selectList("calendar.green", seq);
+	}
+	
+	public CalendarDTO successday(String seq) {
+		//루틴수행일, 이번달 초록불 달성률
+		return template.selectOne("calendar.successday", seq);
+	}
+	
+	public CalendarDTO getdiary(String seq) {
+		return template.selectOne("calendar.getdiary", seq);
+	}
 
 
 

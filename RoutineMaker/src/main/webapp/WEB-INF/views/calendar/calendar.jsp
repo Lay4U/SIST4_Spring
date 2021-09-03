@@ -12,18 +12,19 @@
 
 	<!-- 왼쪽 단락 -->
       <div id="left">
-      
-	    <i id="usericon" class="fas fa-user-circle"></i>
-	    <div class="userinfo">
-	      	<p id="username">${username.name}</p>
-	      	<p id="withdate">루틴 시작한지 ${withdate.withdate}일 째</p>
-      	</div>
-      	
+      <div id="my-profile" style=" display:flex;">
+			<img style="width:21%;" src="/routinemaker/resources/images/user.jpg"/>
+			<ul style="padding-top:15px;">
+				<li>사용자:&nbsp;&nbsp;<span>${username.name}</span></li>
+				<li>루틴 시작한 지, <span class="font-strong">${withdate.withdate}</span>일
+				</li>
+				<li>자기소개:&nbsp;&nbsp;<span>${username.selfIntro}</span></li>
+			</ul>
+	</div>
+       	
       	<div class="month">
 	      	<i class="fas fa-chevron-left"></i>
-	      	<c:forEach items="${dateList}" var="dto">
-	      	&nbsp;&nbsp;${dto.sysyear}년 ${dto.sysmonth}월&nbsp;&nbsp;
-	      	</c:forEach>
+	      	&nbsp;&nbsp;${getSuccess.todate}&nbsp;&nbsp;
 	      	<i class="fas fa-chevron-right"></i>
       	</div>
       	
@@ -70,13 +71,13 @@
      	<div class="calsub">
      	<div style="font-size:4em; margin-left:-20px;">🚥</div>
       	<div><i class="far fa-check-square"></i> 루틴 수행
-      		<div><span>6</span>일</div>
+      		<div><span>${getSuccess.successday}</span>일</div>
       	</div>
       	<div><i class="far fa-dot-circle"></i> 초록불
-      		<div><span>3</span>회</div>
+      		<div><span class="green"></span>회</div>
       	</div>
       	<div><i class="far fa-edit"></i> 회고 작성
-      		<div><span>9</span>일</div>
+      		<div><span>${getDiary.diarycnt}</span>일</div>
       	</div>
      	</div>
 
@@ -103,10 +104,10 @@
 		<div class="successrate">
 		<h4>&nbsp;이번 달 초록불 달성률 <span style="font-size:1.3em;">😎</span></h4>
 			<div class="progress-bar progress-bar-success" role="progressbar" 
-				id="progress-bar" aria-valuemin="0" aria-valuemax="100" 
-				style="width: 60%;">60%
+				id="greenbar" aria-valuemin="0" aria-valuemax="100" style="min-width: 1em; width:0%;">
 			</div>
 		</div>
+		
 	
 	</div> <!-- end-<div id="right"> -->
 
@@ -114,7 +115,55 @@
 
 <script>
 
+		let greencnt;
+		let greenper;
+		
+		let todate = ${getSuccess.allday}; //어제까지의 전체 날짜 수
+				
+        $(document).ready(function(seq){
+
+       		$.ajax({
+				type: 'GET',
+				url: '/routinemaker/calendar/m1.action',
+				data: 'seq=' + $('#greenseq').val(),
+				dataType: 'json',
+				success: function(greenlist) {
+						greencnt =0;
+					$(greenlist).each(function(index, item) {
+						
+						if(item.green == 0){
+							greencnt++;
+						}	
+						
+					});
+					
+					$('.green').text(greencnt);
+					greenper = (greencnt/todate)*100;
+			        //alert('greencnt='+greencnt);
+			        //alert('greenper='+greenper);
+			        
+			        $('#greenbar').css('width',greenper+'%');
+			        if(greenper == 0) {
+			        	$('#greenbar').css('color','black');
+			        	$('#greenbar').css('width','200px');
+			        	$('#greenbar').text('이번 달에 달성한 초록불이 없어요😭');
+			        }else {
+			        	$('#greenbar').text(greenper+'%');
+			        }
+			      		
+
+				},error: function(a,b,c){
+					console.log(a,b,c);
+				}
+			});
+       });
+		
+        
+        
+    
+
 	var today = new Date();//오늘 날짜//내 컴퓨터 로컬을 기준으로 today에 Date 객체를 넣어줌
+	
 	var date = new Date();//today의 Date를 세어주는 역할
 	
 	function buildCalendar() {//현재 달 달력 만들기
@@ -124,17 +173,21 @@
 		//new를 쓰지 않았을때 이번달을 받아오려면 +1을 해줘야한다. 
 		//왜냐면 getMonth()는 0~11을 반환하기 때문
 		var lastDate = new Date(today.getFullYear(), today.getMonth() + 1, 0);
+		//alert('lastDate='+lastDate);
 		//이번 달의 마지막 날
 		//new를 써주면 정확한 월을 가져옴, getMonth()+1을 해주면 다음달로 넘어가는데
 		//day를 1부터 시작하는게 아니라 0부터 시작하기 때문에 
 		//대로 된 다음달 시작일(1일)은 못가져오고 1 전인 0, 즉 전달 마지막일 을 가져오게 된다
 		var tbCalendar = document.getElementById("calendar");
+		//alert('tbCalendar='+tbCalendar);
 		//날짜를 찍을 테이블 변수 만듬, 일 까지 다 찍힘
 		var tbCalendarYM = document.getElementById("tbCalendarYM");
+		//alert('tbCalendarYM='+tbCalendarYM);
 		//테이블에 정확한 날짜 찍는 변수
 		//innerHTML : js 언어를 HTML의 권장 표준 언어로 바꾼다
 		//new를 찍지 않아서 month는 +1을 더해줘야 한다. 
 		tbCalendarYM.innerHTML = today.getFullYear() + "년 " + (today.getMonth() + 1) + "월";
+		//alert('tbCalendarYM.innerHTML='+tbCalendarYM.innerHTML);
 
 		/*while은 이번달이 끝나면 다음달로 넘겨주는 역할*/
 		while (tbCalendar.rows.length > 2) {
@@ -146,6 +199,7 @@
 		}
 		var row = null;
 		row = tbCalendar.insertRow();
+		//alert('row='+row);
 		//테이블에 새로운 열 삽입//즉, 초기화
 		var cnt = 0;// count, 셀의 갯수를 세어주는 역할
 		// 1일이 시작되는 칸을 맞추어 줌
@@ -187,5 +241,7 @@
 	}
 	
 	buildCalendar();
+	
+	
 	
 </script>

@@ -240,7 +240,11 @@
 
 
 	<script>
-		
+	 $('#btnAdd').click(function(){
+			
+		 alert("루틴 추가 성공🎉");
+		 	
+	 });
 	</script>
 </body>
 </html>

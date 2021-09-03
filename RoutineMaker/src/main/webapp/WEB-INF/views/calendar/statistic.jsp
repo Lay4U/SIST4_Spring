@@ -14,35 +14,26 @@
 	<!-- 왼쪽 단락 -->
 	<div id="left">
 
-		<i id="usericon" class="fas fa-user-circle"></i>
-		<div class="userinfo">
-			<p id="username">${username.name}</p>
-			<p id="withdate">루틴 시작한지 ${withdate.withdate}일 째</p>
-		</div>
-
 		<div class="month" style="margin-left:-75px;">
 	      	<i class="fas fa-chevron-left"></i>
-	      	<c:forEach items="${dateList}" var="dto">
-	      	&nbsp;&nbsp;${dto.sysyear}년 ${dto.sysmonth}월&nbsp;&nbsp;
-	      	</c:forEach>
+	      	&nbsp;&nbsp;${withdate.todate}&nbsp;&nbsp;
 	      	<i class="fas fa-chevron-right"></i>
 		</div>
-
 
 		<div class="bigbarleft">
 			<div class="bigbar">
 				<div class="barbox">
-					<div>이번 달 루틴 성공률&nbsp;&nbsp;(10/100)</div>
+					<div>이번 달 루틴 성공률&nbsp;&nbsp;(1/2)</div>
 					<div class="progress-bar progress-bar-info progress-bar-striped active"
 						role="progressbar" id="bar1" aria-valuemin="0"
-						aria-valuemax="100" style="width: 60%;"></div>
+						aria-valuemax="100" style="width: 50%;"></div>
 				</div>
 
 				<div class="barbox">
 					<div>이번 달 목표 달성까지 남은 달성률&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🚩 목표:70%</div>
 					<div class="progress-bar progress-bar-info progress-bar-striped active"
 						role="progressbar" id="bar2" aria-valuemin="0"
-						aria-valuemax="100" style="width: 100%;"></div>
+						aria-valuemax="100" style="width: 70%;"></div>
 				</div>
 			</div>
 		</div>
@@ -50,10 +41,10 @@
 		<div class="bigbarright">
 			<div class="bigbar">
 				<div class="barbox">
-					<p id="p1">60% 달성!</p>
+					<p id="p1">50% 달성!</p>
 				</div>
 				<div class="barbox">
-					<p id="p2">100% 남았어요!</p>
+					<p id="p2">30% 남았어요!</p>
 				</div>
 			</div>
 		</div>
@@ -63,13 +54,13 @@
 		<div class="smallbar">
 			<div class="barleft">
 				<div class="barbox">
-					<p>초록불🟢</p>
+					<p>초록불 💚</p>
 				</div>
 				<div class="barbox">
-					<p>노란불🟡</p>
+					<p>노란불 💛</p>
 				</div>
 				<div class="barbox">
-					<p>빨간불🔴</p>
+					<p>빨간불 💔</p>
 				</div>
 			</div>
 
@@ -77,7 +68,7 @@
 				<div class="barbox">
 					<div class="progress-bar progress-bar-success" role="progressbar"
 						id="bar3" aria-valuemin="0" aria-valuemax="100"
-						style="min-width: 1.6em; width: 35%;"></div>
+						style="min-width: 1.6em; width: 50%;"></div>
 				</div>
 
 				<div class="barbox">
@@ -89,19 +80,19 @@
 				<div class="barbox">
 					<div class="progress-bar progress-bar-danger" role="progressbar"
 						id="bar5" aria-valuemin="0" aria-valuemax="100"
-						style="min-width: 1.6em; width: 100%;"></div>
+						style="min-width: 1.6em; width: 0%;"></div>
 				</div>
 			</div>
 			
 			<div class="barpercent">
 				<div class="barbox">
-					<p id="bar3percent">35%</p>
+					<p id="bar3percent">50%</p>
 				</div>
 				<div class="barbox">
 					<p id="bar4percent">50%</p>
 				</div>
 				<div class="barbox">
-					<p id="bar5percent">100%</p>
+					<p id="bar5percent">0%</p>
 				</div>
 			</div><!-- end-<div class="barpercent"> -->
 
@@ -113,8 +104,7 @@
 	<!-- 오른쪽 단락 -->
 	<div id="right">
 		
-		<div class="userinfo"></div>
-		<div class="month"><p>이번 달 루틴 피드백📢</p></div>
+		<div><p style="font-size:2em;">이번 달 루틴 피드백📢</p></div>
 		
 		<div class="feedbackbox">
 			<div class="speech-bubble"><span>루틴 달성률이 부족해요!</span></div>

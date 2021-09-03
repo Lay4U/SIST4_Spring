@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class CalendarController {
@@ -21,38 +22,56 @@ public class CalendarController {
 	@RequestMapping(value = "/calendar/calendar.action", method = { RequestMethod.GET })
 	public String getUserInfo(HttpServletRequest req, HttpServletResponse resp, HttpSession session) {
 
-		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		//À¯Àú¸í°¡Á®¿À±â
 		CalendarDTO username = dao.getUserName(seq);
-		//ï¿½Ô²ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Â°
+		//ÇÔ²²ÇÑÁö ¸îÀÏÂ°
 		CalendarDTO withdate = dao.getWithdate(seq);
-		//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½,ï¿½ï¿½ 
+		//ÇöÀç ³â,¿ù 
 		List<CalendarDTO> dateList = dao.getSysdate();
-		//ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ¾->ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ¾ï¿½ï¿½
+		//ÀÌ ´ÞÀÇ ·çÆ¾->Áö³­·çÆ¾µé
 		List<CalendarDTO> pastRoutineList = dao.pastRoutine(seq);
-		//ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ¾->ï¿½ï¿½ï¿½ï¿½ï¿½Æ¾ï¿½ï¿½
+		//ÀÌ ´ÞÀÇ ·çÆ¾->ÁøÇà·çÆ¾µé
 		List<CalendarDTO> nowRoutineList = dao.nowRoutine(seq);
+		//·çÆ¾ ¼öÇàÀÏ, ÀÌ¹ø´Þ ÃÊ·ÏºÒ ´Þ¼º·ü
+		CalendarDTO getSuccess = dao.successday(seq);
+		//È¸°í ÀÛ¼º ÀÏ¼ö
+		CalendarDTO getDiary = dao.getdiary(seq);
+		
 		
 		req.setAttribute("username", username);
 		req.setAttribute("withdate", withdate);
 		req.setAttribute("dateList", dateList);
 		req.setAttribute("pastRoutineList", pastRoutineList);
 		req.setAttribute("nowRoutineList", nowRoutineList);
+		req.setAttribute("getSuccess", getSuccess);
+		req.setAttribute("getDiary", getDiary);
 
 		return "calendar.calendar";
+	}
+	
+	@RequestMapping(value = "/calendar/m1.action", method = { RequestMethod.GET })
+	@ResponseBody
+	public List<CalendarDTO> getgreen(HttpServletRequest req, 
+							    HttpServletResponse resp, 
+							    HttpSession session ) {
+		
+		
+		
+	return dao.green(seq);
+
 	}
 
 
 	@RequestMapping(value = "/calendar/statistic.action", method = { RequestMethod.GET })
 	public String statistic(HttpServletRequest req, HttpServletResponse resp, HttpSession session) {
 
-		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		//À¯Àú¸í°¡Á®¿À±â
 		CalendarDTO username = dao.getUserName(seq);
-		//ï¿½Ô²ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Â°
+		//ÇÔ²²ÇÑÁö ¸îÀÏÂ°
 		CalendarDTO withdate = dao.getWithdate(seq);
-		//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½,ï¿½ï¿½ 
+		//ÇöÀç ³â,¿ù 
 		List<CalendarDTO> dateList = dao.getSysdate();
-		
-		
+
 		req.setAttribute("username", username);
 		req.setAttribute("withdate", withdate);
 		req.setAttribute("dateList", dateList);

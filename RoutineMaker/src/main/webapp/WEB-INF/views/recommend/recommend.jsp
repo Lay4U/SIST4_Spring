@@ -80,19 +80,18 @@
 		
 			<div class="list-group list-group-recommend">
 				<c:forEach var="dto" items="${bestRoutine}">
-					<a href="#routineModal" data-toggle="modal"  data-title="Test Title"
+					<a href="#routineModal" data-toggle="modal" data-title="${dto.name}" 
 					id="color${dto.routineseq}" class="list-group-item">${dto.routineseq}. ${dto.name}</a>
 				</c:forEach>
 			</div>
-		
 		</div>
 		
 	</div>
 
 
 
-	<!-- Modal -->
-	<form id="addForm">
+	<!-- 루틴 추가하기 모달 -->
+	<form method="POST" action="/routinemaker/myroutine/routineplus.action">
 		<div class="modal fade" id="routineModal" data-backdrop="static"
 			tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel"
 			aria-hidden="true" >
@@ -102,7 +101,7 @@
 			
 					<div class="modal-header">
 						<h5 class="modal-title" id="staticBackdropLabel" 
-								style="text-align:center; font-size: 1.5em;">내 루틴에 추가하기</h5>
+								style="text-align:center; font-size: 1.5em;">내 루틴에 추가하기💗</h5>
 						
 						<button type="button" class="close" data-dismiss="modal"
 							aria-label="Close">
@@ -115,10 +114,8 @@
 						
 						<table class="table table-bordered" id="routineplus">
 							<tr>
-								<th colspan="2">
-								
-								
-								<h4 class="modal-title1" id="routinename">${dto.name }</h4>
+								<th colspan="2" style="text-align:center;">
+								<h4 class="modal-title1" id="routinename">${dto.name}</h4>
 								
 								
 								</th>
@@ -127,20 +124,22 @@
 								<th>타임필터</th>
 								<td>
 									<select id="time" name="time" class="tr100 height30">
-										<option value="">☀아침</option>
-										<option value="">☕점심</option>
-										<option value="">🌙저녁</option>
+										<option value="아침">아침</option>
+										<option value="오후">오후</option>
+										<option value="저녁">저녁</option>
 									</select>
 								</td>
 							</tr>
 							<tr>
 								<th>상황/시간</th>
-								<td><input type="text" name="" id="" class="tr300 height30" placeholder="ex) 운동 후, 아침 먹은 후"></td>
+								<td><input type="text" "text" name="state" 
+								class="tr300 height30" placeholder="ex) 운동 후, 아침 먹은 후"></td>
 							</tr>
 							<tr>
 								<th>알람설정</th>
-								<td><label class="switch"> <input type="checkbox"
-										id="alarmset"> <span class="slider round"></span>
+								<td><label class="switch">
+								<input type="checkbox" id="alarmset">
+								<span class="slider round"></span>
 								</label>
 									<p class="ap">OFF</p>
 									<p class="ap" style="display: none;">ON</p></td>
@@ -153,36 +152,36 @@
 								<th>루틴반복주기</th>
 								<td>
 									<label class="switch">
-									<input type="checkbox" id="routineset">
-									<span class="slider round"></span>
+										<input type="checkbox" name="repeat" id="routineset">
+										<span class="slider round"></span>
 									</label>
-									<p class="rp">OFF</p>
-									<p class="rp" style="display: none;">ON</p>
+										<p class="rp">OFF</p>
+										<p class="rp" style="display: none;">ON</p>
 								</td>
 							</tr>
 							<tr>
 								<th>테마</th>
 								<td>
 									<select id="theme" name="theme" class="tr100 height30">
-										<option value="">모닝루틴</option>
-										<option value="">저녁루틴</option>
-										<option value="">건강</option>
-										<option value="">생산성</option>
-										<option value="">셀프케어</option>
-										<option value="">생활</option>
-										<option value="">여유</option>
-										<option value="">관계</option>
-										<option value="">성장</option>
-										<option value="">공부</option>
-										<option value="">경제</option>
-										<option value="">경제</option>
-										<option value="">기타</option>
+										<option value="모닝루틴">모닝루틴</option>
+										<option value="저녁루틴">저녁루틴</option>
+										<option value="건강">건강</option>
+										<option value="생산성">생산성</option>
+										<option value="셀프케어">셀프케어</option>
+										<option value="생활">생활</option>
+										<option value="여유">여유</option>
+										<option value="관계">관계</option>
+										<option value="성장">성장</option>
+										<option value="공부">공부</option>
+										<option value="경제">경제</option>
+										<option value="기타">기타</option>
+										
 									</select>
 								</td>
 							</tr>
 							<tr>
 								<th>희망시작일</th>
-								<td><input type="date" name="sysdate" id=""></td>
+								<td><input type="date" name="startDate" id=""></td>
 							</tr>
 						</table>
 					
@@ -200,58 +199,17 @@
 
 	<script>
 	
+	
 	//모달에 루틴 제목 불러오기
-	
-		/* var routineName="";  //루틴이름을 받아올 변수
-  
-		    $(document).ready(function() {     
-		        $('#routineModal').on('show.bs.modal', function(event) {          
-		        	routineName = $(event.relatedTarget).data('name');
-		         
-		        });
-		        
-		    }); */
-
-
-		    $('#routineModal').on('show.bs.modal', function (event) { 
-		    	  var button = $(event.relatedTarget) // 모달 윈도우를 오픈하는 버튼
-		    	  var titleTxt = button.data('title') // 버튼에서 data-title 값을 titleTxt 변수에 저장
-		    	  var modal = $(this)
-		    	  modal.find('.modal-title1').text(titleTxt) // 모달위도우에서 .modal-title을 찾아 titleTxt 값을 치환
-		    	})
+		
+		$('#routineModal').on('show.bs.modal', function (event) { 
+    	  	var button = $(event.relatedTarget) // 모달 윈도우를 오픈하는 버튼
+	    	var titleTxt = button.data('title') // 버튼에서 data-title 값을 titleTxt 변수에 저장
+	    	var modal = $(this)
+		    modal.find('.modal-title1').text(titleTxt) // 모달위도우에서 .modal-title을 찾아 titleTxt 값을 치환
+		 });
 		
 		
-		
-	/* $('#btnAdd').click(function() {
-		
-		//직렬화: 객체나 배열 등의 데이터를 일련의 하나의 연속된 문자열로 만드는 작업 
-		//alert($('#form7').serialize());
-		
-		$.ajax({
-			type: 'POST',
-			url: '/routinemaker/recommend/routineadd.action',
-			data: $('#addForm').serialize(),
-			dataType: 'json',
-			success: function(result) {
-				
-				if (result == '1') {
-					alert('루틴에 퍼가기 성공했어요🎉');
-				} else {
-					alert('루틴에 퍼가기가 실패했어요😥');
-				}
-				
-			},
-			
-				error: function(a,b,c) {
-					console.log(a,b,c);
-			}
-		
-		});
-	
-	}); */
-
-
-	
 	
 
 	$(function(){
@@ -325,7 +283,11 @@
 					 }); 
 				 
 	 
-		  
+		 $('#btnAdd').click(function(){
+			
+			 alert("루틴 추가 성공🎉");
+			 	
+		 });
 		  
 		  		
 	 

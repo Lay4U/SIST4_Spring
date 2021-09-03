@@ -79,16 +79,17 @@ public class RecommendController {
 		//POST
 		//http://localhost:8090/recommend/routineadd.action
 		//루틴 등록하기
-		@RequestMapping(value = "/recommend/routineadd.action", method = { RequestMethod.POST })
-		@ResponseBody
-		public int routineadd(HttpServletRequest req, HttpServletResponse resp,
-							  HttpSession session ,RecommendDTO dto) {
-			
-			
-			return dao.routineadd(dto);
-		}
-		
-		
+		/*
+		 * @RequestMapping(value = "/recommend/routineadd.action", method = {
+		 * RequestMethod.POST })
+		 * 
+		 * @ResponseBody public int routineadd(HttpServletRequest req,
+		 * HttpServletResponse resp, HttpSession session ,RecommendDTO dto) {
+		 * 
+		 * 
+		 * return dao.routineAdd1(dto); }
+		 * 
+		 */
 		
 		
 		//Ajax 구현
@@ -102,7 +103,18 @@ public class RecommendController {
 	       return dao.routineSearchWord(keyword);
 	    }
 				
-	
+	    
+	    
+	    //테마별 루틴 조회하기
+	    @RequestMapping(value = "/recommend/m2.action", method = { RequestMethod.GET })
+		@ResponseBody
+	    public List<RecommendDTO> list(HttpServletRequest req, HttpServletResponse resp
+										 , HttpSession session, String theme) {
+
+			
+			return dao.getRoutineList(theme);
+			
+		}
 	    
 	    
 	    

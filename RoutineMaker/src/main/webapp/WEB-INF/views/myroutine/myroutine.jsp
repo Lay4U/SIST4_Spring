@@ -191,7 +191,8 @@
 							</tr>
 							<tr>
 								<th>상황/시간</th>
-								<td><input type="text" name="state" class="tr300 height30"></td>
+								<td><input type="text" name="state" 
+								class="tr300 height30"></td>
 							</tr>
 							<tr>
 								<th>알람설정</th>
@@ -244,8 +245,12 @@
 					</div>
 				</div>
 			</div>
-		</div><!-- 모달 -->
+		</div>
+		<!-- 모달 -->
 	</form>
+	
+	
+	
 	
 	<!-- 예약루틴 확인하기 -->
 	<div class="modal fade" id="bookroutine" data-backdrop="static"
@@ -281,7 +286,10 @@
 					</div>
 				</div>
 			</div>
-		</div><!-- 모달 -->	
+		</div>
+		<!-- 모달 -->	
+		
+		
 
 	<!-- 루틴 수정하기 Modal -->
 	<form method="POST" action="/routinemaker/myroutine/routineplus.action">

@@ -6,6 +6,8 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.routinemaker.myroutine.RoutinePlusDTO;
+
 
 
 @Repository
@@ -31,6 +33,16 @@ public class RecommendDAO {
 	}
 
 	
+	//루틴테마별 루틴을 List로 받는다
+		public List<RecommendDTO> getRoutineList(String theme){
+			
+			return template.selectList("recommend.getRoutineList", theme);
+			
+		}
+
+	
+	
+	
 	//루틴번호로 루틴이름을 받아온다.
 	
  	public List<RecommendDTO> routineSearchWord(String keyword){
@@ -39,24 +51,21 @@ public class RecommendDAO {
          
     }
 
- 	
  	//루틴추가하기
-	public int routineadd(RecommendDTO dto) {
+ 	public void routineAdd1(RecommendPlusDTO dto) {
 		
-		return template.insert("recommend.routineadd", dto);
+		//반환값없는 insert
+		template.insert("recommend.routineAdd1", dto);
 	}
-	 
+
+	public void routineAdd2(RecommendPlusDTO dto) {
+		
+		//반환값없는 insert1
+		template.insert("recommend.routineAdd2", dto);
+	}
 
 	
-	
-	/*
-	 * //루틴테마별로 -> 루틴 알려주기 public RecommendDTO routineCheckTheme(String theme) {
-	 * 
-	 * 
-	 * return template.selectOne("recommend.routineCheckTheme", theme); }
-	 */
 
-	
 	
 	
 }

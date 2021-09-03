@@ -87,12 +87,14 @@
 			
 			<div class="container-padding-horizen"></div>
 
-			<div id="content-routineset">☀ 아침 5:00 기상 미라클 모닝 루틴을 실천할 시간을
-			정해주세요! 권장 시간은 05:00 이지만, 루티너님이 지킬 수 있는 시간으로 시작해서 서서히 당겨가는것을 추천드립니다! 눈
-			뜨자마자 물 한잔 🥛 눈 뜨자마자 일어나서 마시는 물 한잔은, 입 속에 남아있는 위산을 씻어주고 세균도 어느 정도 제거해
-			주는 역할을 한다고 합니다. 또한 신진대사에 도움을 줘 혈액순환을 원활히 하기 때문에 깨끗한 혈액 공급의 원천이 된다는 사실
-			알고 계시죠? 잠도 깨고 몸도 깨는 일석이조의 효과를 느껴보세요 하루 5분 방정리 🧹 왜 청소를 시간내서 하려고 할까요?
-			아칭메 일어나서 책상을 정리한다던가, 이부자리를 정리하는 등 가벼운 정리로도 하루를 상쾌하게 시작할 수 있어요 : ) 아침
+			<div id="content-routineset"><mark>☀ 아침 5:00 기상 미라클 모닝</mark><br> 루틴을 실천할 시간을
+			정해주세요!<br>
+			권장 시간은 05:00 이지만, 루티너님이 지킬 수 있는 시간으로 시작해서 서서히 당겨가는것을 추천드립니다!<br><br>
+			<mark>눈 뜨자마자 물 한잔 🥛</mark><br>눈 뜨자마자 일어나서 마시는 물 한잔은, 입 속에 남아있는 위산을 씻어주고 세균도 어느 정도 제거해
+			주는 역할을 한다고 합니다.<br>
+			또한 신진대사에 도움을 줘 혈액순환을 원활히 하기 때문에 깨끗한 혈액 공급의 원천이 된다는 사실 알고 계시죠?<br>
+			잠도 깨고 몸도 깨는 일석이조의 효과를 느껴보세요.<br><br><mark>하루 5분 방정리 🧹</mark><br> 왜 청소를 시간내서 하려고 할까요?<br>
+			아칭메 일어나서 책상을 정리한다던가, 이부자리를 정리하는 등 가벼운 정리로도 하루를 상쾌하게 시작할 수 있어요 : )<br>아침
 			외출시 입을 옷 정리 부터 천천히 시작해 보세요!</div>
 		</div>
 
@@ -116,10 +118,126 @@
 
 
 		<div id="btn-routindadd">
-			<button type="button" class="btn btn-primary btn-lg btn-block">
+			<button type="button" data-toggle="modal" data-target="#routineModal" class="btn btn-primary btn-lg btn-block">
 			내 루틴에 추가하기</button>
 		</div>
 	</div>
+
+	
+
+	<!-- 루틴 추가하기 모달 -->
+	<form method="POST" action="/routinemaker/myroutine/routineplus.action">
+		<div class="modal fade" id="routineModal" data-backdrop="static"
+			tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel"
+			aria-hidden="true" >
+			<div class="modal-dialog" role="document">
+			
+				<div class="modal-content">
+			
+					<div class="modal-header">
+						<h5 class="modal-title" id="staticBackdropLabel" 
+								style="text-align:center; font-size: 1.5em;">내 루틴에 추가하기💗</h5>
+						
+						<button type="button" class="close" data-dismiss="modal"
+							aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+							<br>
+						</button>
+					</div>
+					
+					<div class="modal-body">
+						
+						<table class="table table-bordered" id="routineplus">
+							<tr>
+								<th colspan="2" style="text-align:center;">
+								<h4 class="modal-title1" id="routinename">인생을 바꾸는 미라클 모닝☀</h4>
+								
+								
+								</th>
+							</tr>
+							<tr>
+								<th>타임필터</th>
+								<td>
+									<select id="time" name="time" class="tr100 height30">
+										<option value="아침">아침</option>
+										<option value="오후">오후</option>
+										<option value="저녁">저녁</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<th>상황/시간</th>
+								<td><input type="text" "text" name="state" 
+								class="tr300 height30" placeholder="ex) 운동 후, 아침 먹은 후"></td>
+							</tr>
+							<tr>
+								<th>알람설정</th>
+								<td><label class="switch">
+								<input type="checkbox" id="alarmset">
+								<span class="slider round"></span>
+								</label>
+									<p class="ap">OFF</p>
+									<p class="ap" style="display: none;">ON</p></td>
+							</tr>
+							<tr>
+								<th>하고싶은 이유</th>
+								<td><input type="text" name="" id="" class="tr300 height30" placeholder="하고싶은 이유 ( 150자 이내 )"></td>
+							</tr>
+							<tr>
+								<th>루틴반복주기</th>
+								<td>
+									<label class="switch">
+										<input type="checkbox" name="repeat" id="routineset">
+										<span class="slider round"></span>
+									</label>
+										<p class="rp">OFF</p>
+										<p class="rp" style="display: none;">ON</p>
+								</td>
+							</tr>
+							<tr>
+								<th>테마</th>
+								<td>
+									<select id="theme" name="theme" class="tr100 height30">
+										<option value="모닝루틴">모닝루틴</option>
+										<option value="저녁루틴">저녁루틴</option>
+										<option value="건강">건강</option>
+										<option value="생산성">생산성</option>
+										<option value="셀프케어">셀프케어</option>
+										<option value="생활">생활</option>
+										<option value="여유">여유</option>
+										<option value="관계">관계</option>
+										<option value="성장">성장</option>
+										<option value="공부">공부</option>
+										<option value="경제">경제</option>
+										<option value="기타">기타</option>
+										
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<th>희망시작일</th>
+								<td><input type="date" name="startDate" id=""></td>
+							</tr>
+						</table>
+					
+					</div>
+					
+					<div class="modal-footer">
+			          <button type="button" id="btnAdd" class="btn btn-primary">내 루틴에 추가하기</button>
+			          <button type="button" class="btn btn-default" data-dismiss="modal">취소하기</button>
+			        </div>
+				</div>
+			</div>
+		</div>
+	</form>
+
+	
+
+
+
+
+
+
 
 	<script>
 		

@@ -32,7 +32,7 @@
 	width:1000px;
 	height: 350px;
 	cursor: pointer;
-	border: 1px solid black;
+	/* border: 1px solid black; */
 	margin: 0 auto;
 }
 
@@ -51,7 +51,7 @@
 .container-routineset-text {
 	float: right;
 	width: 57%;
-	border: 1px solid black;
+	/* border: 1px solid black; */
 }
 
 .image {

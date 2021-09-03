@@ -29,13 +29,39 @@
             order by regdate desc
   	 </select>
 
+
+	<!-- 루틴 테마별로 조회하기 -->
+	<select id="getRoutineList" resultType="recommend" parameterType="String">
+		select * from tblRoutine 
+			where theme = #{theme} and routineseq between 1 and 10 
+				order by routineseq asc
+	</select>
+
+
+
 	
-	<!-- 루틴 추가하기 -->
-	<insert id="routineadd" parameterType="recommend">
+	 <!-- 루틴 추가하기 -->
+	<!-- <insert id="routineadd" parameterType="recommend">
 		insert into tblRoutine 
 		values(routineSeq.nextVal, #{name}, #{content}, #{theme}, #{sysdate}, 1, null);
-	</insert>	
+	</insert>	 -->
 
+
+	<!-- 루틴추가하기 -->
+	<insert id="routineAdd1" parameterType="com.routinemaker.myroutine.RoutinePlusDTO">
+		insert into tblRoutine 
+			values (routineSeq.nextVal , #{name}, '변화하고 싶어서', #{theme}, sysdate, 1, null)
+	</insert>
+	
+	
+	
+	<insert id="routineAdd2" parameterType="com.routinemaker.myroutine.RoutinePlusDTO">
+		insert into TBLROUTINESTATE (ROUTINESTATESEQ, STARTDATE, KIND, REST, TIME, STATE, ALARM, REPEAT, READCOUNT, MEMBERSEQ, ROUTINESEQ) 
+			values (routineStateSeq.nextVal, #{startDate}, '루틴', 'N', #{time}, #{state}, #{alarm}, #{repeat}, 1, 1, (SELECT MAX(ROUTINESEQ) FROM TBLROUTINE))
+	</insert>
+	
+	
+	
 	
 </mapper>
 

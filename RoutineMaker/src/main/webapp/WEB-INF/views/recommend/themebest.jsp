@@ -34,19 +34,21 @@
 		<div class="container-content" style="text-align: center;">
 			<c:forEach var="rtdto" items="${routineTheme}">
 				<button type="button" id="themecolor${rtdto.routineseq}"
-					class="btn-routine btn">${rtdto.theme}</button>
+					class="btn-routine btn routineTheme">${rtdto.theme}</button>
 			</c:forEach>
 		</div>
 
 
+
+
 		<div class="container-padding-horizen"></div>
 		<div class="container-padding-horizen"></div>
 		<div class="container-padding-horizen"></div>
 
 
-		<div class="list-group list-group-recommend">
+		<div id="routineResult" class="list-group list-group-recommend routinelist">
 			<c:forEach var="dto" items="${bestRoutine}">
-			<a href="#routineModal" data-toggle="modal" id="colorroutine${dto.routineseq}"
+				<a href="#routineModal" data-toggle="modal" id="colorroutine${dto.routineseq}"
 					class="list-group-item">${dto.routineseq}.${dto.name}</a>
 				<div class="container-padding-horizen"></div>
 			</c:forEach>
@@ -55,7 +57,6 @@
 
 	</div>
 
-	
 	
 		<!-- Modal -->
 		<div class="modal fade" id="routineModal" data-backdrop="static"
@@ -66,7 +67,7 @@
 				<div class="modal-content">
 			
 					<div class="modal-header">
-						<h5 class="modal-title" id="staticBackdropLabel" style="text-align:center; font-size: 1.5em;">내 루틴에 퍼가기</h5>
+						<h5 class="modal-title" id="staticBackdropLabel" style="text-align:center; font-size:"1.5em;">내 루틴에 퍼가기</h5>
 						
 						<button type="button" class="close" data-dismiss="modal"
 							aria-label="Close">
@@ -111,19 +112,18 @@
 								<th>테마</th>
 								<td>
 									<select id="theme" name="theme" class="tr100 height30">
-										<option value="">모닝루틴</option>
-										<option value="">저녁루틴</option>
-										<option value="">건강</option>
-										<option value="">생산성</option>
-										<option value="">셀프케어</option>
-										<option value="">생활</option>
-										<option value="">여유</option>
-										<option value="">관계</option>
-										<option value="">성장</option>
-										<option value="">공부</option>
-										<option value="">경제</option>
-										<option value="">경제</option>
-										<option value="">기타</option>
+										<option value="모닝루틴">모닝루틴</option>
+										<option value="저녁루틴">저녁루틴</option>
+										<option value="건강">건강</option>
+										<option value="생산성">생산성</option>
+										<option value="셀프케어">셀프케어</option>
+										<option value="생활">생활</option>
+										<option value="여유">여유</option>
+										<option value="관계">관계</option>
+										<option value="성장">성장</option>
+										<option value="공부">공부</option>
+										<option value="경제">경제</option>
+										<option value="기타">기타</option>
 									</select>
 								</td>
 							</tr>
@@ -147,89 +147,122 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	<script>
-	
-		$(function() {
+		
+	/* Ajax로 구현 -> 루틴 테마 클릭 시 , 해당 루틴 불러오기 */
+	 
+	$('.routineTheme').click(function(){
+		
+		let td = event.srcElement;
+		let theme = $(td).text();
+		
+		  $.ajax({
+	        	 
+	            type: 'GET',
+	            url: '/routinemaker/recommend/m2.action',
+	            data: 'theme=' + theme , 
+	            dataType: 'json',
+	            success: function(routineList) {
+	               
+	            //이전 검색 결과물을 삭제
+              		$('#routineResult').html('');
+                
+          			if( routineList.length > 0 ) {
+          				
+         			 	$(routineList).each(function(index, item) {
+         			 		
+         			 		$('.routinelist').append('<a href="#routineModal"  data-toggle="modal" id="colorroutine${dto.routineseq}" class="list-group-item" style="background-color: RGB(217,237,247);">'
+         			 		 + item.routineseq 
+          		 			 + '.' 
+          		 			 + item.name 
+          		 			 + '</a><div class="container-padding-horizen"></div>');
+         			 		
+         			 	
+         			 		
+         			 		
+         			 	});
+         			 	
+          			} else { 
 
-			<c:forEach items="${routineTheme}" var="rtdto">
-			num = ${rtdto.routineseq};
+	      				 $('.routinelist').append('<p>해당 테마의 루틴이 없습니다.</p>'); 
+	                }
+	            
+		            },
+          			
+	            
+	            		 error: function(a,b,c) {
+				           console.log(a,b,c);
+				               
+				           }
+				     });
+				         
+				 }); 
+				
+		
+		
+		
+		
+	$(function() {
 
-			num2 = num % 5;
-			/* console.log(num); */
-			/* console.log(num2); */
+		<c:forEach items="${routineTheme}" var="rtdto">
+		num = ${rtdto.routineseq};
 
-			if (num2 == 0) {
-				$('#themecolor${rtdto.routineseq}').addClass('btn-primary');
+		num2 = num % 5;
+		/* console.log(num); */
+		/* console.log(num2); */
 
-			} else if (num2 == 1) {
-				$('#themecolor${rtdto.routineseq}').addClass('btn-success');
+		if (num2 == 0) {
+			$('#themecolor${rtdto.routineseq}').addClass('btn-primary');
 
-			} else if (num2 == 2) {
-				$('#themecolor${rtdto.routineseq}').addClass('btn-info');
+		} else if (num2 == 1) {
+			$('#themecolor${rtdto.routineseq}').addClass('btn-success');
 
-			} else if (num2 == 3) {
-				$('#themecolor${rtdto.routineseq}').addClass('btn-warning');
+		} else if (num2 == 2) {
+			$('#themecolor${rtdto.routineseq}').addClass('btn-info');
 
-			} else if (num2 == 4) {
-				$('#themecolor${rtdto.routineseq}').addClass('btn-danger');
+		} else if (num2 == 3) {
+			$('#themecolor${rtdto.routineseq}').addClass('btn-warning');
 
-			}
+		} else if (num2 == 4) {
+			$('#themecolor${rtdto.routineseq}').addClass('btn-danger');
 
-			</c:forEach>
+		}
 
-		});
+		</c:forEach>
+
+	});
 
 		
-		$(function() {
-
-			<c:forEach items="${bestRoutine}" var="dto">
+		
+	$(function(){
+        
+		
+		<c:forEach items="${bestRoutine}" var="dto">
+	      
 			num = ${dto.routineseq};
-
-			num2 = num % 4;
-			/* console.log(num); */
-			/*console.log(num2);*/
-
-			if (num2 == 0) {
-				$('#colorroutine${dto.routineseq}').addClass('list-group-item-success');
-				
-			} else if (num2 == 1) {
-				$('#colorroutine${dto.routineseq}').addClass('list-group-item-info');
-				
-			} else if (num2 == 2) {
-				$('#colorroutine${dto.routineseq}').addClass('list-group-item-warning');
-				
-			} else if (num2 == 3) {
-				$('#colorroutine${dto.routineseq}').addClass('list-group-item-danger');
-				
-			}
-					
-			
-			</c:forEach>
-					
-					
-		});
-		
-		
+	       	num2 = num % 4;
+	      
+	       	 if (num2 == 0){
+					$('#colorroutine${dto.routineseq}').addClass('list-group-item-success');
+					//console.log('list-group-item-success');
+				}else if(num2 == 1){
+					$('#colorroutine${dto.routineseq}').addClass('list-group-item-info');
+					//console.log('list-group-item-info');
+				}else if (num2 == 2){
+					$('#colorroutine${dto.routineseq}').addClass('list-group-item-warning');
+					//console.log('list-group-item-warning');
+				}else if (num2 == 3){
+					$('#colorroutine${dto.routineseq}').addClass('list-group-item-danger');
+					//console.log('list-group-item-danger');
+				}
+       	 
+       	</c:forEach>
+       
+     });	
 	
-		
-		
-		
-		
+	
+	
+	
 	</script>
 
 </body>

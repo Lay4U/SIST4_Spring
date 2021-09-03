@@ -57,10 +57,37 @@
 
 		</div>
 
-
-
-
+		<hr>
 		<div class="container-padding-horizen"></div>
+
+		
+
+			<div class="container-routineset">
+
+			<div class="img-container-routineset"
+				onclick="location.href='/routinemaker/recommend/routinesetview.action';">
+				<img style="width:404px;" class="image-routineset"
+					src="/routinemaker/resources/images/exercise.jpg" />
+			</div>
+
+
+			<div class="container-routineset-text" style="padding:30px;">
+				<div class="container-title">퇴근 후 운동하는 습관 기르기!</div>
+				<div class="container-padding-horizen"></div>
+				<div class="container-content">
+					퇴근 후 운동하는 습관을 만들고 싶지만, 실천하기 어려웠다면 이 루틴세트를 추천합니다 : )<br>
+					 꾸준히 운동하기 위해 필요한 환경 세팅부터 실제 운동까지 모두 모아봤어요 :) <br> 
+				</div>
+				
+				<mark><a href='#'>#건강</a>
+			</div>
+
+
+		</div>
+
+
+		</div>	
+
 
 
 

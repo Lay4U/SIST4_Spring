@@ -39,7 +39,7 @@
 				</c:if>
 				
 			</span>
-			</span> 
+			</span>
 			
 			<c:if test="${empty now}">
 				<input type="date" id="my-calendar" class="btn btn-xs" name="my-calendar" value="2021-09-03">
@@ -64,10 +64,10 @@
 
 		<table class="table table-bordered" id="my-table">
 			<tr>
-				<th class="tr30">번호</th>
-				<th>테마</th>
-				<th>시간/상황</th>
-				<th>루틴명</th>
+				<th class="tr20">번호</th>
+				<th class="tr45">테마</th>
+				<th class="tr250">시간/상황</th>
+				<th class="tr250">루틴명</th>
 				
 			<c:if test="${empty rdto}">
 				<th class="tr20">8/30</th>
@@ -91,7 +91,7 @@
 			
 			
 			
-				<th>3주차 루틴회고</th>
+				<th class="tr280">3주차 루틴회고</th>
 			</tr>
 
 			<c:if test="${empty rdto}">
@@ -151,7 +151,7 @@
 		<button type="button" data-toggle="modal" data-target="#routineplus"
 			class="btn btn-success">루틴추가하기</button>
 		<button type="button" data-toggle="modal" data-target="#bookroutine"
-			class="btn btn-default"> 예약루틴확인</button>
+			class="btn btn-default" > 예약루틴확인</button>
 				
 
 	<!-- 루틴 추가하기 Modal -->
@@ -268,15 +268,18 @@
 								<th>시작날짜</th>
 								<th>루틴명</th>
 							</tr>
+						<c:forEach items="${futuredto}" var="dto">	
 							<tr>
-								<td>2021-09-15</td>
-								<td>물마시기</td>
+								<td>${dto.startdate}</td>
+								<td>${dto.name}</td>
 							</tr>
+						</c:forEach>
+							
 						</table>
 
 					</div>
 					<div class="modal-footer" style="text-align: center;">
-						<button type="button" class="btn btn-success"
+						<button type="button" class="btn btn-success btn-block"
 							data-dismiss="modal">확인</button>
 					</div>
 				</div>
@@ -384,34 +387,49 @@
 		<div id="diary-date">
 			<div class="diary-header" style="width: 100px;">데일리회고</div>
 			<div id="diary-weekdate">
-				<div class="weekdate-date">
+				<!-- <div class="weekdate-date" onclick="open(2021-08-30)">
+				<input type="radio" name="date" class="weekdate-date btn1" id="id_btn_01" /> 
+				<label for="id_btn_01">
 					<div>30</div>
 					<div>월</div>
+				</label>
 				</div>
-				<div class="weekdate-date">
+				<div class="weekdate-date" onclick="open(2021-08-31)">
+				<input type="radio" name="date" class="btn1" id="id_btn_02" /> <label for="id_btn_02">
 					<div>31</div>
 					<div>화</div>
+				</label>
 				</div>
-				<div class="weekdate-date">
+				<div class="weekdate-date" onclick="open(2021-09-01)">
 					<div>1</div>
 					<div>수</div>
 				</div>
-				<div class="weekdate-date">
+				<div class="weekdate-date" onclick="open(2021-09-02)">
 					<div>2</div>
 					<div>목</div>
 				</div>
-				<div class="weekdate-date">
+				<div class="weekdate-date" onclick="open(2021-09-03)" style="border: 1px solid purple; color: #8633C0;">
 					<div>3</div>
 					<div>금</div>
 				</div>
-				<div class="weekdate-date">
+				<div class="weekdate-date" onclick="open(2021-09-04)">
 					<div>4</div>
 					<div>토</div>
 				</div>
-				<div class="weekdate-date" style="border-style: none;">
+				<div class="weekdate-date" style="border-style: none;" onclick="open(2021-09-05)">
 					<div>5</div>
 					<div>일</div>
-				</div>
+				</div> -->
+				
+				<input type="radio" name="date" class="btn1" id="id_btn_01" /> <label for="id_btn_01">30<span>(월)</span></label>
+				<input type="radio" name="date" class="btn1" id="id_btn_02" /> <label for="id_btn_02">31<span>(화)</span></label>
+				<input type="radio" name="date" class="btn1" id="id_btn_03" /> <label for="id_btn_03">1<span>(수)</span></label>
+				<input type="radio" name="date" class="btn1" id="id_btn_04" /> <label for="id_btn_04">2<span>(목)</span></label>
+				<input type="radio" name="date" class="btn1" id="id_btn_05" checked/> <label for="id_btn_05">3<span>(금)</span></label>
+				<input type="radio" name="date" class="btn1" id="id_btn_06" /> <label for="id_btn_06">4<span>(토)</span></label>
+				<input type="radio" name="date" class="btn1" id="id_btn_07" /> <label for="id_btn_07">5<span>(일)</span></label>
+			
+			
 			</div>
 		</div>
 
@@ -426,24 +444,19 @@
 			</div>
 		</div>
 		<div>
-			<div class="diary-header margin-b20">오늘의 나에게!</div>
+			<div class="diary-header margin-b20">나에게 한마디!</div>
 			<div>
-				<textarea class="diary-text margin-b20" rows="" cols=""
-					placeholder="수고한 나에게 한마디!"></textarea>
+				<textarea class="diary-text margin-b20" placeholder="수고한 나에게 한마디!" 
+				id="diarytxt"></textarea>
 			</div>
 		</div>
 		<div class="button-left">
 			<button class="btn btn-success">저장하기</button>
 		</div>
-
-
 	</div>
-
-
 </div>
 
 <script>
-	
 
 	//date값 입력시 -> 일주일 자동적용
 	$('#my-calendar').change(function() {
@@ -528,14 +541,10 @@
 					 }//submit
 					 
 					submit();
-					
-				}
-				
-					
+	
+				}	
 			});
-	
-	
-	
+
 
 	//루틴추가(알람,반복주기 ON토글)
 	$('#alarmset').click(function() {
@@ -544,4 +553,72 @@
 	$('#routineset').click(function() {
 		$('.rp').toggle();
 	});
+	
+	
+	//다이어리조회
+	$('#id_btn_01').click(function() {
+		
+		$.ajax({
+			type:'GET',
+			url: 'http://localhost:8090/routinemaker/myroutine/dailydiary.action?date=' + '2021-08-30',
+			dataType: 'json',
+			success: function(obj) {
+				//alert(obj.content);
+				$('#diarytxt').text(obj.content);
+			},
+			error: function(a,b,c) {
+				console.log(a,b,c);
+			}
+		});
+	});
+	
+	$('#id_btn_02').click(function() {
+		
+		$.ajax({
+			type:'GET',
+			url: 'http://localhost:8090/routinemaker/myroutine/dailydiary.action?date=' + '2021-08-31',
+			dataType: 'json',
+			success: function(obj) {
+				//alert(obj.content);
+				$('#diarytxt').text(obj.content);
+			},
+			error: function(a,b,c) {
+				console.log(a,b,c);
+			}
+		});
+	});
+	
+	$('#id_btn_03').click(function() {
+		
+		$.ajax({
+			type:'GET',
+			url: 'http://localhost:8090/routinemaker/myroutine/dailydiary.action?date=' + '2021-09-01',
+			dataType: 'json',
+			success: function(obj) {
+				//alert(obj.content);
+				$('#diarytxt').text(obj.content);
+			},
+			error: function(a,b,c) {
+				console.log(a,b,c);
+			}
+		});
+	});
+	
+	$('#id_btn_04').click(function() {
+		
+		$.ajax({
+			type:'GET',
+			url: 'http://localhost:8090/routinemaker/myroutine/dailydiary.action?date=' + '2021-09-02',
+			dataType: 'json',
+			success: function(obj) {
+				//alert(obj.content);
+				$('#diarytxt').text(obj.content);
+			},
+			error: function(a,b,c) {
+				console.log(a,b,c);
+			}
+		});
+	});
+	
+	
 </script>

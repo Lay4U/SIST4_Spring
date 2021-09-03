@@ -48,7 +48,17 @@ public class MyroutineController {
 		String s = Long.toString(days); //long->문자열로변환
 		dto.setRegdate(s);
 		
-		//기본셋팅 루틴
+		
+		//예약루틴
+		List<MyroutineDTO> futuredto = dao.futureList(seq);
+		//날짜만 가공(시간부분 제외)
+		for (MyroutineDTO fdto : futuredto) {
+			fdto.setStartdate(fdto.getStartdate().substring(0, 11));
+		}
+		
+		req.setAttribute("futuredto", futuredto);
+		
+		//기본날짜(첫화면) 루틴
 		List<MyroutineDTO> bdto = dao.getroutine(seq);
 		req.setAttribute("bdto", bdto);
 		
@@ -63,7 +73,7 @@ public class MyroutineController {
 			List<MyroutineDTO> rdto = dao.routinelist(map);
 			req.setAttribute("rdto", rdto); //rnum까지 들어있음
 			
-			//날짜가공
+			//날짜가공(2021-08-31 -> 08/31 날짜)
 			
 			
 			
@@ -127,7 +137,18 @@ public class MyroutineController {
 		
 	}
 	
-	
+	@RequestMapping(value = "/myroutine/dailydiary.action", method = { RequestMethod.GET })
+	@ResponseBody
+	public DailyDiaryDTO dailydiary(HttpServletRequest req, HttpServletResponse resp, HttpSession session,
+			String date) {
+			
+		String seq = "1"; //조회할 회원번호
+		
+		DailyDiaryDTO dto = dao.getDiary(date);
+		System.out.println(dto);
+		
+		return dto;
+	}
 	
 	
 }

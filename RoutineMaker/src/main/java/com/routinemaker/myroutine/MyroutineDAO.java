@@ -39,6 +39,16 @@ public class MyroutineDAO {
 		template.insert("myroutine.add1", dto);
 	}
 
+	public List<MyroutineDTO> futureList(String seq) {
+		// 예약루틴목록
+		return template.selectList("myroutine.future", seq);
+	}
+
+	public DailyDiaryDTO getDiary(String date) {
+		//데일리 다이어리 목록가져오기
+		return template.selectOne("myroutine.getDiary", date);
+	}
+
 	
 	
 }
